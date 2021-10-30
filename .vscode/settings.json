@@ -1,3 +1,17 @@
 {
-  "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out"
+  "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out",
+  "latex-workshop.latex.recipe.default": "latexmk (lualatex)",
+  "files.associations": {
+    "*.tex": "latex",
+    "*.cls": "latex",
+    "*.sty": "latex"
+  },
+  "cSpell.words": [
+    "Jaimes",
+    "Jhonel",
+    "Stefano"
+  ],
+  "cSpell.ignoreRegExpList": [
+    "\\\\begin\\{luacode\\*?\\}[^]*\\\\end\\{luacode\\*?\\}"
+  ],
 }
