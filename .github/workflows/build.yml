@@ -1,0 +1,35 @@
+name: Build and lint document
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Lint LaTeX document
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: |
+            chktex -q --inputfiles=0 src/*.tex
+            chktex -q --inputfiles=0 src/*.cls
+            chktex -q --inputfiles=0 src/*.sty
+            chktex -q --inputfiles=0 src/sections/*.tex
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: src/
+          root_file: main.tex
+      - name: Get short commit hash
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: pdf-${{ steps.vars.outputs.sha_short }}
+          path: src/main.pdf

@@ -1,0 +1,14 @@
+changelog:
+  categories:
+    - title: Content 📖
+      labels:
+        - content
+    - title: Enhancements 🎉
+      labels:
+        - enhancement
+    - title: Bugs 🐛
+      labels:
+        - bug
+    - title: Other Changes
+      labels:
+        - "*"
