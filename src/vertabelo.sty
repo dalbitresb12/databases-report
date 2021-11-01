@@ -1,2 +1,17 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{vertabelo}[2021/10/30 Vertabelo's XML processing package]
+
+\RequirePackage{array}
+\RequirePackage{longtable}
+
+\newenvironment{database}{
+  \renewenvironment{table}{
+    \newcommand{\attribute}[3]{####1 & ####2 & ####3 \\ \hline}
+    \begin{longtable}[c]{ | l | l | m{0.5\textwidth} | }
+      \hline
+      Atributo & Tipo & Descripción \\
+      \hline
+  }{
+    \end{longtable}
+  }
+}{}
