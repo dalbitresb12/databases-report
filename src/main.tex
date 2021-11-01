@@ -1,9 +1,15 @@
 \documentclass[12pt, a4paper]{upcreport}
 
 \usepackage{vertabelo}
+\usepackage{enumeratedtable}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{subfiles}
+
+\renewcommand{\arraystretch}{1.5}
 
 \settitle{Trabajo final}
-\settheme{Modelamiento de base de datos de una empresa}
+\settheme{Modelamiento de la base de datos de Coursera Inc.}
 \setcoursename{Diseño de Bases de Datos}
 \setcoursecode{SI400}
 \setcoursegroup{CC41}
@@ -20,10 +26,37 @@
 
 \graphicspath{{images/}}
 
+\title{\thetitle}
+\author{Franco Galindo, Diego Albitres, Jhonel Rios, Ángel Meneses y Stefano Solis}
+\date{\today}
+
 \begin{document}
 
 \maketitlepage
 
 \newpage
+
+\tableofcontents
+
+\newpage
+
+\subfile{sections/business-about.tex}
+
+\newpage
+
+\subfile{sections/database-metadata.tex}
+
+\newpage
+
+% \begin{database}
+%   \begin{table}
+%     \attribute{id}{int}{
+%       Identificador único del estudiante
+%     }
+%     \attribute{fullname}{varchar(max)}{
+%       Nombre completo del estudiante
+%     }
+%   \end{table}
+% \end{database}
 
 \end{document}
