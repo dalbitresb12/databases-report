@@ -24,7 +24,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           working_directory: src/
-          root_file: src/main.tex
+          root_file: main.tex
       - name: Get short commit hash
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
