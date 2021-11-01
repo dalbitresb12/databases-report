@@ -1,26 +1,2 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{vertabelo}[2021/10/30 Vertabelo's XML processing package]
-
-\RequirePackage{luacode}
-
-\begin{luacode*}
-  parser = require "parse_xml.lua"
-  parser.add_action("Tables", [[%s]])
-  parser.add_action("Table", [[
-    \section{@{name}}
-    %s
-  ]])
-
-  function article_load(filename)
-    local transformed = parser.load_file(filename)
-    if transformed then
-      parser.print_tex(transformed)
-    else
-      tex.sprint("Error in parsing of the XML file " .. filename)
-    end
-  end
-\end{luacode*}
-
-\DeclareRobustCommand{\insertxml}[1]{
-  \directlua{article_load("#1")}
-}
