@@ -5,7 +5,7 @@
 
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{graphicx}
-% \RequirePackage{mathptmx} % Commented until it can work with lualatex
+\RequirePackage{mathptmx}
 \RequirePackage[spanish, calc]{datetime2}
 
 \DeclareRobustCommand{\setimagesfolder}[1][images/]{
