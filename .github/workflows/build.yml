@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  build_lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
