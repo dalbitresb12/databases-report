@@ -7,7 +7,7 @@
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage[spanish, calc]{datetime2}
 \RequirePackage[T1]{fontenc}
-% \RequirePackage{mathptmx} % Commented until it can work with lualatex
+\RequirePackage{mathptmx}
 \RequirePackage{graphicx}
 
 \DeclareRobustCommand{\settitle}[1]{
