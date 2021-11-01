@@ -1,0 +1,29 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{enumeratedtable}[2021/11/01 Vertabelo's XML processing package]
+
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{fmtcount}
+\RequirePackage{keyval}
+
+\define@key{enumeratedtable}{prefix}{\def\enutb@prefix{#1}}
+\define@key{enumeratedtable}{header}{\def\enutb@header{#1}}
+\define@key{enumeratedtable}{padding}{\def\enutb@padding{#1}}
+\setkeys{enumeratedtable}{prefix=IT, header=Código, padding=2}
+
+\newenvironment{enumeratedtable}[1][]{
+  \setkeys{enumeratedtable}{#1}
+  \newcounter{tablecounter\enutb@prefix}
+  \renewcommand{\item}[1]{
+    \stepcounter{tablecounter\enutb@prefix}
+    \enutb@prefix\padzeroes[\enutb@padding]{\decimal{tablecounter\enutb@prefix}} & ##1 \\
+    \hline
+  }
+
+  \begin{longtable}[c]{ | l | m{0.9\textwidth} | }
+    \hline
+    \enutb@header & Descripción \\
+    \hline
+}{
+  \end{longtable}
+}
