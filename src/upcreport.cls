@@ -1,16 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{upcreport}[2021/10/30 Universidad Peruana de Ciencias Aplicadas themed article class]
+\ProvidesClass{upcreport}[2021/11/01 Universidad Peruana de Ciencias Aplicadas themed article class]
 
 \LoadClassWithOptions{article}
 
+\RequirePackage[spanish]{babel}
 \RequirePackage[margin=1in]{geometry}
-\RequirePackage{graphicx}
-\RequirePackage{mathptmx}
 \RequirePackage[spanish, calc]{datetime2}
-
-\DeclareRobustCommand{\setimagesfolder}[1][images/]{
-  \graphicspath{{#1}}
-}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathptmx}
+\RequirePackage{graphicx}
 
 \DeclareRobustCommand{\settitle}[1]{
   \DeclareRobustCommand{\thetitle}{#1}
