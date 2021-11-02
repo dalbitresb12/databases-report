@@ -1,0 +1,51 @@
+{
+  "name": "vertabelo-latex",
+  "version": "0.1.0",
+  "description": "Fetch Vertabelo's XML and transform into LaTex template",
+  "repository": "https://github.com/dalbitresb12/databases-report",
+  "author": {
+    "name": "Diego Albitres",
+    "email": "diego.albitres@gmail.com",
+    "url": "https://dalbitresb.com/"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "clean": "del-cli dist",
+    "start": "node dist/index.js",
+    "lint": "concurrently -s --kill-others-on-fail yarn:lint:*",
+    "lint:eslint": "eslint -ext .ts,.js .",
+    "lint:ts": "tsc --noemit"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/gulp": "^4.0.9",
+    "@types/gulp-babel": "^6.1.30",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "babel-plugin-preval": "^5.0.0",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.1.0",
+    "esm": "^3.2.25",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "concurrently": "^6.3.0",
+    "consola": "^2.15.3",
+    "dotenv": "^10.0.0",
+    "fast-xml-parser": "^3.21.1",
+    "got": "^11.8.2",
+    "ts-dedent": "^2.2.0"
+  }
+}
