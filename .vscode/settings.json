@@ -1,15 +1,48 @@
 {
   "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/out",
+  "latex-workshop.latex.rootFile.useSubFile": false,
+  "latex-workshop.latex.watch.files.ignore": [
+    "**/*.bbx",
+    "**/*.bbl",
+    "**/*.cbx",
+    "**/*.cfg",
+    "**/*.clo",
+    "**/*.cnf",
+    "**/*.def",
+    "**/*.dfu",
+    "**/*.enc",
+    "**/*.fd",
+    "**/*.fmt",
+    "**/*.lbx",
+    "**/*.map",
+    "**/*.mkii",
+    "**/*.pfb",
+    "**/*.tfm",
+    "**/*.vf",
+    "**/*.code.tex",
+    "**/texmf-{dist,var}/**",
+    "**/Local/MiKTeX/**",
+    "**/Local/Programs/MiKTeX/**",
+    "**/Roaming/MiKTeX/**",
+    "**/Program*/MiKTeX*/**",
+    "**/.miktex/texmfs/**",
+    "/var/cache/miktex-texmf/**",
+    "/usr/local/share/miktex-texmf/**",
+    "**/Library/Application Support/MiKTeX/texmfs/**",
+    "/dev/null"
+  ],
   "files.associations": {
     "*.tex": "latex",
     "*.cls": "latex",
     "*.sty": "latex"
   },
   "cSpell.words": [
+    "Coursera",
     "enumeratedtable",
     "Jaimes",
     "Jhonel",
-    "Stefano"
+    "Stefano",
+    "subcategorías"
   ],
   "cSpell.ignoreRegExpList": [
     "\\\\begin\\{luacode\\*?\\}[^]*\\\\end\\{luacode\\*?\\}",
