@@ -34,6 +34,10 @@ jobs:
         run: yarn build
       - name: Create update
         run: yarn start ${{ github.workspace }}/lib/out/
+        env:
+          TOKEN: ${{ secrets.VERTABELO_TOKEN }}
+          PASSWORD: ${{ secrets.VERTABELO_PASSWORD }}
+          MODEL_ID: ${{ secrets.VERTABELO_MODEL_ID }}
       - name: Move updated files to destination
         run: cp ${{ github.workspace }}/lib/out/ ${{ github.workspace }}/src/sections
       - name: Create pull request with update
