@@ -12,7 +12,7 @@ on:
 
 jobs:
   build_lint:
-    name: 'build and lint (node: 14)'
+    name: 'build and lint (node: ${{ matrix.node }})'
     runs-on: ubuntu-latest
     defaults:
       run:
