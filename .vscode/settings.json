@@ -45,7 +45,8 @@
     "subcategorías"
   ],
   "cSpell.ignoreRegExpList": [
-    "\\\\begin\\{luacode\\*?\\}[^]*\\\\end\\{luacode\\*?\\}"
+    "\\\\begin\\{luacode\\*?\\}[^]*\\\\end\\{luacode\\*?\\}",
+    "\\\\begin\\{table\\}[^]*\\\\end\\{table\\}"
   ],
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml"
