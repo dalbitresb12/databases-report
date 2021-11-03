@@ -1,0 +1,45 @@
+name: vertabelo-latex
+
+on:
+  push:
+    paths:
+      - "lib/**"
+    branches:
+      - main
+  pull_request:
+    paths:
+      - "lib/**"
+
+jobs:
+  build_lint:
+    name: 'build and lint (node: 14)'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./lib
+    strategy:
+      matrix:
+        node: [14]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Use node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('lib/**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Lint
+        run: yarn lint
+      - name: Build
+        run: yarn build

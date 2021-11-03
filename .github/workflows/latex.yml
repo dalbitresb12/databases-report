@@ -1,4 +1,4 @@
-name: Build and lint document
+name: LaTeX
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   build_lint:
+    name: build and lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

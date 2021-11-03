@@ -1,0 +1,47 @@
+name: update-docs
+
+on: [workflow_dispatch]
+
+jobs:
+  update:
+    name: vertabelo-latex
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./lib
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: 'main'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Use node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('lib/**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn build
+      - name: Create update
+        run: yarn start ${{ github.workspace }}/lib/out/
+      - name: Move updated files to destination
+        run: cp ${{ github.workspace }}/lib/out/ ${{ github.workspace }}/src/sections
+      - name: Create pull request with update
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: 'main'
+          commit-message: '[CI] Updated documents from Vertabelo'
+          branch: 'content/vertabelo-updates'
+          title: '[CI] Updated documents from Vertabelo'
+          labels: 'content'
+          reviewers: 'dalbitresb12'
