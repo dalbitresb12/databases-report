@@ -39,7 +39,7 @@ jobs:
           PASSWORD: ${{ secrets.VERTABELO_PASSWORD }}
           MODEL_ID: ${{ secrets.VERTABELO_MODEL_ID }}
       - name: Move updated files to destination
-        run: cp ${{ github.workspace }}/lib/out/ ${{ github.workspace }}/src/sections
+        run: cp ${{ github.workspace }}/lib/out/*.tex ${{ github.workspace }}/src/sections
       - name: Create pull request with update
         uses: peter-evans/create-pull-request@v3
         with:
