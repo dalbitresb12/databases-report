@@ -16,7 +16,7 @@
     "clean": "del-cli dist",
     "start": "node dist/index.js",
     "lint": "concurrently -s --kill-others-on-fail yarn:lint:*",
-    "lint:eslint": "eslint -ext .ts,.js .",
+    "lint:eslint": "eslint --ext .ts,.js .",
     "lint:ts": "tsc --noemit"
   },
   "devDependencies": {
