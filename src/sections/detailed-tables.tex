@@ -4,6 +4,333 @@
 
 \begin{document}
   
-\subsubsection{Tabla Student}
+\begin{database}
+  \subsubsection{Tabla Student}
+  
+  \begin{table}
+    \attribute{id}{int}{
+      User ID
+    }
+    \attribute{fullname}{varchar(max)}{}
+    \attribute{email}{varchar(254)}{}
+    \attribute{password}{char(60)}{}
+    \attribute{alternative\_email}{varchar(254)}{}
+    \attribute{profile\_picture\_url}{varchar(2000)}{}
+    \attribute{employment\_status}{tinyint}{}
+    \attribute{industry}{varchar(100)}{}
+    \attribute{employer}{varchar(max)}{}
+    \attribute{profession}{varchar(100)}{}
+    \attribute{experience\_level}{tinyint}{}
+    \attribute{is\_current\_employer}{bit}{}
+    \attribute{highest\_degree}{tinyint}{}
+    \attribute{university}{varchar(max)}{}
+    \attribute{major}{tinyint}{}
+    \attribute{is\_student}{bit}{}
+    \attribute{experience\_privacy}{tinyint}{}
+    \attribute{about\_me}{varchar(max)}{}
+    \attribute{location}{varchar(max)}{}
+    \attribute{principal\_skills}{varchar(max)}{}
+    \attribute{website\_urls}{varchar(max)}{}
+    \attribute{gender}{tinyint}{}
+    \attribute{birthday}{date}{}
+    \attribute{phone\_number}{varchar(25)}{}
+    \attribute{details\_privacy}{tinyint}{}
+  \end{table}
+  
+  \subsubsection{Tabla Institution}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{name}{varchar(max)}{}
+    \attribute{description}{varchar(max)}{}
+    \attribute{country}{char(2)}{}
+    \attribute{logo\_url}{varchar(2000)}{}
+    \attribute{squared\_logo\_url}{varchar(2000)}{}
+    \attribute{course\_logo\_url}{varchar(2000)}{}
+    \attribute{website\_urls}{varchar(max)}{}
+  \end{table}
+  
+  \subsubsection{Tabla Instructor}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{fullname}{varchar(max)}{}
+    \attribute{occupation}{varchar(max)}{}
+    \attribute{rating}{float(2)}{}
+    \attribute{ratings\_count}{int}{}
+    \attribute{profile\_picture\_url}{varchar(2000)}{}
+    \attribute{website\_urls}{varchar(max)}{}
+    \attribute{biography}{varchar(max)}{}
+    \attribute{is\_top\_instructor}{bit}{}
+    \attribute{institution\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Course}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{slug}{varchar(50)}{}
+    \attribute{name}{varchar(max)}{}
+    \attribute{course\_rating}{float(2)}{}
+    \attribute{content\_rating}{float(2)}{}
+    \attribute{instructor\_rating}{float(2)}{}
+    \attribute{enrolled\_students}{int}{}
+    \attribute{description}{varchar(max)}{}
+    \attribute{recent\_views}{int}{}
+    \attribute{has\_certificate}{bit}{}
+    \attribute{is\_fully\_online}{bit}{}
+    \attribute{time\_commitment}{bigint}{}
+    \attribute{financial\_aid}{bit}{}
+    \attribute{institution\_id}{int}{}
+    \attribute{certificate\_template\_url}{varchar(2000)}{}
+    \attribute{course\_type}{tinyint}{}
+    \attribute{category\_id}{int}{}
+    \attribute{subcategory\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Category}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{slug}{varchar(50)}{}
+    \attribute{name}{varchar(max)}{}
+    \attribute{description}{varchar(max)}{}
+    \attribute{parent\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Review}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{rating}{int}{}
+    \attribute{user\_review}{varchar(max)}{}
+    \attribute{publication\_date}{smalldatetime}{}
+    \attribute{course\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Membership}
+  
+  \begin{table}
+    \attribute{course\_id}{int}{}
+    \attribute{student\_id}{int}{}
+    \attribute{course\_role}{tinyint}{}
+    \attribute{enrollment\_date}{datetime}{}
+    \attribute{finished\_course}{bit}{}
+    \attribute{certificate\_code}{varchar(20)}{}
+  \end{table}
+  
+  \subsubsection{Tabla Question}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{question}{varchar(500)}{}
+    \attribute{answer}{varchar(max)}{}
+    \attribute{is\_global}{bit}{}
+  \end{table}
+  
+  \subsubsection{Tabla Question\_Category}
+  
+  \begin{table}
+    \attribute{question\_id}{int}{}
+    \attribute{category\_id}{int}{}
+    \attribute{order}{tinyint}{}
+  \end{table}
+  
+  \subsubsection{Tabla Question\_Course}
+  
+  \begin{table}
+    \attribute{question\_id}{int}{}
+    \attribute{course\_id}{int}{}
+    \attribute{order}{tinyint}{}
+  \end{table}
+  
+  \subsubsection{Tabla Course\_Instructor}
+  
+  \begin{table}
+    \attribute{course\_id}{int}{}
+    \attribute{instructor\_id}{int}{}
+    \attribute{order}{tinyint}{}
+  \end{table}
+  
+  \subsubsection{Tabla Specialization\_Course}
+  
+  \begin{table}
+    \attribute{specialization\_id}{int}{}
+    \attribute{course\_id}{int}{}
+    \attribute{order}{tinyint}{}
+  \end{table}
+  
+  \subsubsection{Tabla Language}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{iso\_code}{char(2)}{}
+    \attribute{human\_name}{varchar(100)}{}
+  \end{table}
+  
+  \subsubsection{Tabla Course\_Language}
+  
+  \begin{table}
+    \attribute{course\_id}{int}{}
+    \attribute{language\_id}{int}{}
+    \attribute{is\_primary}{bit}{}
+  \end{table}
+  
+  \subsubsection{Tabla Module}
+  
+  \begin{table}
+    \attribute{course\_id}{int}{}
+    \attribute{module\_id}{int}{}
+    \attribute{name}{varchar(100)}{}
+    \attribute{slug}{varchar(100)}{}
+    \attribute{description}{varchar(max)}{}
+    \attribute{time\_commitment}{bigint}{}
+    \attribute{order}{int}{}
+    \attribute{forum\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Lecture}
+  
+  \begin{table}
+    \attribute{course\_id}{int}{}
+    \attribute{module\_id}{int}{}
+    \attribute{lesson\_id}{int}{}
+    \attribute{lecture\_id}{int}{}
+    \attribute{name}{varchar(100)}{}
+    \attribute{slug}{varchar(100)}{}
+    \attribute{lesson\_type}{tinyint}{}
+    \attribute{time\_commitment}{bigint}{}
+    \attribute{video\_id}{int}{}
+    \attribute{reading\_id}{int}{}
+    \attribute{quiz\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Video}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{cloudfront\_domain}{varchar(100)}{}
+    \attribute{cloudfront\_object\_key}{varchar(500)}{}
+    \attribute{resolution\_width}{int}{}
+    \attribute{resolution\_height}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Subtitle}
+  
+  \begin{table}
+    \attribute{video\_id}{int}{}
+    \attribute{id}{int}{}
+    \attribute{cloudfront\_domain}{varchar(100)}{}
+    \attribute{cloudfront\_object\_key}{varchar(500)}{}
+    \attribute{original\_format}{varchar(10)}{}
+    \attribute{language\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Lesson}
+  
+  \begin{table}
+    \attribute{course\_id}{int}{}
+    \attribute{module\_id}{int}{}
+    \attribute{lesson\_id}{int}{}
+    \attribute{name}{varchar(100)}{}
+    \attribute{slug}{varchar(100)}{}
+    \attribute{time\_commitment}{bigint}{}
+  \end{table}
+  
+  \subsubsection{Tabla Quiz}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{submissions\_interval}{bigint}{}
+    \attribute{submissions\_per\_interval}{tinyint}{}
+    \attribute{contains\_widget\_questions}{bit}{}
+    \attribute{max\_score}{int}{}
+    \attribute{passing\_fraction}{float(2)}{}
+    \attribute{passing\_score}{int}{}
+    \attribute{question\_count}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Forum}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{name}{varchar(100)}{}
+    \attribute{description}{varchar(200)}{}
+    \attribute{thread\_count}{int}{}
+    \attribute{last\_post}{datetime}{}
+    \attribute{course\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Certificate}
+  
+  \begin{table}
+    \attribute{certificate\_code}{varchar(20)}{}
+    \attribute{grade\_achieved}{float(2)}{}
+    \attribute{date\_achieved}{datetime}{}
+    \attribute{pdf\_url}{varchar(2000)}{}
+    \attribute{image\_url}{varchar(2000)}{}
+  \end{table}
+  
+  \subsubsection{Tabla QuizQuestion}
+  
+  \begin{table}
+    \attribute{quiz\_id}{int}{}
+    \attribute{question\_id}{int}{}
+    \attribute{extra\_credit}{bit}{}
+    \attribute{is\_submit\_allowed}{bit}{}
+    \attribute{question\_type}{tinyint}{}
+    \attribute{definition\_id}{int}{}
+    \attribute{max\_score}{float(2)}{}
+  \end{table}
+  
+  \subsubsection{Tabla ContentDefinition}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{value}{varchar(max)}{}
+    \attribute{has\_asset\_block}{bit}{}
+    \attribute{has\_code\_block}{bit}{}
+    \attribute{has\_math}{bit}{}
+    \attribute{is\_plain\_text}{bit}{}
+  \end{table}
+  
+  \subsubsection{Tabla QuizOption}
+  
+  \begin{table}
+    \attribute{quiz\_id}{int}{}
+    \attribute{option\_id}{int}{}
+    \attribute{definition\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Thread}
+  
+  \begin{table}
+    \attribute{id}{int}{}
+    \attribute{name}{varchar(200)}{}
+    \attribute{created\_at}{datetime}{}
+    \attribute{created\_by}{int}{}
+    \attribute{course\_id}{int}{}
+    \attribute{forum\_id}{int}{}
+    \attribute{content\_definition\_id}{int}{}
+    \attribute{last\_answered\_at}{datetime}{}
+    \attribute{last\_answered\_by}{int}{}
+    \attribute{answer\_count}{int}{}
+    \attribute{top\_level\_answer\_count}{int}{}
+    \attribute{upvote\_count}{int}{}
+    \attribute{follower\_count}{int}{}
+    \attribute{view\_count}{int}{}
+    \attribute{parent\_thread\_id}{int}{}
+  \end{table}
+  
+  \subsubsection{Tabla Student\_Thread}
+  
+  \begin{table}
+    \attribute{student\_id}{int}{}
+    \attribute{thread\_id}{int}{}
+    \attribute{is\_upvoted}{bit}{}
+    \attribute{is\_follower}{bit}{}
+    \attribute{viewed}{bit}{}
+  \end{table}
+\end{database}
 
 \end{document}
