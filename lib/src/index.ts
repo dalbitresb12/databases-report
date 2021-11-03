@@ -3,6 +3,7 @@ import fs from 'fs/promises';
 import consola from 'consola';
 import { fetchXML } from './utils/fetcher';
 import { parseXML } from './utils/parser';
+import { createDatabase, createDocument } from './utils/transform';
 
 consola.wrapAll();
 
@@ -14,13 +15,10 @@ if (typeof modelId !== "string") {
 const run = async () => {
   const xml = await fetchXML(modelId);
   const parsed = parseXML(xml);
-  await fs.writeFile(
-    "../output.json",
-    JSON.stringify(parsed, null, '  '),
-    {
-      encoding: 'utf-8',
-    }
-  );
+  const database = createDatabase(parsed);
+  const document = createDocument(database);
+  await fs.mkdir("out/", { recursive: true });
+  await fs.writeFile("out/detailed-tables.tex", document, { encoding: 'utf-8' });
 };
 
 run();
