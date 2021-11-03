@@ -44,8 +44,8 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           base: 'main'
-          commit-message: '[CI] Updated documents from Vertabelo'
+          commit-message: 'Updated documents from Vertabelo'
           branch: 'content/vertabelo-updates'
-          title: '[CI] Updated documents from Vertabelo'
+          title: 'Updated documents from Vertabelo'
           labels: 'content'
           reviewers: 'dalbitresb12'
