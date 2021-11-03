@@ -1,17 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{vertabelo}[2021/10/30 Vertabelo's XML processing package]
+\ProvidesPackage{vertabelo}[2021/11/03 Vertabelo's XML processing package]
 
 \RequirePackage{array}
-\RequirePackage{longtable}
+\RequirePackage{xltabular}
 
 \newenvironment{database}{
   \renewenvironment{table}{
-    \newcommand{\attribute}[3]{####1 & ####2 & ####3 \\ \hline}
-    \begin{longtable}[c]{ | l | l | m{0.5\textwidth} | }
+    \newcommand{\attribute}[3]{\texttt{####1} & \texttt{####2} & ####3 \\ \hline}
+    \xltabular{\linewidth}{ | >{\raggedright\arraybackslash}l | >{\raggedright\arraybackslash}l | >{\raggedright\arraybackslash}X | }
       \hline
-      Atributo & Tipo & Descripción \\
-      \hline
+      Atributo & Tipo & Descripción \\ \hline
   }{
-    \end{longtable}
+    \endxltabular
   }
 }{}
