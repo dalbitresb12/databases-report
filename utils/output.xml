@@ -1,0 +1,4542 @@
+<DatabaseModel VersionId="2.4">
+    <Name/>
+    <Description/>
+    <DatabaseEngine>
+        <Name>sql_server</Name>
+        <Version>2019</Version>
+    </DatabaseEngine>
+    <Counters>
+        <Counter>
+            <Name>table</Name>
+            <Value>39</Value>
+            <Prefix>t</Prefix>
+        </Counter>
+        <Counter>
+            <Name>column</Name>
+            <Value>294</Value>
+            <Prefix>c</Prefix>
+        </Counter>
+        <Counter>
+            <Name>index</Name>
+            <Value>0</Value>
+            <Prefix>i</Prefix>
+        </Counter>
+        <Counter>
+            <Name>reference</Name>
+            <Value>82</Value>
+            <Prefix>r</Prefix>
+        </Counter>
+        <Counter>
+            <Name>table_check</Name>
+            <Value>1</Value>
+            <Prefix>tc</Prefix>
+        </Counter>
+        <Counter>
+            <Name>alternate_key</Name>
+            <Value>1</Value>
+            <Prefix>a</Prefix>
+        </Counter>
+        <Counter>
+            <Name>sequence</Name>
+            <Value>0</Value>
+            <Prefix>s</Prefix>
+        </Counter>
+        <Counter>
+            <Name>note</Name>
+            <Value>0</Value>
+            <Prefix>n</Prefix>
+        </Counter>
+        <Counter>
+            <Name>view</Name>
+            <Value>0</Value>
+            <Prefix>v</Prefix>
+        </Counter>
+        <Counter>
+            <Name>view_column</Name>
+            <Value>0</Value>
+            <Prefix>vc</Prefix>
+        </Counter>
+        <Counter>
+            <Name>area</Name>
+            <Value>0</Value>
+            <Prefix>ar</Prefix>
+        </Counter>
+        <Counter>
+            <Name>text</Name>
+            <Value>0</Value>
+            <Prefix>tx</Prefix>
+        </Counter>
+        <Counter>
+            <Name>tableDisplay</Name>
+            <Value>39</Value>
+            <Prefix>td</Prefix>
+        </Counter>
+        <Counter>
+            <Name>viewDisplay</Name>
+            <Value>0</Value>
+            <Prefix>vd</Prefix>
+        </Counter>
+        <Counter>
+            <Name>referenceDisplay</Name>
+            <Value>82</Value>
+            <Prefix>rd</Prefix>
+        </Counter>
+        <Counter>
+            <Name>materialized_view</Name>
+            <Value>1</Value>
+            <Prefix>mv</Prefix>
+        </Counter>
+        <Counter>
+            <Name>materialized_view_column</Name>
+            <Value>1</Value>
+            <Prefix>mvc</Prefix>
+        </Counter>
+        <Counter>
+            <Name>materializedViewDisplay</Name>
+            <Value>1</Value>
+            <Prefix>mvd</Prefix>
+        </Counter>
+        <Counter>
+            <Name>external_table</Name>
+            <Value>0</Value>
+            <Prefix>et</Prefix>
+        </Counter>
+        <Counter>
+            <Name>external_table_column</Name>
+            <Value>0</Value>
+            <Prefix>etc</Prefix>
+        </Counter>
+        <Counter>
+            <Name>externalTableDisplay</Name>
+            <Value>101</Value>
+            <Prefix>etd</Prefix>
+        </Counter>
+    </Counters>
+    <AdditionalSQLBeforeCreate/>
+    <AdditionalSQLAfterCreate/>
+    <AdditionalSQLBeforeDrop/>
+    <AdditionalSQLAfterDrop/>
+    <Tables>
+        <Table Id="t1">
+            <Name>Student</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c1">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del estudiante</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties>
+                        <Property>
+                            <Name>identity</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_increment</Name>
+                            <Value>1</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_seed</Name>
+                            <Value>1</Value>
+                        </Property>
+                    </Properties>
+                </Column>
+                <Column Id="c2">
+                    <Name>fullname</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Nombre completo del estudiante</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c4">
+                    <Name>email</Name>
+                    <Type>varchar(254)</Type>
+                    <Description>Correo electrónico principal de la cuenta</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c5">
+                    <Name>password</Name>
+                    <Type>char(60)</Type>
+                    <Description>Contraseña encriptada con el algoritmo BCrypt del estudiante</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c6">
+                    <Name>alternative_email</Name>
+                    <Type>varchar(254)</Type>
+                    <Description>Cuenta personal o correo alternativo del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c3">
+                    <Name>profile_picture_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Dirección URL de la foto de perfil del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c7">
+                    <Name>employment_status</Name>
+                    <Type>tinyint</Type>
+                    <Description>Seleccionable para la situación laboral del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c8">
+                    <Name>industry</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Seleccionable para la industria en la que trabaja el estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c9">
+                    <Name>employer</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Seleccionable para dónde trabaja el estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c10">
+                    <Name>profession</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Seleccionable para cuál es la profesión del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c11">
+                    <Name>experience_level</Name>
+                    <Type>tinyint</Type>
+                    <Description>Seleccionable para el nivel de experiencia relevante del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c12">
+                    <Name>is_current_employer</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si el empleador ingresado es el actual</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c13">
+                    <Name>highest_degree</Name>
+                    <Type>tinyint</Type>
+                    <Description>Seleccionable para el máximo grado educativo.</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c14">
+                    <Name>university</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Universidad en la que se encuentra el estudiante en la actualidad </Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c15">
+                    <Name>major</Name>
+                    <Type>tinyint</Type>
+                    <Description>El campo de estudio del usuario</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c16">
+                    <Name>is_student</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si es un estudiante actualmente</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c17">
+                    <Name>experience_privacy</Name>
+                    <Type>tinyint</Type>
+                    <Description>Seleccionable para la privacidad de experiencia del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c18">
+                    <Name>about_me</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c19">
+                    <Name>location</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Ubicación del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c20">
+                    <Name>principal_skills</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Campo separado por comas de las habilidades del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c21">
+                    <Name>website_urls</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Lista de URLs del estudiante en formato JSON</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c22">
+                    <Name>gender</Name>
+                    <Type>tinyint</Type>
+                    <Description>Seleccionable del género del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c23">
+                    <Name>birthday</Name>
+                    <Type>date</Type>
+                    <Description>Fecha de nacimiento del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c24">
+                    <Name>phone_number</Name>
+                    <Type>varchar(25)</Type>
+                    <Description>Número de teléfono del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c25">
+                    <Name>details_privacy</Name>
+                    <Type>tinyint</Type>
+                    <Description>Seleccionable de quién puede acceder a la información personal del estudiante</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c1</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t2">
+            <Name>Institution</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c26">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la institución</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties>
+                        <Property>
+                            <Name>identity</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_seed</Name>
+                            <Value>1</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_increment</Name>
+                            <Value>1</Value>
+                        </Property>
+                    </Properties>
+                </Column>
+                <Column Id="c27">
+                    <Name>name</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Nombre de la institución</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c28">
+                    <Name>description</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Descripción de la institución</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c29">
+                    <Name>country</Name>
+                    <Type>char(2)</Type>
+                    <Description>País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2.</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c170">
+                    <Name>logo_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Dirección URL del logo de la institución </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c174">
+                    <Name>squared_logo_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Dirección URL del logo en cuadrado de la institución</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c175">
+                    <Name>course_logo_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Dirección URL del logo de la institución utilizada en la cabecera de un curso </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c176">
+                    <Name>website_urls</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Lista de URLs de la institución en formato JSON</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c26</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t3">
+            <Name>Instructor</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c30">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de cada instructor</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties>
+                        <Property>
+                            <Name>identity</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_seed</Name>
+                            <Value>1</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_increment</Name>
+                            <Value>1</Value>
+                        </Property>
+                    </Properties>
+                </Column>
+                <Column Id="c31">
+                    <Name>fullname</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Nombre completo del instructor </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c32">
+                    <Name>occupation</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Ocupación del instructor</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c36">
+                    <Name>rating</Name>
+                    <Type>float(2)</Type>
+                    <Description>Calificación de la calidad de enseñanza de parte de los estudiantes</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c37">
+                    <Name>ratings_count</Name>
+                    <Type>int</Type>
+                    <Description>Cantidad de calificaciones recibidas</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c33">
+                    <Name>profile_picture_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Enlace del CDN a la foto de perfil del instructor</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c34">
+                    <Name>website_urls</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Lista de URLs del instructor en formato JSON </Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c35">
+                    <Name>biography</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Biografía del instructor</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c38">
+                    <Name>is_top_instructor</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si es un instructor top</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c43">
+                    <Name>institution_id</Name>
+                    <Type>int</Type>
+                    <Description>Institución Afiliada en la que trabaja el instructor</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c30</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t4">
+            <Name>Course</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c46">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de cada curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties>
+                        <Property>
+                            <Name>identity</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_seed</Name>
+                            <Value>1</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_increment</Name>
+                            <Value>1</Value>
+                        </Property>
+                    </Properties>
+                </Column>
+                <Column Id="c47">
+                    <Name>slug</Name>
+                    <Type>varchar(50)</Type>
+                    <Description>Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c48">
+                    <Name>name</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Nombre del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c49">
+                    <Name>course_rating</Name>
+                    <Type>float(2)</Type>
+                    <Description>Cantidad de estrellas que tiene el curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c51">
+                    <Name>content_rating</Name>
+                    <Type>float(2)</Type>
+                    <Description>Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c150">
+                    <Name>instructor_rating</Name>
+                    <Type>float(2)</Type>
+                    <Description>Calificación de la calidad de enseñanza del instructor</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c53">
+                    <Name>enrolled_students</Name>
+                    <Type>int</Type>
+                    <Description>Número de estudiantes que se han inscrito en el curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c54">
+                    <Name>description</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Descripción del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c55">
+                    <Name>recent_views</Name>
+                    <Type>int</Type>
+                    <Description>Cantidad de visitas recientes al curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c109">
+                    <Name>has_certificate</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si el curso tiene algún certificado</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c56">
+                    <Name>is_fully_online</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si el curso es 100% online</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c57">
+                    <Name>time_commitment</Name>
+                    <Type>bigint</Type>
+                    <Description>Tiempo estimado donde un estudiante termina un curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c151">
+                    <Name>financial_aid</Name>
+                    <Type>bit</Type>
+                    <Description>Identificador de si se ofrece apoyo financiero al curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c61">
+                    <Name>institution_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador de la institución afiliada que ofrece el curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c110">
+                    <Name>certificate_template_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Enlace que lleva a una imagen del certificado</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c146">
+                    <Name>course_type</Name>
+                    <Type>tinyint</Type>
+                    <Description>Seleccionable para el tipo de curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c271">
+                    <Name>category_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador de la categoría del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c272">
+                    <Name>subcategory_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador de la subcategoría del curso</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c46</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t6">
+            <Name>Category</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c69">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de cada categoría</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties>
+                        <Property>
+                            <Name>identity</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_seed</Name>
+                            <Value>1</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_increment</Name>
+                            <Value>1</Value>
+                        </Property>
+                    </Properties>
+                </Column>
+                <Column Id="c71">
+                    <Name>slug</Name>
+                    <Type>varchar(50)</Type>
+                    <Description>Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c70">
+                    <Name>name</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Nombre de la categoría</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c115">
+                    <Name>description</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Descripción de la categoría</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c114">
+                    <Name>parent_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de una categoría padre</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c69</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t8">
+            <Name>Review</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c78">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de cada reseña</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties>
+                        <Property>
+                            <Name>identity</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_seed</Name>
+                            <Value>1</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_increment</Name>
+                            <Value>1</Value>
+                        </Property>
+                    </Properties>
+                </Column>
+                <Column Id="c79">
+                    <Name>rating</Name>
+                    <Type>int</Type>
+                    <Description>Número de estrellas que da la reseña</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c80">
+                    <Name>user_review</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Texto de la reseña </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c81">
+                    <Name>publication_date</Name>
+                    <Type>smalldatetime</Type>
+                    <Description>Fecha de publicación</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c94">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c78</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t10">
+            <Name>Membership</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c111">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c87">
+                    <Name>student_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del estudiante</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c236">
+                    <Name>course_role</Name>
+                    <Type>tinyint</Type>
+                    <Description>Rol del estudiante en el curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c237">
+                    <Name>enrollment_date</Name>
+                    <Type>datetime</Type>
+                    <Description>Fecha de inscripción</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c235">
+                    <Name>finished_course</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de finalización de del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c234">
+                    <Name>certificate_code</Name>
+                    <Type>varchar(20)</Type>
+                    <Description>Código alfanumérico del certificado</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c87</Column>
+                    <Column>c111</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t15">
+            <Name>Question</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c116">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la pregunta</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties>
+                        <Property>
+                            <Name>identity</Name>
+                            <Value>true</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_seed</Name>
+                            <Value>1</Value>
+                        </Property>
+                        <Property>
+                            <Name>identity_increment</Name>
+                            <Value>1</Value>
+                        </Property>
+                    </Properties>
+                </Column>
+                <Column Id="c119">
+                    <Name>question</Name>
+                    <Type>varchar(500)</Type>
+                    <Description>Texto de la pregunta </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c120">
+                    <Name>answer</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Texto de la respuesta</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c118">
+                    <Name>is_global</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si la pregunta es global</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c116</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t16">
+            <Name>Question_Category</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c123">
+                    <Name>question_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la pregunta</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c124">
+                    <Name>category_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la categoría</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c131">
+                    <Name>order</Name>
+                    <Type>tinyint</Type>
+                    <Description>Número de orden correlativo de la pregunta en la categoría</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c123</Column>
+                    <Column>c124</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t17">
+            <Name>Question_Course</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c125">
+                    <Name>question_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la pregunta</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c126">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c130">
+                    <Name>order</Name>
+                    <Type>tinyint</Type>
+                    <Description>Número de orden correlativo de la pregunta en la categoría</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c125</Column>
+                    <Column>c126</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t19">
+            <Name>Course_Instructor</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c134">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c133">
+                    <Name>instructor_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del instructor</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c135">
+                    <Name>order</Name>
+                    <Type>tinyint</Type>
+                    <Description>Orden correlativo del instructor en el curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c134</Column>
+                    <Column>c133</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t22">
+            <Name>Specialization_Course</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c147">
+                    <Name>specialization_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la especialización</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c148">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c149">
+                    <Name>order</Name>
+                    <Type>tinyint</Type>
+                    <Description>Orden correlativo del curso en la especialización en cada curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c147</Column>
+                    <Column>c148</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t23">
+            <Name>Language</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c152">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del idioma</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c156">
+                    <Name>iso_code</Name>
+                    <Type>char(2)</Type>
+                    <Description>Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c153">
+                    <Name>human_name</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Nombre común del idioma (ejemplo: english)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c152</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t24">
+            <Name>Course_Language</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c154">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c157">
+                    <Name>language_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del idioma</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c158">
+                    <Name>is_primary</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si el idioma es el principal del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c154</Column>
+                    <Column>c157</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t25">
+            <Name>Module</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c161">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c162">
+                    <Name>module_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del módulo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c210">
+                    <Name>name</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Nombre del módulo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c212">
+                    <Name>slug</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c165">
+                    <Name>description</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Descripción del módulo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c164">
+                    <Name>time_commitment</Name>
+                    <Type>bigint</Type>
+                    <Description>Tiempo estimado donde un estudiante termina un módulo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c178">
+                    <Name>order</Name>
+                    <Type>int</Type>
+                    <Description>Número de orden correlativo del módulo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c225">
+                    <Name>forum_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del foro</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c161</Column>
+                    <Column>c162</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t26">
+            <Name>Lecture</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c226">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c227">
+                    <Name>module_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del módulo </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c228">
+                    <Name>lesson_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la lección</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c168">
+                    <Name>lecture_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la lectura</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c213">
+                    <Name>name</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Nombre de la lectura</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c209">
+                    <Name>slug</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c179">
+                    <Name>lesson_type</Name>
+                    <Type>tinyint</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c208">
+                    <Name>time_commitment</Name>
+                    <Type>bigint</Type>
+                    <Description>Tiempo estimado donde un estudiante termina una lectura</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c186">
+                    <Name>video_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador del video</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c250">
+                    <Name>reading_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador de la lectura</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c265">
+                    <Name>quiz_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador de la quiz</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c168</Column>
+                    <Column>c226</Column>
+                    <Column>c227</Column>
+                    <Column>c228</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t27">
+            <Name>Video</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c181">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del video</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c182">
+                    <Name>cloudfront_domain</Name>
+                    <Type>varchar(100)</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c183">
+                    <Name>cloudfront_object_key</Name>
+                    <Type>varchar(500)</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c184">
+                    <Name>resolution_width</Name>
+                    <Type>int</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c185">
+                    <Name>resolution_height</Name>
+                    <Type>int</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c181</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t28">
+            <Name>Subtitle</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c188">
+                    <Name>video_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del video</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c187">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del subtítulo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c189">
+                    <Name>cloudfront_domain</Name>
+                    <Type>varchar(100)</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c190">
+                    <Name>cloudfront_object_key</Name>
+                    <Type>varchar(500)</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c191">
+                    <Name>original_format</Name>
+                    <Type>varchar(10)</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c194">
+                    <Name>language_id</Name>
+                    <Type>int</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c188</Column>
+                    <Column>c187</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t31">
+            <Name>Lesson</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c214">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c215">
+                    <Name>module_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del módulo </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c216">
+                    <Name>lesson_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la lección</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c217">
+                    <Name>name</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Nombre de la lección</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c218">
+                    <Name>slug</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c219">
+                    <Name>time_commitment</Name>
+                    <Type>bigint</Type>
+                    <Description>Tiempo estimado donde un estudiante termina una lección</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c214</Column>
+                    <Column>c215</Column>
+                    <Column>c216</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t32">
+            <Name>Quiz</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c220">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del Quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c258">
+                    <Name>submissions_interval</Name>
+                    <Type>bigint</Type>
+                    <Description>Tiempo de espera para la renovación del intervalo de intentos para una Quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c259">
+                    <Name>submissions_per_interval</Name>
+                    <Type>tinyint</Type>
+                    <Description>Cantidad de intentos disponibles para realizar una Quiz por intervalo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c260">
+                    <Name>contains_widget_questions</Name>
+                    <Type>bit</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c261">
+                    <Name>max_score</Name>
+                    <Type>int</Type>
+                    <Description>Puntuación máxima en la Quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c262">
+                    <Name>passing_fraction</Name>
+                    <Type>float(2)</Type>
+                    <Description>Porcentaje mínimo de respuestas correctas para aprobar el Quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c263">
+                    <Name>passing_score</Name>
+                    <Type>int</Type>
+                    <Description>Puntuación mínima para aprobar el Quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c264">
+                    <Name>question_count</Name>
+                    <Type>int</Type>
+                    <Description>Cantidad de preguntas en la Quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c220</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t33">
+            <Name>Forum</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c224">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de Forum</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c266">
+                    <Name>name</Name>
+                    <Type>varchar(100)</Type>
+                    <Description>Nombre del foro</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c267">
+                    <Name>description</Name>
+                    <Type>varchar(200)</Type>
+                    <Description>Descripción del foro</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c268">
+                    <Name>thread_count</Name>
+                    <Type>int</Type>
+                    <Description>Cantidad de publicaciones</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c269">
+                    <Name>last_post</Name>
+                    <Type>datetime</Type>
+                    <Description>Fecha de la última publicación hecha.</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c273">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c224</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t34">
+            <Name>Certificate</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c229">
+                    <Name>certificate_code</Name>
+                    <Type>varchar(20)</Type>
+                    <Description>Identificador único del certificado</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c230">
+                    <Name>grade_achieved</Name>
+                    <Type>float(2)</Type>
+                    <Description>Calificación obtenida en el curso</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c231">
+                    <Name>date_achieved</Name>
+                    <Type>datetime</Type>
+                    <Description>Fecha de obtención del certificado</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c232">
+                    <Name>pdf_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Enlace que lleva a un pdf del certificado</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c233">
+                    <Name>image_url</Name>
+                    <Type>varchar(2000)</Type>
+                    <Description>Enlace que lleva a una imagen del certificado</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c229</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t35">
+            <Name>QuizQuestion</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c239">
+                    <Name>quiz_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c238">
+                    <Name>question_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la pregunta</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c240">
+                    <Name>extra_credit</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador si la pregunta tiene créditos extra</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c241">
+                    <Name>is_submit_allowed</Name>
+                    <Type>bit</Type>
+                    <Description>Indicador de si es posible enviar</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c242">
+                    <Name>question_type</Name>
+                    <Type>tinyint</Type>
+                    <Description/>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c251">
+                    <Name>definition_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la definición</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c256">
+                    <Name>max_score</Name>
+                    <Type>float(2)</Type>
+                    <Description>Calificación máxima para la pregunta</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c239</Column>
+                    <Column>c238</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t36">
+            <Name>ContentDefinition</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c244">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la definición de contenido</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c245">
+                    <Name>value</Name>
+                    <Type>varchar(max)</Type>
+                    <Description>Definición del contenido</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c246">
+                    <Name>has_asset_block</Name>
+                    <Type>bit</Type>
+                    <Description>Indica si tiene </Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c247">
+                    <Name>has_code_block</Name>
+                    <Type>bit</Type>
+                    <Description>Indica si tiene un bloque de código</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c248">
+                    <Name>has_math</Name>
+                    <Type>bit</Type>
+                    <Description>Indica si tiene matemática</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c249">
+                    <Name>is_plain_text</Name>
+                    <Type>bit</Type>
+                    <Description>Indica si es un texto plano</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c244</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t37">
+            <Name>QuizOption</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c253">
+                    <Name>quiz_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del quiz</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c254">
+                    <Name>option_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la opción</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c257">
+                    <Name>definition_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único de la definición</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c253</Column>
+                    <Column>c254</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t38">
+            <Name>Thread</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c270">
+                    <Name>id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c294">
+                    <Name>name</Name>
+                    <Type>varchar(200)</Type>
+                    <Description>Nombre del hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c274">
+                    <Name>created_at</Name>
+                    <Type>datetime</Type>
+                    <Description>Fecha de creación del hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c278">
+                    <Name>created_by</Name>
+                    <Type>int</Type>
+                    <Description>Id del estudiante que creó el hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c280">
+                    <Name>course_id</Name>
+                    <Type>int</Type>
+                    <Description>Id del curso del que forma parte el hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c279">
+                    <Name>forum_id</Name>
+                    <Type>int</Type>
+                    <Description>Id del foro al que pertenece el hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c286">
+                    <Name>content_definition_id</Name>
+                    <Type>int</Type>
+                    <Description>Id de la definición de contenido</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c287">
+                    <Name>last_answered_at</Name>
+                    <Type>datetime</Type>
+                    <Description>Fecha de la última vez que el hilo ha sido respondido</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c290">
+                    <Name>last_answered_by</Name>
+                    <Type>int</Type>
+                    <Description>Id del estudiante que ha respondido la última vez</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c288">
+                    <Name>answer_count</Name>
+                    <Type>int</Type>
+                    <Description>Número de respuestas</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c292">
+                    <Name>top_level_answer_count</Name>
+                    <Type>int</Type>
+                    <Description>Número de respuestas que se muestran al inicio del hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c289">
+                    <Name>upvote_count</Name>
+                    <Type>int</Type>
+                    <Description>Número de votos positivos que tiene el hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c275">
+                    <Name>follower_count</Name>
+                    <Type>int</Type>
+                    <Description>Número de seguidores que tiene el hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c291">
+                    <Name>view_count</Name>
+                    <Type>int</Type>
+                    <Description>Número de visualizaciones que tiene el hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c293">
+                    <Name>parent_thread_id</Name>
+                    <Type>int</Type>
+                    <Description>Id del hilo padre</Description>
+                    <Nullable>true</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c270</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+        <Table Id="t39">
+            <Name>Student_Thread</Name>
+            <Description/>
+            <Columns>
+                <Column Id="c281">
+                    <Name>student_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del estudiante</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c282">
+                    <Name>thread_id</Name>
+                    <Type>int</Type>
+                    <Description>Identificador único del hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c283">
+                    <Name>is_upvoted</Name>
+                    <Type>bit</Type>
+                    <Description>Indica si el estudiante ha votado por dicho hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c284">
+                    <Name>is_follower</Name>
+                    <Type>bit</Type>
+                    <Description>Indica si el estudiante es un seguidor del hilo</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+                <Column Id="c285">
+                    <Name>viewed</Name>
+                    <Type>bit</Type>
+                    <Description>Indica si el hilo ha sido visto</Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue/>
+                    <CheckExpression/>
+                    <Properties/>
+                </Column>
+            </Columns>
+            <PrimaryKey>
+                <Name/>
+                <Columns>
+                    <Column>c281</Column>
+                    <Column>c282</Column>
+                </Columns>
+            </PrimaryKey>
+            <AlternateKeys/>
+            <Indexes/>
+            <TableChecks/>
+            <AdditionalSQLBefore/>
+            <AdditionalSQLAfter/>
+            <Properties/>
+        </Table>
+    </Tables>
+    <ExternalTables/>
+    <Views/>
+    <MaterializedViews/>
+    <References>
+        <Reference Id="r5">
+            <Name>Instructor_Institution</Name>
+            <Description/>
+            <PKTable>t2</PKTable>
+            <FKTable>t3</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c26</PKColumn>
+                    <FKColumn>c43</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r8">
+            <Name>Course_Institution</Name>
+            <Description/>
+            <PKTable>t2</PKTable>
+            <FKTable>t4</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c26</PKColumn>
+                    <FKColumn>c61</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r17">
+            <Name>Accomplishment_Student__Student_Accomplishment_Student</Name>
+            <Description/>
+            <PKTable>t1</PKTable>
+            <FKTable>t10</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c1</PKColumn>
+                    <FKColumn>c87</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r20">
+            <Name>Review_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t8</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c94</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r29">
+            <Name>Course_Student__Student_Course_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t10</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c111</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r31">
+            <Name>Category_Category</Name>
+            <Description/>
+            <PKTable>t6</PKTable>
+            <FKTable>t6</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c114</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r35">
+            <Name>Table_16_Question</Name>
+            <Description/>
+            <PKTable>t15</PKTable>
+            <FKTable>t16</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c116</PKColumn>
+                    <FKColumn>c123</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r36">
+            <Name>Table_16_Category</Name>
+            <Description/>
+            <PKTable>t6</PKTable>
+            <FKTable>t16</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c124</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r37">
+            <Name>Course_Question__Question_Course_Question</Name>
+            <Description/>
+            <PKTable>t15</PKTable>
+            <FKTable>t17</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c116</PKColumn>
+                    <FKColumn>c125</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r38">
+            <Name>Course_Question__Question_Course_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t17</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c126</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r41">
+            <Name>Instructor_Course__Course_Instructor_Instructor</Name>
+            <Description/>
+            <PKTable>t3</PKTable>
+            <FKTable>t19</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c30</PKColumn>
+                    <FKColumn>c133</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r42">
+            <Name>Instructor_Course__Course_Instructor_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t19</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c134</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r48">
+            <Name>Specialization_Course_Specialization</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t22</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c147</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r49">
+            <Name>Specialization_Course_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t22</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c148</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r50">
+            <Name>Course_Language_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t24</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c154</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r52">
+            <Name>Course_Language_Language</Name>
+            <Description/>
+            <PKTable>t23</PKTable>
+            <FKTable>t24</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c152</PKColumn>
+                    <FKColumn>c157</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r53">
+            <Name>Week_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t25</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c161</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r55">
+            <Name>Lecture_Video</Name>
+            <Description/>
+            <PKTable>t27</PKTable>
+            <FKTable>t26</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c181</PKColumn>
+                    <FKColumn>c186</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r56">
+            <Name>Subtitle_Video</Name>
+            <Description/>
+            <PKTable>t27</PKTable>
+            <FKTable>t28</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c181</PKColumn>
+                    <FKColumn>c188</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r58">
+            <Name>Subtitle_Language</Name>
+            <Description/>
+            <PKTable>t23</PKTable>
+            <FKTable>t28</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c152</PKColumn>
+                    <FKColumn>c194</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r61">
+            <Name>Lesson_Module</Name>
+            <Description/>
+            <PKTable>t25</PKTable>
+            <FKTable>t31</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c161</PKColumn>
+                    <FKColumn>c214</FKColumn>
+                </ReferenceColumn>
+                <ReferenceColumn>
+                    <PKColumn>c162</PKColumn>
+                    <FKColumn>c215</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r63">
+            <Name>Module_Forum</Name>
+            <Description/>
+            <PKTable>t33</PKTable>
+            <FKTable>t25</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c224</PKColumn>
+                    <FKColumn>c225</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r64">
+            <Name>Lecture_Lesson</Name>
+            <Description/>
+            <PKTable>t31</PKTable>
+            <FKTable>t26</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c214</PKColumn>
+                    <FKColumn>c226</FKColumn>
+                </ReferenceColumn>
+                <ReferenceColumn>
+                    <PKColumn>c215</PKColumn>
+                    <FKColumn>c227</FKColumn>
+                </ReferenceColumn>
+                <ReferenceColumn>
+                    <PKColumn>c216</PKColumn>
+                    <FKColumn>c228</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r65">
+            <Name>Membership_Accomplishment</Name>
+            <Description/>
+            <PKTable>t34</PKTable>
+            <FKTable>t10</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c229</PKColumn>
+                    <FKColumn>c234</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>1..1</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r66">
+            <Name>QuizPrompt_Quiz</Name>
+            <Description/>
+            <PKTable>t32</PKTable>
+            <FKTable>t35</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c220</PKColumn>
+                    <FKColumn>c239</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r67">
+            <Name>Lecture_ContentDefinition</Name>
+            <Description/>
+            <PKTable>t36</PKTable>
+            <FKTable>t26</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c244</PKColumn>
+                    <FKColumn>c250</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r68">
+            <Name>QuizQuestion_ContentDefinition</Name>
+            <Description/>
+            <PKTable>t36</PKTable>
+            <FKTable>t35</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c244</PKColumn>
+                    <FKColumn>c251</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r69">
+            <Name>QuizOption_Quiz</Name>
+            <Description/>
+            <PKTable>t32</PKTable>
+            <FKTable>t37</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c220</PKColumn>
+                    <FKColumn>c253</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r70">
+            <Name>QuizOption_ContentDefinition</Name>
+            <Description/>
+            <PKTable>t36</PKTable>
+            <FKTable>t37</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c244</PKColumn>
+                    <FKColumn>c257</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r71">
+            <Name>Lecture_Quiz</Name>
+            <Description/>
+            <PKTable>t32</PKTable>
+            <FKTable>t26</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c220</PKColumn>
+                    <FKColumn>c265</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r72">
+            <Name>Course_Category</Name>
+            <Description/>
+            <PKTable>t6</PKTable>
+            <FKTable>t4</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c271</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r73">
+            <Name>Course_Subcategory</Name>
+            <Description/>
+            <PKTable>t6</PKTable>
+            <FKTable>t4</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c69</PKColumn>
+                    <FKColumn>c272</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r74">
+            <Name>Forum_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t33</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c273</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r75">
+            <Name>Thread_Student</Name>
+            <Description/>
+            <PKTable>t1</PKTable>
+            <FKTable>t38</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c1</PKColumn>
+                    <FKColumn>c278</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r76">
+            <Name>Thread_Forum</Name>
+            <Description/>
+            <PKTable>t33</PKTable>
+            <FKTable>t38</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c224</PKColumn>
+                    <FKColumn>c279</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r77">
+            <Name>Thread_Course</Name>
+            <Description/>
+            <PKTable>t4</PKTable>
+            <FKTable>t38</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c46</PKColumn>
+                    <FKColumn>c280</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r78">
+            <Name>Student_Thread_Student</Name>
+            <Description/>
+            <PKTable>t1</PKTable>
+            <FKTable>t39</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c1</PKColumn>
+                    <FKColumn>c281</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r79">
+            <Name>Student_Thread_Thread</Name>
+            <Description/>
+            <PKTable>t38</PKTable>
+            <FKTable>t39</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c270</PKColumn>
+                    <FKColumn>c282</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r80">
+            <Name>Thread_ContentDefinition</Name>
+            <Description/>
+            <PKTable>t36</PKTable>
+            <FKTable>t38</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c244</PKColumn>
+                    <FKColumn>c286</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r81">
+            <Name>Thread_Last_Answered_By_Student</Name>
+            <Description/>
+            <PKTable>t1</PKTable>
+            <FKTable>t38</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c1</PKColumn>
+                    <FKColumn>c290</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>true</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+        <Reference Id="r82">
+            <Name>Thread_Thread</Name>
+            <Description/>
+            <PKTable>t38</PKTable>
+            <FKTable>t38</FKTable>
+            <PKRole/>
+            <FKRole/>
+            <ReferenceColumns>
+                <ReferenceColumn>
+                    <PKColumn>c270</PKColumn>
+                    <FKColumn>c293</FKColumn>
+                </ReferenceColumn>
+            </ReferenceColumns>
+            <Cardinality>0..*</Cardinality>
+            <Mandatory>false</Mandatory>
+            <OnUpdateAction>None</OnUpdateAction>
+            <OnDeleteAction>None</OnDeleteAction>
+            <Properties/>
+        </Reference>
+    </References>
+    <Sequences/>
+    <Notes/>
+    <Areas/>
+    <Texts/>
+    <TableDisplays>
+        <TableDisplay Id="td1">
+            <X>7743.5</X>
+            <Y>6925.5</Y>
+            <Width>224.0</Width>
+            <Height>390.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t1</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td2">
+            <X>6810.5</X>
+            <Y>6905.5</Y>
+            <Width>208.0</Width>
+            <Height>145.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t2</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td3">
+            <X>6878.5</X>
+            <Y>7258.5</Y>
+            <Width>219.0</Width>
+            <Height>174.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t3</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td4">
+            <X>7366.5</X>
+            <Y>6667.5</Y>
+            <Width>251.0</Width>
+            <Height>289.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t4</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td6">
+            <X>7058.5</X>
+            <Y>6581.5</Y>
+            <Width>209.0</Width>
+            <Height>102.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t6</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td8">
+            <X>7483.5</X>
+            <Y>6481.5</Y>
+            <Width>202.0</Width>
+            <Height>102.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t8</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td10">
+            <X>7743.5</X>
+            <Y>6729.5</Y>
+            <Width>207.0</Width>
+            <Height>116.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t10</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td15">
+            <X>6548.5</X>
+            <Y>6643.5</Y>
+            <Width>175.0</Width>
+            <Height>87.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t15</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td16">
+            <X>6813.5</X>
+            <Y>6548.5</Y>
+            <Width>181.0</Width>
+            <Height>81.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t16</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td17">
+            <X>6956.5</X>
+            <Y>6724.5</Y>
+            <Width>173.0</Width>
+            <Height>72.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t17</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td19">
+            <X>7038.5</X>
+            <Y>7059.5</Y>
+            <Width>177.0</Width>
+            <Height>74.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t19</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td22">
+            <X>7257.5</X>
+            <Y>7052.5</Y>
+            <Width>179.0</Width>
+            <Height>73.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t22</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td23">
+            <X>7498.5</X>
+            <Y>7176.5</Y>
+            <Width>183.0</Width>
+            <Height>73.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t23</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td24">
+            <X>7514.5</X>
+            <Y>7043.5</Y>
+            <Width>147.0</Width>
+            <Height>73.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t24</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td25">
+            <X>6534.5</X>
+            <Y>6830.5</Y>
+            <Width>225.0</Width>
+            <Height>145.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t25</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td26">
+            <X>6598.5</X>
+            <Y>7188.5</Y>
+            <Width>235.0</Width>
+            <Height>188.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t26</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td27">
+            <X>6172.5</X>
+            <Y>7156.5</Y>
+            <Width>279.0</Width>
+            <Height>116.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t27</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td28">
+            <X>6189.5</X>
+            <Y>7366.5</Y>
+            <Width>244.0</Width>
+            <Height>130.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t28</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td31">
+            <X>6279.5</X>
+            <Y>6986.5</Y>
+            <Width>222.0</Width>
+            <Height>116.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t31</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td32">
+            <X>6614.5</X>
+            <Y>7444.5</Y>
+            <Width>222.0</Width>
+            <Height>145.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t32</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td33">
+            <X>6235.5</X>
+            <Y>6674.5</Y>
+            <Width>179.0</Width>
+            <Height>116.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t33</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td34">
+            <X>7748.5</X>
+            <Y>6554.5</Y>
+            <Width>201.0</Width>
+            <Height>102.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t34</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td35">
+            <X>6640.5</X>
+            <Y>7760.5</Y>
+            <Width>199.0</Width>
+            <Height>130.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t35</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td36">
+            <X>6351.5</X>
+            <Y>7646.5</Y>
+            <Width>201.0</Width>
+            <Height>116.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t36</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td37">
+            <X>6911.5</X>
+            <Y>7588.5</Y>
+            <Width>180.0</Width>
+            <Height>73.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t37</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td38">
+            <X>5929.5</X>
+            <Y>6793.5</Y>
+            <Width>255.0</Width>
+            <Height>246.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t38</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+        <TableDisplay Id="td39">
+            <X>7319.5</X>
+            <Y>7304.5</Y>
+            <Width>130.0</Width>
+            <Height>102.0</Height>
+            <LineColor>#000000</LineColor>
+            <FillColor>#ffffff</FillColor>
+            <Table>t39</Table>
+            <FixedSize>false</FixedSize>
+        </TableDisplay>
+    </TableDisplays>
+    <ExternalTableDisplays/>
+    <ViewDisplays/>
+    <MaterializedViewDisplays/>
+    <ReferenceDisplays>
+        <ReferenceDisplay Id="rd5">
+            <Color>#000000</Color>
+            <Type>Vertical_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6909.5</X>
+                    <Y>6957.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6909.5</X>
+                    <Y>7300.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td2</PkTableDisplay>
+            <FkTableDisplay>td3</FkTableDisplay>
+            <Reference>r5</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd8">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6947.5</X>
+                    <Y>6948.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7243.5</X>
+                    <Y>6948.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7243.5</X>
+                    <Y>6899.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7417.5</X>
+                    <Y>6899.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td2</PkTableDisplay>
+            <FkTableDisplay>td4</FkTableDisplay>
+            <Reference>r8</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd17">
+            <Color>#000000</Color>
+            <Type>Vertical_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7846.5</X>
+                    <Y>6953.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7846.5</X>
+                    <Y>6770.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td1</PkTableDisplay>
+            <FkTableDisplay>td10</FkTableDisplay>
+            <Reference>r17</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd20">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7552.5</X>
+                    <Y>6707.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7552.5</X>
+                    <Y>6619.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7588.5</X>
+                    <Y>6619.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7588.5</X>
+                    <Y>6524.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td8</FkTableDisplay>
+            <Reference>r20</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd29">
+            <Color>#000000</Color>
+            <Type>Horizontal_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7544.5</X>
+                    <Y>6792.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7798.5</X>
+                    <Y>6792.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td10</FkTableDisplay>
+            <Reference>r29</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd31">
+            <Color>#000000</Color>
+            <Type>Self_5CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7100.5</X>
+                    <Y>6615.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7100.5</X>
+                    <Y>6551.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7028.5</X>
+                    <Y>6551.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7028.5</X>
+                    <Y>6615.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7100.5</X>
+                    <Y>6615.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td6</PkTableDisplay>
+            <FkTableDisplay>td6</FkTableDisplay>
+            <Reference>r31</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd35">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6670.5</X>
+                    <Y>6660.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6895.5</X>
+                    <Y>6660.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6895.5</X>
+                    <Y>6579.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td15</PkTableDisplay>
+            <FkTableDisplay>td16</FkTableDisplay>
+            <Reference>r35</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd36">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7141.5</X>
+                    <Y>6649.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7141.5</X>
+                    <Y>6531.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6939.5</X>
+                    <Y>6531.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6939.5</X>
+                    <Y>6561.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td6</PkTableDisplay>
+            <FkTableDisplay>td16</FkTableDisplay>
+            <Reference>r36</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd37">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6711.5</X>
+                    <Y>6700.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6846.5</X>
+                    <Y>6700.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6846.5</X>
+                    <Y>6745.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7018.5</X>
+                    <Y>6745.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td15</PkTableDisplay>
+            <FkTableDisplay>td17</FkTableDisplay>
+            <Reference>r37</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd38">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7383.5</X>
+                    <Y>6796.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7196.5</X>
+                    <Y>6796.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7196.5</X>
+                    <Y>6758.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7114.5</X>
+                    <Y>6758.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td17</FkTableDisplay>
+            <Reference>r38</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd41">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6986.5</X>
+                    <Y>7294.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6986.5</X>
+                    <Y>7100.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7158.5</X>
+                    <Y>7100.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td3</PkTableDisplay>
+            <FkTableDisplay>td19</FkTableDisplay>
+            <Reference>r41</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd42">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7442.5</X>
+                    <Y>6842.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7198.5</X>
+                    <Y>6842.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7198.5</X>
+                    <Y>7094.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td19</FkTableDisplay>
+            <Reference>r42</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd48">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7458.5</X>
+                    <Y>6897.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7458.5</X>
+                    <Y>6986.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7297.5</X>
+                    <Y>6986.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7297.5</X>
+                    <Y>7092.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td22</FkTableDisplay>
+            <Reference>r48</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd49">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7523.5</X>
+                    <Y>6935.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7523.5</X>
+                    <Y>6998.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7354.5</X>
+                    <Y>6998.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7354.5</X>
+                    <Y>7093.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td22</FkTableDisplay>
+            <Reference>r49</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd50">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7553.5</X>
+                    <Y>6917.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7553.5</X>
+                    <Y>7000.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7583.5</X>
+                    <Y>7000.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7583.5</X>
+                    <Y>7082.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td24</FkTableDisplay>
+            <Reference>r50</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd52">
+            <Color>#000000</Color>
+            <Type>Vertical_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7594.5</X>
+                    <Y>7223.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7594.5</X>
+                    <Y>7084.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td23</PkTableDisplay>
+            <FkTableDisplay>td24</FkTableDisplay>
+            <Reference>r52</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd53">
+            <Color>#000000</Color>
+            <Type>Horizontal_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7398.5</X>
+                    <Y>6872.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6602.5</X>
+                    <Y>6872.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td25</FkTableDisplay>
+            <Reference>r53</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd55">
+            <Color>#000000</Color>
+            <Type>Horizontal_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6342.5</X>
+                    <Y>7222.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6694.5</X>
+                    <Y>7222.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td27</PkTableDisplay>
+            <FkTableDisplay>td26</FkTableDisplay>
+            <Reference>r55</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd56">
+            <Color>#000000</Color>
+            <Type>Vertical_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6299.5</X>
+                    <Y>7183.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6299.5</X>
+                    <Y>7402.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td27</PkTableDisplay>
+            <FkTableDisplay>td28</FkTableDisplay>
+            <Reference>r56</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd58">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7551.5</X>
+                    <Y>7210.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6969.5</X>
+                    <Y>7210.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6969.5</X>
+                    <Y>7404.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6368.5</X>
+                    <Y>7404.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td23</PkTableDisplay>
+            <FkTableDisplay>td28</FkTableDisplay>
+            <Reference>r58</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd61">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6594.5</X>
+                    <Y>6935.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6339.5</X>
+                    <Y>6935.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6339.5</X>
+                    <Y>7018.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td25</PkTableDisplay>
+            <FkTableDisplay>td31</FkTableDisplay>
+            <Reference>r61</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd63">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6356.5</X>
+                    <Y>6723.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6461.5</X>
+                    <Y>6723.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6461.5</X>
+                    <Y>6855.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6593.5</X>
+                    <Y>6855.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td33</PkTableDisplay>
+            <FkTableDisplay>td25</FkTableDisplay>
+            <Reference>r63</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd64">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6437.5</X>
+                    <Y>7043.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6731.5</X>
+                    <Y>7043.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6731.5</X>
+                    <Y>7228.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td31</PkTableDisplay>
+            <FkTableDisplay>td26</FkTableDisplay>
+            <Reference>r64</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd65">
+            <Color>#000000</Color>
+            <Type>Vertical_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7839.5</X>
+                    <Y>6615.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7839.5</X>
+                    <Y>6769.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td34</PkTableDisplay>
+            <FkTableDisplay>td10</FkTableDisplay>
+            <Reference>r65</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd66">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6680.5</X>
+                    <Y>7485.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6680.5</X>
+                    <Y>7537.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6709.5</X>
+                    <Y>7537.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6709.5</X>
+                    <Y>7804.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td32</PkTableDisplay>
+            <FkTableDisplay>td35</FkTableDisplay>
+            <Reference>r66</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd67">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6465.5</X>
+                    <Y>7678.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6465.5</X>
+                    <Y>7282.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6673.5</X>
+                    <Y>7282.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td36</PkTableDisplay>
+            <FkTableDisplay>td26</FkTableDisplay>
+            <Reference>r67</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd68">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6516.5</X>
+                    <Y>7744.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6582.5</X>
+                    <Y>7744.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6582.5</X>
+                    <Y>7828.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6679.5</X>
+                    <Y>7828.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td36</PkTableDisplay>
+            <FkTableDisplay>td35</FkTableDisplay>
+            <Reference>r68</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd69">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6682.5</X>
+                    <Y>7461.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6948.5</X>
+                    <Y>7461.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6948.5</X>
+                    <Y>7616.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td32</PkTableDisplay>
+            <FkTableDisplay>td37</FkTableDisplay>
+            <Reference>r69</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd70">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6517.5</X>
+                    <Y>7656.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6737.5</X>
+                    <Y>7656.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6737.5</X>
+                    <Y>7629.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6947.5</X>
+                    <Y>7629.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td36</PkTableDisplay>
+            <FkTableDisplay>td37</FkTableDisplay>
+            <Reference>r70</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd71">
+            <Color>#000000</Color>
+            <Type>Vertical_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6714.5</X>
+                    <Y>7498.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6714.5</X>
+                    <Y>7305.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td32</PkTableDisplay>
+            <FkTableDisplay>td26</FkTableDisplay>
+            <Reference>r71</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd72">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7213.5</X>
+                    <Y>6639.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7410.5</X>
+                    <Y>6639.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7410.5</X>
+                    <Y>6791.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td6</PkTableDisplay>
+            <FkTableDisplay>td4</FkTableDisplay>
+            <Reference>r72</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd73">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7182.5</X>
+                    <Y>6613.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7460.5</X>
+                    <Y>6613.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7460.5</X>
+                    <Y>6768.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td6</PkTableDisplay>
+            <FkTableDisplay>td4</FkTableDisplay>
+            <Reference>r73</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd74">
+            <Color>#000000</Color>
+            <Type>Horizontal_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7398.5</X>
+                    <Y>6770.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6359.5</X>
+                    <Y>6770.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td33</FkTableDisplay>
+            <Reference>r74</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd75">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7848.5</X>
+                    <Y>7012.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7081.5</X>
+                    <Y>7012.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7081.5</X>
+                    <Y>6889.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6007.5</X>
+                    <Y>6889.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td1</PkTableDisplay>
+            <FkTableDisplay>td38</FkTableDisplay>
+            <Reference>r75</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd76">
+            <Color>#000000</Color>
+            <Type>Cross_3CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6275.5</X>
+                    <Y>6704.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6021.5</X>
+                    <Y>6704.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6021.5</X>
+                    <Y>6865.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td33</PkTableDisplay>
+            <FkTableDisplay>td38</FkTableDisplay>
+            <Reference>r76</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd77">
+            <Color>#000000</Color>
+            <Type>Horizontal_2CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7436.5</X>
+                    <Y>6818.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6029.5</X>
+                    <Y>6818.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td4</PkTableDisplay>
+            <FkTableDisplay>td38</FkTableDisplay>
+            <Reference>r77</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd78">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7785.5</X>
+                    <Y>7290.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7581.5</X>
+                    <Y>7290.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7581.5</X>
+                    <Y>7343.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7376.5</X>
+                    <Y>7343.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td1</PkTableDisplay>
+            <FkTableDisplay>td39</FkTableDisplay>
+            <Reference>r78</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd79">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6008.5</X>
+                    <Y>6868.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6252.5</X>
+                    <Y>6868.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6252.5</X>
+                    <Y>7314.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>7376.5</X>
+                    <Y>7314.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td38</PkTableDisplay>
+            <FkTableDisplay>td39</FkTableDisplay>
+            <Reference>r79</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd80">
+            <Color>#000000</Color>
+            <Type>Vertical_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>6409.5</X>
+                    <Y>7712.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6409.5</X>
+                    <Y>7578.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6012.5</X>
+                    <Y>7578.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6012.5</X>
+                    <Y>6833.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td36</PkTableDisplay>
+            <FkTableDisplay>td38</FkTableDisplay>
+            <Reference>r80</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd81">
+            <Color>#000000</Color>
+            <Type>Horizontal_4CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>7784.5</X>
+                    <Y>7264.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6942.5</X>
+                    <Y>7264.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6942.5</X>
+                    <Y>6920.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>6006.5</X>
+                    <Y>6920.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td1</PkTableDisplay>
+            <FkTableDisplay>td38</FkTableDisplay>
+            <Reference>r81</Reference>
+        </ReferenceDisplay>
+        <ReferenceDisplay Id="rd82">
+            <Color>#000000</Color>
+            <Type>Self_5CP</Type>
+            <ControlPoints>
+                <ControlPoint>
+                    <X>5966.5</X>
+                    <Y>6888.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5966.5</X>
+                    <Y>6763.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5899.5</X>
+                    <Y>6763.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5899.5</X>
+                    <Y>6888.5</Y>
+                </ControlPoint>
+                <ControlPoint>
+                    <X>5966.5</X>
+                    <Y>6888.5</Y>
+                </ControlPoint>
+            </ControlPoints>
+            <PkTableDisplay>td38</PkTableDisplay>
+            <FkTableDisplay>td38</FkTableDisplay>
+            <Reference>r82</Reference>
+        </ReferenceDisplay>
+    </ReferenceDisplays>
+    <Properties>
+        <Property>
+            <Name>pdf-printer-paper-size</Name>
+            <Value>A4</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-top</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-bottom</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-left</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-margin-right</Name>
+            <Value>10</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-page-orientation</Name>
+            <Value>landscape</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-show-pages</Name>
+            <Value>false</Value>
+        </Property>
+        <Property>
+            <Name>pdf-printer-include-footer</Name>
+            <Value>true</Value>
+        </Property>
+        <Property>
+            <Name>reference-notation</Name>
+            <Value>crows-foot</Value>
+        </Property>
+        <Property>
+            <Name>pages-line-color</Name>
+            <Value>#CC0000</Value>
+        </Property>
+        <Property>
+            <Name>show-grid</Name>
+            <Value>false</Value>
+        </Property>
+        <Property>
+            <Name>grid-color</Name>
+            <Value>#D9D9D9</Value>
+        </Property>
+        <Property>
+            <Name>grid-style</Name>
+            <Value>solid</Value>
+        </Property>
+        <Property>
+            <Name>grid-spacing</Name>
+            <Value>2</Value>
+        </Property>
+        <Property>
+            <Name>grid-spacing-units</Name>
+            <Value>cm</Value>
+        </Property>
+        <Property>
+            <Name>grid-subdivisions</Name>
+            <Value>1</Value>
+        </Property>
+    </Properties>
+    <DefaultAdditionalProperties>
+        <Types>
+            <Name>table</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>column</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>alternate_key</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>index</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>table_check</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>trigger</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>reference</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>view</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>sequence</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>procedure</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>all</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>view_column</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>primary_key</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>materialized_view</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>materialized_view_column</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>external_table</Name>
+            <Properties/>
+        </Types>
+        <Types>
+            <Name>external_table_column</Name>
+            <Properties/>
+        </Types>
+    </DefaultAdditionalProperties>
+</DatabaseModel>

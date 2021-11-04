@@ -1,0 +1,271 @@
+Tabla Student
+Column name	Type	Description
+id	int	Identificador único del estudiante
+fullname	varchar(max)	Nombre completo del estudiante
+email	varchar(254)	Correo electrónico principal de la cuenta
+password	char(60)	Contraseña encriptada con el algoritmo BCrypt del estudiante
+alternative_email	varchar(254)	Cuenta personal o correo alternativo del estudiante
+profile_picture_url	varchar(2000)	Dirección URL de la foto de perfil del estudiante
+employment_status	tinyint	Seleccionable para la situación laboral del estudiante
+industry	varchar(100)	Seleccionable para la industria en la que trabaja el estudiante
+employer	varchar(max)	Seleccionable para dónde trabaja el estudiante
+profession	varchar(100)	Seleccionable para cuál es la profesión del estudiante
+experience_level	tinyint	Seleccionable para el nivel de experiencia relevante del estudiante
+is_current_employer	bit	Indicador de si el empleador ingresado es el actual
+highest_degree	tinyint	Seleccionable para el máximo grado educativo.
+university	varchar(max)	Universidad en la que se encuentra el estudiante en la actualidad 
+major	tinyint	El campo de estudio del usuario
+is_student	bit	Indicador de si es un estudiante actualmente
+experience_privacy	tinyint	Seleccionable para la privacidad de experiencia del estudiante
+about_me	varchar(max)	Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso
+location	varchar(max)	Ubicación del estudiante
+principal_skills	varchar(max)	Campo separado por comas de las habilidades del estudiante
+website_urls	varchar(max)	Lista de URLs del estudiante en formato JSON
+gender	tinyint	Seleccionable del género del estudiante
+birthday	date	Fecha de nacimiento del estudiante
+phone_number	varchar(25)	Número de teléfono del estudiante
+details_privacy	tinyint	Seleccionable de quién puede acceder a la información personal del estudiante
+
+Tabla Institution
+Column name	Type	Description
+id	int	Identificador único de la institución
+name	varchar(max)	Nombre de la institución
+description	varchar(max)	Descripción de la institución
+country	char(2)	País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2.
+logo_url	varchar(2000)	Dirección URL del logo de la institución 
+squared_logo_url	varchar(2000)	Dirección URL del logo en cuadrado de la institución
+course_logo_url	varchar(2000)	Dirección URL del logo de la institución utilizada en la cabecera de un curso 
+website_urls	varchar(max)	Lista de URLs de la institución en formato JSON
+
+Tabla Instructor
+Column name	Type	Description
+id	int	Identificador único de cada instructor
+fullname	varchar(max)	Nombre completo del instructor 
+occupation	varchar(max)	Ocupación del instructor
+rating	float(2)	Calificación de la calidad de enseñanza de parte de los estudiantes
+ratings_count	int	Cantidad de calificaciones recibidas
+profile_picture_url	varchar(2000)	Enlace del CDN a la foto de perfil del instructor
+website_urls	varchar(max)	Lista de URLs del instructor en formato JSON 
+biography	varchar(max)	Biografía del instructor
+is_top_instructor	bit	Indicador de si es un instructor top
+institution_id	int	Institución Afiliada en la que trabaja el instructor
+
+Tabla Course
+Column name	Type	Description
+id	int	Identificador único de cada curso
+slug	varchar(50)	Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)
+name	varchar(max)	Nombre del curso
+course_rating	float(2)	Cantidad de estrellas que tiene el curso
+content_rating	float(2)	Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido
+instructor_rating	float(2)	Calificación de la calidad de enseñanza del instructor
+enrolled_students	int	Número de estudiantes que se han inscrito en el curso
+description	varchar(max)	Descripción del curso
+recent_views	int	Cantidad de visitas recientes al curso
+has_certificate	bit	Indicador de si el curso tiene algún certificado
+is_fully_online	bit	Indicador de si el curso es 100% online
+time_commitment	bigint	Tiempo estimado donde un estudiante termina un curso
+financial_aid	bit	Identificador de si se ofrece apoyo financiero al curso
+institution_id	int	Identificador de la institución afiliada que ofrece el curso
+certificate_template_url	varchar(2000)	Enlace que lleva a una imagen del certificado
+course_type	tinyint	Seleccionable para el tipo de curso
+category_id	int	Identificador de la categoría del curso
+subcategory_id	int	Identificador de la subcategoría del curso
+
+Tabla Category
+Column name	Type	Description
+id	int	Identificador único de cada categoría
+slug	varchar(50)	Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)
+name	varchar(max)	Nombre de la categoría
+description	varchar(max)	Descripción de la categoría
+parent_id	int	Identificador único de una categoría padre
+
+Tabla Review
+Column name	Type	Description
+id	int	Identificador único de cada reseña
+rating	int	Número de estrellas que da la reseña
+user_review	varchar(max)	Texto de la reseña 
+publication_date	smalldatetime	Fecha de publicación
+course_id	int	Identificador único del curso
+
+Tabla Membership
+Column name	Type	Description
+course_id	int	Identificador único del curso
+student_id	int	Identificador único del estudiante
+course_role	tinyint	Rol del estudiante en el curso
+enrollment_date	datetime	Fecha de inscripción
+finished_course	bit	Indicador de finalización de del curso
+certificate_code	varchar(20)	Código alfanumérico del certificado
+
+Tabla Question
+Column name	Type	Description
+id	int	Identificador único de la pregunta
+question	varchar(500)	Texto de la pregunta 
+answer	varchar(max)	Texto de la respuesta
+is_global	bit	Indicador de si la pregunta es global
+
+Tabla Question_Category
+Column name	Type	Description
+question_id	int	Identificador único de la pregunta
+category_id	int	Identificador único de la categoría
+order	tinyint	Número de orden correlativo de la pregunta en la categoría
+
+Tabla Question_Course
+Column name	Type	Description
+question_id	int	Identificador único de la pregunta
+course_id	int	Identificador único del curso
+order	tinyint	Número de orden correlativo de la pregunta en la categoría
+
+Tabla Course_Instructor
+Column name	Type	Description
+course_id	int	Identificador único del curso
+instructor_id	int	Identificador único del instructor
+order	tinyint	Orden correlativo del instructor en el curso
+
+Tabla Specialization_Course
+Column name	Type	Description
+specialization_id	int	Identificador único de la especialización
+course_id	int	Identificador único del curso
+order	tinyint	Orden correlativo del curso en la especialización en cada curso
+  
+Tabla Language
+Column name	Type	Description
+id	int	Identificador único del idioma
+iso_code	char(2)	Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)
+human_name	varchar(100)	Nombre común del idioma (ejemplo: english)
+
+Tabla Course_Language
+Column name	Type	Description
+course_id	int	Identificador único del curso
+language_id	int	Identificador único del idioma
+is_primary	bit	Indicador de si el idioma es el principal del curso
+
+Tabla Module
+Column name	Type	Description
+course_id	int	Identificador único del curso
+module_id	int	Identificador único del módulo
+name	varchar(100)	Nombre del módulo
+slug	varchar(100)	Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)
+description	varchar(max)	Descripción del módulo
+time_commitment	bigint	Tiempo estimado donde un estudiante termina un módulo
+order	int	Número de orden correlativo del módulo
+forum_id	int	Identificador único del foro
+
+
+Tabla Lecture
+Column name	Type	Description
+course_id	int	Identificador único del curso
+module_id	int	Identificador único del módulo 
+lesson_id	int	Identificador único de la lección
+lecture_id	int	Identificador único de la lectura
+name	varchar(100)	Nombre de la lectura
+slug	varchar(100)	Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)
+lesson_type	tinyint	
+time_commitment	bigint	Tiempo estimado donde un estudiante termina una lectura
+video_id	int	Identificador del video
+reading_id	int	Identificador de la lectura
+quiz_id	int	Identificador de la quiz
+
+Tabla Video
+Column name	Type	Description
+id	int	Identificador único del video
+cloudfront_domain	varchar(100)	
+cloudfront_object_key	varchar(500)	
+resolution_width	int	
+resolution_height	int	
+
+Tabla Subtitle
+Column name	Type	Description
+video_id	int	Identificador único del video
+id	int	Identificador único del subtítulo
+cloudfront_domain	varchar(100)	
+cloudfront_object_key	varchar(500)	
+original_format	varchar(10)	
+language_id	int	
+
+Tabla Lesson
+Column name	Type	Description
+course_id	int	Identificador único del curso
+module_id	int	Identificador único del módulo 
+lesson_id	int	Identificador único de la lección
+name	varchar(100)	Nombre de la lección
+slug	varchar(100)	Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)
+time_commitment	bigint	Tiempo estimado donde un estudiante termina una lección
+
+Tabla Quiz
+Column name	Type	Description
+id	int	Identificador único del Quiz
+submissions_interval	bigint	Tiempo de espera para la renovación del intervalo de intentos para una Quiz
+submissions_per_interval	tinyint	Cantidad de intentos disponibles para realizar una Quiz por intervalo
+contains_widget_questions	bit	
+max_score	int	Puntuación máxima en la Quiz
+passing_fraction	float(2)	Porcentaje mínimo de respuestas correctas para aprobar el Quiz
+passing_score	int	Puntuación mínima para aprobar el Quiz
+question_count	int	Cantidad de preguntas en la Quiz
+
+Tabla Forum
+Column name	Type	Description
+id	int	Identificador único de Forum
+name	varchar(100)	Nombre del foro
+description	varchar(200)	Descripción del foro
+thread_count	int	Cantidad de publicaciones
+last_post	datetime	Fecha de la última publicación hecha.
+course_id	int	Identificador único del curso
+
+Tabla Certificate
+Column name	Type	Description
+certificate_code	varchar(20)	Identificador único del certificado
+grade_achieved	float(2)	Calificación obtenida en el curso
+date_achieved	datetime	Fecha de obtención del certificado
+pdf_url	varchar(2000)	Enlace que lleva a un pdf del certificado
+image_url	varchar(2000)	Enlace que lleva a una imagen del certificado
+
+Tabla QuizQuestion
+Column name	Type	Description
+quiz_id	int	Identificador único del quiz
+question_id	int	Identificador único de la pregunta
+extra_credit	bit	Indicador si la pregunta tiene créditos extra
+is_submit_allowed	bit	Indicador de si es posible enviar
+question_type	tinyint	
+definition_id	int	Identificador único de la definición
+max_score	float(2)	Calificación máxima para la pregunta
+
+Tabla ContentDefinition
+Column name	Type	Description
+id	int	Identificador único de la definición de contenido
+value	varchar(max)	Definición del contenido
+has_asset_block	bit	Indica si tiene 
+has_code_block	bit	Indica si tiene un bloque de código
+has_math	bit	Indica si tiene matemática
+is_plain_text	bit	Indica si es un texto plano
+
+Tabla QuizOption
+Column name	Type	Description
+quiz_id	int	Identificador único del quiz
+option_id	int	Identificador único de la opción
+definition_id	int	Identificador único de la definición
+
+Tabla Thread
+Column name	Type	Description
+id	int	Identificador único del hilo
+name	varchar(200)	Nombre del hilo
+created_at	datetime	Fecha de creación del hilo
+created_by	int	Id del estudiante que creó el hilo
+course_id	int	Id del curso del que forma parte el hilo
+forum_id	int	Id del foro al que pertenece el hilo
+content_definition_id	int	Id de la definición de contenido
+last_answered_at	datetime	Fecha de la última vez que el hilo ha sido respondido
+last_answered_by	int	Id del estudiante que ha respondido la última vez
+answer_count	int	Número de respuestas
+top_level_answer_count	int	Número de respuestas que se muestran al inicio del hilo
+upvote_count	int	Número de votos positivos que tiene el hilo
+follower_count	int	Número de seguidores que tiene el hilo
+view_count	int	Número de visualizaciones que tiene el hilo
+parent_thread_id	int	Id del hilo padre
+
+Tabla Student_Thread
+Column name	Type	Description
+student_id	int	Identificador único del estudiante
+thread_id	int	Identificador único del hilo
+is_upvoted	bit	Indica si el estudiante ha votado por dicho hilo
+is_follower	bit	Indica si el estudiante es un seguidor del hilo
+viewed	bit	Indica si el hilo ha sido visto
