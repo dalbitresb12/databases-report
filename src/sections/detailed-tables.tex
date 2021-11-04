@@ -9,206 +9,440 @@
   
   \begin{table}
     \attribute{id}{int}{
-      User ID
+      Identificador único del estudiante
     }
-    \attribute{fullname}{varchar(max)}{}
-    \attribute{email}{varchar(254)}{}
-    \attribute{password}{char(60)}{}
-    \attribute{alternative\_email}{varchar(254)}{}
-    \attribute{profile\_picture\_url}{varchar(2000)}{}
-    \attribute{employment\_status}{tinyint}{}
-    \attribute{industry}{varchar(100)}{}
-    \attribute{employer}{varchar(max)}{}
-    \attribute{profession}{varchar(100)}{}
-    \attribute{experience\_level}{tinyint}{}
-    \attribute{is\_current\_employer}{bit}{}
-    \attribute{highest\_degree}{tinyint}{}
-    \attribute{university}{varchar(max)}{}
-    \attribute{major}{tinyint}{}
-    \attribute{is\_student}{bit}{}
-    \attribute{experience\_privacy}{tinyint}{}
-    \attribute{about\_me}{varchar(max)}{}
-    \attribute{location}{varchar(max)}{}
-    \attribute{principal\_skills}{varchar(max)}{}
-    \attribute{website\_urls}{varchar(max)}{}
-    \attribute{gender}{tinyint}{}
-    \attribute{birthday}{date}{}
-    \attribute{phone\_number}{varchar(25)}{}
-    \attribute{details\_privacy}{tinyint}{}
+    \attribute{fullname}{varchar(max)}{
+      Nombre completo del estudiante
+    }
+    \attribute{email}{varchar(254)}{
+      Correo electrónico principal de la cuenta
+    }
+    \attribute{password}{char(60)}{
+      Contraseña encriptada con el algoritmo BCrypt del estudiante
+    }
+    \attribute{alternative\_email}{varchar(254)}{
+      Cuenta personal o correo alternativo del estudiante
+    }
+    \attribute{profile\_picture\_url}{varchar(2000)}{
+      Dirección URL de la foto de perfil del estudiante
+    }
+    \attribute{employment\_status}{tinyint}{
+      Seleccionable para la situación laboral del estudiante
+    }
+    \attribute{industry}{varchar(100)}{
+      Seleccionable para la industria en la que trabaja el estudiante
+    }
+    \attribute{employer}{varchar(max)}{
+      Seleccionable para dónde trabaja el estudiante
+    }
+    \attribute{profession}{varchar(100)}{
+      Seleccionable para cuál es la profesión del estudiante
+    }
+    \attribute{experience\_level}{tinyint}{
+      Seleccionable para el nivel de experiencia relevante del estudiante
+    }
+    \attribute{is\_current\_employer}{bit}{
+      Indicador de si el empleador ingresado es el actual
+    }
+    \attribute{highest\_degree}{tinyint}{
+      Seleccionable para el máximo grado educativo.
+    }
+    \attribute{university}{varchar(max)}{
+      Universidad en la que se encuentra el estudiante en la actualidad
+    }
+    \attribute{major}{tinyint}{
+      El campo de estudio del usuario
+    }
+    \attribute{is\_student}{bit}{
+      Indicador de si es un estudiante actualmente
+    }
+    \attribute{experience\_privacy}{tinyint}{
+      Seleccionable para la privacidad de experiencia del estudiante
+    }
+    \attribute{about\_me}{varchar(max)}{
+      Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso
+    }
+    \attribute{location}{varchar(max)}{
+      Ubicación del estudiante
+    }
+    \attribute{principal\_skills}{varchar(max)}{
+      Campo separado por comas de las habilidades del estudiante
+    }
+    \attribute{website\_urls}{varchar(max)}{
+      Lista de URLs del estudiante en formato JSON
+    }
+    \attribute{gender}{tinyint}{
+      Seleccionable del género del estudiante
+    }
+    \attribute{birthday}{date}{
+      Fecha de nacimiento del estudiante
+    }
+    \attribute{phone\_number}{varchar(25)}{
+      Número de teléfono del estudiante
+    }
+    \attribute{details\_privacy}{tinyint}{
+      Seleccionable de quién puede acceder a la información personal del estudiante
+    }
   \end{table}
   
   \subsubsection{Tabla Institution}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{name}{varchar(max)}{}
-    \attribute{description}{varchar(max)}{}
-    \attribute{country}{char(2)}{}
-    \attribute{logo\_url}{varchar(2000)}{}
-    \attribute{squared\_logo\_url}{varchar(2000)}{}
-    \attribute{course\_logo\_url}{varchar(2000)}{}
-    \attribute{website\_urls}{varchar(max)}{}
+    \attribute{id}{int}{
+      Identificador único de la institución
+    }
+    \attribute{name}{varchar(max)}{
+      Nombre de la institución
+    }
+    \attribute{description}{varchar(max)}{
+      Descripción de la institución
+    }
+    \attribute{country}{char(2)}{
+      País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2.
+    }
+    \attribute{logo\_url}{varchar(2000)}{
+      Dirección URL del logo de la institución
+    }
+    \attribute{squared\_logo\_url}{varchar(2000)}{
+      Dirección URL del logo en cuadrado de la institución
+    }
+    \attribute{course\_logo\_url}{varchar(2000)}{
+      Dirección URL del logo de la institución utilizada en la cabecera de un curso
+    }
+    \attribute{website\_urls}{varchar(max)}{
+      Lista de URLs de la institución en formato JSON
+    }
   \end{table}
   
   \subsubsection{Tabla Instructor}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{fullname}{varchar(max)}{}
-    \attribute{occupation}{varchar(max)}{}
-    \attribute{rating}{float(2)}{}
-    \attribute{ratings\_count}{int}{}
-    \attribute{profile\_picture\_url}{varchar(2000)}{}
-    \attribute{website\_urls}{varchar(max)}{}
-    \attribute{biography}{varchar(max)}{}
-    \attribute{is\_top\_instructor}{bit}{}
-    \attribute{institution\_id}{int}{}
+    \attribute{id}{int}{
+      Identificador único de cada instructor
+    }
+    \attribute{fullname}{varchar(max)}{
+      Nombre completo del instructor
+    }
+    \attribute{occupation}{varchar(max)}{
+      Ocupación del instructor
+    }
+    \attribute{rating}{float(2)}{
+      Calificación de la calidad de enseñanza de parte de los estudiantes
+    }
+    \attribute{ratings\_count}{int}{
+      Cantidad de calificaciones recibidas
+    }
+    \attribute{profile\_picture\_url}{varchar(2000)}{
+      Enlace del CDN a la foto de perfil del instructor
+    }
+    \attribute{website\_urls}{varchar(max)}{
+      Lista de URLs del instructor en formato JSON
+    }
+    \attribute{biography}{varchar(max)}{
+      Biografía del instructor
+    }
+    \attribute{is\_top\_instructor}{bit}{
+      Indicador de si es un instructor top
+    }
+    \attribute{institution\_id}{int}{
+      Institución Afiliada en la que trabaja el instructor
+    }
   \end{table}
   
   \subsubsection{Tabla Course}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{slug}{varchar(50)}{}
-    \attribute{name}{varchar(max)}{}
-    \attribute{course\_rating}{float(2)}{}
-    \attribute{content\_rating}{float(2)}{}
-    \attribute{instructor\_rating}{float(2)}{}
-    \attribute{enrolled\_students}{int}{}
-    \attribute{description}{varchar(max)}{}
-    \attribute{recent\_views}{int}{}
-    \attribute{has\_certificate}{bit}{}
-    \attribute{is\_fully\_online}{bit}{}
-    \attribute{time\_commitment}{bigint}{}
-    \attribute{financial\_aid}{bit}{}
-    \attribute{institution\_id}{int}{}
-    \attribute{certificate\_template\_url}{varchar(2000)}{}
-    \attribute{course\_type}{tinyint}{}
-    \attribute{category\_id}{int}{}
-    \attribute{subcategory\_id}{int}{}
+    \attribute{id}{int}{
+      Identificador único de cada curso
+    }
+    \attribute{slug}{varchar(50)}{
+      Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)
+    }
+    \attribute{name}{varchar(max)}{
+      Nombre del curso
+    }
+    \attribute{course\_rating}{float(2)}{
+      Cantidad de estrellas que tiene el curso
+    }
+    \attribute{content\_rating}{float(2)}{
+      Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido
+    }
+    \attribute{instructor\_rating}{float(2)}{
+      Calificación de la calidad de enseñanza del instructor
+    }
+    \attribute{enrolled\_students}{int}{
+      Número de estudiantes que se han inscrito en el curso
+    }
+    \attribute{description}{varchar(max)}{
+      Descripción del curso
+    }
+    \attribute{recent\_views}{int}{
+      Cantidad de visitas recientes al curso
+    }
+    \attribute{has\_certificate}{bit}{
+      Indicador de si el curso tiene algún certificado
+    }
+    \attribute{is\_fully\_online}{bit}{
+      Indicador de si el curso es 100\% online
+    }
+    \attribute{time\_commitment}{bigint}{
+      Tiempo estimado donde un estudiante termina un curso
+    }
+    \attribute{financial\_aid}{bit}{
+      Identificador de si se ofrece apoyo financiero al curso
+    }
+    \attribute{institution\_id}{int}{
+      Identificador de la institución afiliada que ofrece el curso
+    }
+    \attribute{certificate\_template\_url}{varchar(2000)}{
+      Enlace que lleva a una imagen del certificado
+    }
+    \attribute{course\_type}{tinyint}{
+      Seleccionable para el tipo de curso
+    }
+    \attribute{category\_id}{int}{
+      Identificador de la categoría del curso
+    }
+    \attribute{subcategory\_id}{int}{
+      Identificador de la subcategoría del curso
+    }
   \end{table}
   
   \subsubsection{Tabla Category}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{slug}{varchar(50)}{}
-    \attribute{name}{varchar(max)}{}
-    \attribute{description}{varchar(max)}{}
-    \attribute{parent\_id}{int}{}
+    \attribute{id}{int}{
+      Identificador único de cada categoría
+    }
+    \attribute{slug}{varchar(50)}{
+      Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)
+    }
+    \attribute{name}{varchar(max)}{
+      Nombre de la categoría
+    }
+    \attribute{description}{varchar(max)}{
+      Descripción de la categoría
+    }
+    \attribute{parent\_id}{int}{
+      Identificador único de una categoría padre
+    }
   \end{table}
   
   \subsubsection{Tabla Review}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{rating}{int}{}
-    \attribute{user\_review}{varchar(max)}{}
-    \attribute{publication\_date}{smalldatetime}{}
-    \attribute{course\_id}{int}{}
+    \attribute{id}{int}{
+      Identificador único de cada reseña
+    }
+    \attribute{rating}{int}{
+      Número de estrellas que da la reseña
+    }
+    \attribute{user\_review}{varchar(max)}{
+      Texto de la reseña
+    }
+    \attribute{publication\_date}{smalldatetime}{
+      Fecha de publicación
+    }
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
   \end{table}
   
   \subsubsection{Tabla Membership}
   
   \begin{table}
-    \attribute{course\_id}{int}{}
-    \attribute{student\_id}{int}{}
-    \attribute{course\_role}{tinyint}{}
-    \attribute{enrollment\_date}{datetime}{}
-    \attribute{finished\_course}{bit}{}
-    \attribute{certificate\_code}{varchar(20)}{}
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{student\_id}{int}{
+      Identificador único del estudiante
+    }
+    \attribute{course\_role}{tinyint}{
+      Rol del estudiante en el curso
+    }
+    \attribute{enrollment\_date}{datetime}{
+      Fecha de inscripción
+    }
+    \attribute{finished\_course}{bit}{
+      Indicador de finalización de del curso
+    }
+    \attribute{certificate\_code}{varchar(20)}{
+      Código alfanumérico del certificado
+    }
   \end{table}
   
   \subsubsection{Tabla Question}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{question}{varchar(500)}{}
-    \attribute{answer}{varchar(max)}{}
-    \attribute{is\_global}{bit}{}
+    \attribute{id}{int}{
+      Identificador único de la pregunta
+    }
+    \attribute{question}{varchar(500)}{
+      Texto de la pregunta
+    }
+    \attribute{answer}{varchar(max)}{
+      Texto de la respuesta
+    }
+    \attribute{is\_global}{bit}{
+      Indicador de si la pregunta es global
+    }
   \end{table}
   
   \subsubsection{Tabla Question\_Category}
   
   \begin{table}
-    \attribute{question\_id}{int}{}
-    \attribute{category\_id}{int}{}
-    \attribute{order}{tinyint}{}
+    \attribute{question\_id}{int}{
+      Identificador único de la pregunta
+    }
+    \attribute{category\_id}{int}{
+      Identificador único de la categoría
+    }
+    \attribute{order}{tinyint}{
+      Número de orden correlativo de la pregunta en la categoría
+    }
   \end{table}
   
   \subsubsection{Tabla Question\_Course}
   
   \begin{table}
-    \attribute{question\_id}{int}{}
-    \attribute{course\_id}{int}{}
-    \attribute{order}{tinyint}{}
+    \attribute{question\_id}{int}{
+      Identificador único de la pregunta
+    }
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{order}{tinyint}{
+      Número de orden correlativo de la pregunta en la categoría
+    }
   \end{table}
   
   \subsubsection{Tabla Course\_Instructor}
   
   \begin{table}
-    \attribute{course\_id}{int}{}
-    \attribute{instructor\_id}{int}{}
-    \attribute{order}{tinyint}{}
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{instructor\_id}{int}{
+      Identificador único del instructor
+    }
+    \attribute{order}{tinyint}{
+      Orden correlativo del instructor en el curso
+    }
   \end{table}
   
   \subsubsection{Tabla Specialization\_Course}
   
   \begin{table}
-    \attribute{specialization\_id}{int}{}
-    \attribute{course\_id}{int}{}
-    \attribute{order}{tinyint}{}
+    \attribute{specialization\_id}{int}{
+      Identificador único de la especialización
+    }
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{order}{tinyint}{
+      Orden correlativo del curso en la especialización en cada curso
+    }
   \end{table}
   
   \subsubsection{Tabla Language}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{iso\_code}{char(2)}{}
-    \attribute{human\_name}{varchar(100)}{}
+    \attribute{id}{int}{
+      Identificador único del idioma
+    }
+    \attribute{iso\_code}{char(2)}{
+      Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)
+    }
+    \attribute{human\_name}{varchar(100)}{
+      Nombre común del idioma (ejemplo: english)
+    }
   \end{table}
   
   \subsubsection{Tabla Course\_Language}
   
   \begin{table}
-    \attribute{course\_id}{int}{}
-    \attribute{language\_id}{int}{}
-    \attribute{is\_primary}{bit}{}
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{language\_id}{int}{
+      Identificador único del idioma
+    }
+    \attribute{is\_primary}{bit}{
+      Indicador de si el idioma es el principal del curso
+    }
   \end{table}
   
   \subsubsection{Tabla Module}
   
   \begin{table}
-    \attribute{course\_id}{int}{}
-    \attribute{module\_id}{int}{}
-    \attribute{name}{varchar(100)}{}
-    \attribute{slug}{varchar(100)}{}
-    \attribute{description}{varchar(max)}{}
-    \attribute{time\_commitment}{bigint}{}
-    \attribute{order}{int}{}
-    \attribute{forum\_id}{int}{}
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{module\_id}{int}{
+      Identificador único del módulo
+    }
+    \attribute{name}{varchar(100)}{
+      Nombre del módulo
+    }
+    \attribute{slug}{varchar(100)}{
+      Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)
+    }
+    \attribute{description}{varchar(max)}{
+      Descripción del módulo
+    }
+    \attribute{time\_commitment}{bigint}{
+      Tiempo estimado donde un estudiante termina un módulo
+    }
+    \attribute{order}{int}{
+      Número de orden correlativo del módulo
+    }
+    \attribute{forum\_id}{int}{
+      Identificador único del foro
+    }
   \end{table}
   
   \subsubsection{Tabla Lecture}
   
   \begin{table}
-    \attribute{course\_id}{int}{}
-    \attribute{module\_id}{int}{}
-    \attribute{lesson\_id}{int}{}
-    \attribute{lecture\_id}{int}{}
-    \attribute{name}{varchar(100)}{}
-    \attribute{slug}{varchar(100)}{}
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{module\_id}{int}{
+      Identificador único del módulo
+    }
+    \attribute{lesson\_id}{int}{
+      Identificador único de la lección
+    }
+    \attribute{lecture\_id}{int}{
+      Identificador único de la lectura
+    }
+    \attribute{name}{varchar(100)}{
+      Nombre de la lectura
+    }
+    \attribute{slug}{varchar(100)}{
+      Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)
+    }
     \attribute{lesson\_type}{tinyint}{}
-    \attribute{time\_commitment}{bigint}{}
-    \attribute{video\_id}{int}{}
-    \attribute{reading\_id}{int}{}
-    \attribute{quiz\_id}{int}{}
+    \attribute{time\_commitment}{bigint}{
+      Tiempo estimado donde un estudiante termina una lectura
+    }
+    \attribute{video\_id}{int}{
+      Identificador del video
+    }
+    \attribute{reading\_id}{int}{
+      Identificador de la lectura
+    }
+    \attribute{quiz\_id}{int}{
+      Identificador de la quiz
+    }
   \end{table}
   
   \subsubsection{Tabla Video}
   
   \begin{table}
-    \attribute{id}{int}{}
+    \attribute{id}{int}{
+      Identificador único del video
+    }
     \attribute{cloudfront\_domain}{varchar(100)}{}
     \attribute{cloudfront\_object\_key}{varchar(500)}{}
     \attribute{resolution\_width}{int}{}
@@ -218,8 +452,12 @@
   \subsubsection{Tabla Subtitle}
   
   \begin{table}
-    \attribute{video\_id}{int}{}
-    \attribute{id}{int}{}
+    \attribute{video\_id}{int}{
+      Identificador único del video
+    }
+    \attribute{id}{int}{
+      Identificador único del subtítulo
+    }
     \attribute{cloudfront\_domain}{varchar(100)}{}
     \attribute{cloudfront\_object\_key}{varchar(500)}{}
     \attribute{original\_format}{varchar(10)}{}
@@ -229,107 +467,225 @@
   \subsubsection{Tabla Lesson}
   
   \begin{table}
-    \attribute{course\_id}{int}{}
-    \attribute{module\_id}{int}{}
-    \attribute{lesson\_id}{int}{}
-    \attribute{name}{varchar(100)}{}
-    \attribute{slug}{varchar(100)}{}
-    \attribute{time\_commitment}{bigint}{}
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
+    \attribute{module\_id}{int}{
+      Identificador único del módulo
+    }
+    \attribute{lesson\_id}{int}{
+      Identificador único de la lección
+    }
+    \attribute{name}{varchar(100)}{
+      Nombre de la lección
+    }
+    \attribute{slug}{varchar(100)}{
+      Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)
+    }
+    \attribute{time\_commitment}{bigint}{
+      Tiempo estimado donde un estudiante termina una lección
+    }
   \end{table}
   
   \subsubsection{Tabla Quiz}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{submissions\_interval}{bigint}{}
-    \attribute{submissions\_per\_interval}{tinyint}{}
+    \attribute{id}{int}{
+      Identificador único del Quiz
+    }
+    \attribute{submissions\_interval}{bigint}{
+      Tiempo de espera para la renovación del intervalo de intentos para una Quiz
+    }
+    \attribute{submissions\_per\_interval}{tinyint}{
+      Cantidad de intentos disponibles para realizar una Quiz por intervalo
+    }
     \attribute{contains\_widget\_questions}{bit}{}
-    \attribute{max\_score}{int}{}
-    \attribute{passing\_fraction}{float(2)}{}
-    \attribute{passing\_score}{int}{}
-    \attribute{question\_count}{int}{}
+    \attribute{max\_score}{int}{
+      Puntuación máxima en la Quiz
+    }
+    \attribute{passing\_fraction}{float(2)}{
+      Porcentaje mínimo de respuestas correctas para aprobar el Quiz
+    }
+    \attribute{passing\_score}{int}{
+      Puntuación mínima para aprobar el Quiz
+    }
+    \attribute{question\_count}{int}{
+      Cantidad de preguntas en la Quiz
+    }
   \end{table}
   
   \subsubsection{Tabla Forum}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{name}{varchar(100)}{}
-    \attribute{description}{varchar(200)}{}
-    \attribute{thread\_count}{int}{}
-    \attribute{last\_post}{datetime}{}
-    \attribute{course\_id}{int}{}
+    \attribute{id}{int}{
+      Identificador único de Forum
+    }
+    \attribute{name}{varchar(100)}{
+      Nombre del foro
+    }
+    \attribute{description}{varchar(200)}{
+      Descripción del foro
+    }
+    \attribute{thread\_count}{int}{
+      Cantidad de publicaciones
+    }
+    \attribute{last\_post}{datetime}{
+      Fecha de la última publicación hecha.
+    }
+    \attribute{course\_id}{int}{
+      Identificador único del curso
+    }
   \end{table}
   
   \subsubsection{Tabla Certificate}
   
   \begin{table}
-    \attribute{certificate\_code}{varchar(20)}{}
-    \attribute{grade\_achieved}{float(2)}{}
-    \attribute{date\_achieved}{datetime}{}
-    \attribute{pdf\_url}{varchar(2000)}{}
-    \attribute{image\_url}{varchar(2000)}{}
+    \attribute{certificate\_code}{varchar(20)}{
+      Identificador único del certificado
+    }
+    \attribute{grade\_achieved}{float(2)}{
+      Calificación obtenida en el curso
+    }
+    \attribute{date\_achieved}{datetime}{
+      Fecha de obtención del certificado
+    }
+    \attribute{pdf\_url}{varchar(2000)}{
+      Enlace que lleva a un pdf del certificado
+    }
+    \attribute{image\_url}{varchar(2000)}{
+      Enlace que lleva a una imagen del certificado
+    }
   \end{table}
   
   \subsubsection{Tabla QuizQuestion}
   
   \begin{table}
-    \attribute{quiz\_id}{int}{}
-    \attribute{question\_id}{int}{}
-    \attribute{extra\_credit}{bit}{}
-    \attribute{is\_submit\_allowed}{bit}{}
+    \attribute{quiz\_id}{int}{
+      Identificador único del quiz
+    }
+    \attribute{question\_id}{int}{
+      Identificador único de la pregunta
+    }
+    \attribute{extra\_credit}{bit}{
+      Indicador si la pregunta tiene créditos extra
+    }
+    \attribute{is\_submit\_allowed}{bit}{
+      Indicador de si es posible enviar
+    }
     \attribute{question\_type}{tinyint}{}
-    \attribute{definition\_id}{int}{}
-    \attribute{max\_score}{float(2)}{}
+    \attribute{definition\_id}{int}{
+      Identificador único de la definición
+    }
+    \attribute{max\_score}{float(2)}{
+      Calificación máxima para la pregunta
+    }
   \end{table}
   
   \subsubsection{Tabla ContentDefinition}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{value}{varchar(max)}{}
-    \attribute{has\_asset\_block}{bit}{}
-    \attribute{has\_code\_block}{bit}{}
-    \attribute{has\_math}{bit}{}
-    \attribute{is\_plain\_text}{bit}{}
+    \attribute{id}{int}{
+      Identificador único de la definición de contenido
+    }
+    \attribute{value}{varchar(max)}{
+      Definición del contenido
+    }
+    \attribute{has\_asset\_block}{bit}{
+      Indica si tiene
+    }
+    \attribute{has\_code\_block}{bit}{
+      Indica si tiene un bloque de código
+    }
+    \attribute{has\_math}{bit}{
+      Indica si tiene matemática
+    }
+    \attribute{is\_plain\_text}{bit}{
+      Indica si es un texto plano
+    }
   \end{table}
   
   \subsubsection{Tabla QuizOption}
   
   \begin{table}
-    \attribute{quiz\_id}{int}{}
-    \attribute{option\_id}{int}{}
-    \attribute{definition\_id}{int}{}
+    \attribute{quiz\_id}{int}{
+      Identificador único del quiz
+    }
+    \attribute{option\_id}{int}{
+      Identificador único de la opción
+    }
+    \attribute{definition\_id}{int}{
+      Identificador único de la definición
+    }
   \end{table}
   
   \subsubsection{Tabla Thread}
   
   \begin{table}
-    \attribute{id}{int}{}
-    \attribute{name}{varchar(200)}{}
-    \attribute{created\_at}{datetime}{}
-    \attribute{created\_by}{int}{}
-    \attribute{course\_id}{int}{}
-    \attribute{forum\_id}{int}{}
-    \attribute{content\_definition\_id}{int}{}
-    \attribute{last\_answered\_at}{datetime}{}
-    \attribute{last\_answered\_by}{int}{}
-    \attribute{answer\_count}{int}{}
-    \attribute{top\_level\_answer\_count}{int}{}
-    \attribute{upvote\_count}{int}{}
-    \attribute{follower\_count}{int}{}
-    \attribute{view\_count}{int}{}
-    \attribute{parent\_thread\_id}{int}{}
+    \attribute{id}{int}{
+      Identificador único del hilo
+    }
+    \attribute{name}{varchar(200)}{
+      Nombre del hilo
+    }
+    \attribute{created\_at}{datetime}{
+      Fecha de creación del hilo
+    }
+    \attribute{created\_by}{int}{
+      Id del estudiante que creó el hilo
+    }
+    \attribute{course\_id}{int}{
+      Id del curso del que forma parte el hilo
+    }
+    \attribute{forum\_id}{int}{
+      Id del foro al que pertenece el hilo
+    }
+    \attribute{content\_definition\_id}{int}{
+      Id de la definición de contenido
+    }
+    \attribute{last\_answered\_at}{datetime}{
+      Fecha de la última vez que el hilo ha sido respondido
+    }
+    \attribute{last\_answered\_by}{int}{
+      Id del estudiante que ha respondido la última vez
+    }
+    \attribute{answer\_count}{int}{
+      Número de respuestas
+    }
+    \attribute{top\_level\_answer\_count}{int}{
+      Número de respuestas que se muestran al inicio del hilo
+    }
+    \attribute{upvote\_count}{int}{
+      Número de votos positivos que tiene el hilo
+    }
+    \attribute{follower\_count}{int}{
+      Número de seguidores que tiene el hilo
+    }
+    \attribute{view\_count}{int}{
+      Número de visualizaciones que tiene el hilo
+    }
+    \attribute{parent\_thread\_id}{int}{
+      Id del hilo padre
+    }
   \end{table}
   
   \subsubsection{Tabla Student\_Thread}
   
   \begin{table}
-    \attribute{student\_id}{int}{}
-    \attribute{thread\_id}{int}{}
-    \attribute{is\_upvoted}{bit}{}
-    \attribute{is\_follower}{bit}{}
-    \attribute{viewed}{bit}{}
+    \attribute{student\_id}{int}{
+      Identificador único del estudiante
+    }
+    \attribute{thread\_id}{int}{
+      Identificador único del hilo
+    }
+    \attribute{is\_upvoted}{bit}{
+      Indica si el estudiante ha votado por dicho hilo
+    }
+    \attribute{is\_follower}{bit}{
+      Indica si el estudiante es un seguidor del hilo
+    }
+    \attribute{viewed}{bit}{
+      Indica si el hilo ha sido visto
+    }
   \end{table}
 \end{database}
 

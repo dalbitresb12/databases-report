@@ -3,36 +3,1660 @@
 \graphicspath{{\subfix{../images/}}}
 
 \begin{document}
+  
+\subsubsection{Entidad Student}
 
-\begin{attrtables}{1}
+\begin{attrtables}{student}
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{id}
-      \definition{User ID}
+      \definition{Identificador único del estudiante}
       \type{int}
-      \unit{Código}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{fullname}
+      \definition{Nombre completo del estudiante}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{email}
+      \definition{Correo electrónico principal de la cuenta}
+      \type{varchar(254)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{password}
+      \definition{Contraseña encriptada con el algoritmo BCrypt del estudiante}
+      \type{char(60)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{alternative\_email}
+      \definition{Cuenta personal o correo alternativo del estudiante}
+      \type{varchar(254)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{profile\_picture\_url}
+      \definition{Dirección URL de la foto de perfil del estudiante}
+      \type{varchar(2000)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{employment\_status}
+      \definition{Seleccionable para la situación laboral del estudiante}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{industry}
+      \definition{Seleccionable para la industria en la que trabaja el estudiante}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{employer}
+      \definition{Seleccionable para dónde trabaja el estudiante}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{profession}
+      \definition{Seleccionable para cuál es la profesión del estudiante}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{experience\_level}
+      \definition{Seleccionable para el nivel de experiencia relevante del estudiante}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_current\_employer}
+      \definition{Indicador de si el empleador ingresado es el actual}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{highest\_degree}
+      \definition{Seleccionable para el máximo grado educativo.}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{university}
+      \definition{Universidad en la que se encuentra el estudiante en la actualidad}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{major}
+      \definition{El campo de estudio del usuario}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_student}
+      \definition{Indicador de si es un estudiante actualmente}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{experience\_privacy}
+      \definition{Seleccionable para la privacidad de experiencia del estudiante}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{about\_me}
+      \definition{Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{location}
+      \definition{Ubicación del estudiante}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{principal\_skills}
+      \definition{Campo separado por comas de las habilidades del estudiante}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{website\_urls}
+      \definition{Lista de URLs del estudiante en formato JSON}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{gender}
+      \definition{Seleccionable del género del estudiante}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{birthday}
+      \definition{Fecha de nacimiento del estudiante}
+      \type{date}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{phone\_number}
+      \definition{Número de teléfono del estudiante}
+      \type{varchar(25)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{details\_privacy}
+      \definition{Seleccionable de quién puede acceder a la información personal del estudiante}
+      \type{tinyint}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Institution}
+
+\begin{attrtables}{institution}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de la institución}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre de la institución}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{description}
+      \definition{Descripción de la institución}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{country}
+      \definition{País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2.}
+      \type{char(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{logo\_url}
+      \definition{Dirección URL del logo de la institución}
+      \type{varchar(2000)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{squared\_logo\_url}
+      \definition{Dirección URL del logo en cuadrado de la institución}
+      \type{varchar(2000)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_logo\_url}
+      \definition{Dirección URL del logo de la institución utilizada en la cabecera de un curso}
+      \type{varchar(2000)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{website\_urls}
+      \definition{Lista de URLs de la institución en formato JSON}
+      \type{varchar(max)}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Instructor}
+
+\begin{attrtables}{instructor}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de cada instructor}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{fullname}
+      \definition{Nombre completo del instructor}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{occupation}
+      \definition{Ocupación del instructor}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{rating}
+      \definition{Calificación de la calidad de enseñanza de parte de los estudiantes}
+      \type{float(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{ratings\_count}
+      \definition{Cantidad de calificaciones recibidas}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{profile\_picture\_url}
+      \definition{Enlace del CDN a la foto de perfil del instructor}
+      \type{varchar(2000)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{website\_urls}
+      \definition{Lista de URLs del instructor en formato JSON}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{biography}
+      \definition{Biografía del instructor}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_top\_instructor}
+      \definition{Indicador de si es un instructor top}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{institution\_id}
+      \definition{Institución Afiliada en la que trabaja el instructor}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Course}
+
+\begin{attrtables}{course}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de cada curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{slug}
+      \definition{Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)}
+      \type{varchar(50)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre del curso}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_rating}
+      \definition{Cantidad de estrellas que tiene el curso}
+      \type{float(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{content\_rating}
+      \definition{Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido}
+      \type{float(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{instructor\_rating}
+      \definition{Calificación de la calidad de enseñanza del instructor}
+      \type{float(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{enrolled\_students}
+      \definition{Número de estudiantes que se han inscrito en el curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{description}
+      \definition{Descripción del curso}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{recent\_views}
+      \definition{Cantidad de visitas recientes al curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{has\_certificate}
+      \definition{Indicador de si el curso tiene algún certificado}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_fully\_online}
+      \definition{Indicador de si el curso es 100\% online}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{time\_commitment}
+      \definition{Tiempo estimado donde un estudiante termina un curso}
+      \type{bigint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{financial\_aid}
+      \definition{Identificador de si se ofrece apoyo financiero al curso}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{institution\_id}
+      \definition{Identificador de la institución afiliada que ofrece el curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{certificate\_template\_url}
+      \definition{Enlace que lleva a una imagen del certificado}
+      \type{varchar(2000)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_type}
+      \definition{Seleccionable para el tipo de curso}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{category\_id}
+      \definition{Identificador de la categoría del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{subcategory\_id}
+      \definition{Identificador de la subcategoría del curso}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Category}
+
+\begin{attrtables}{category}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de cada categoría}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{slug}
+      \definition{Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)}
+      \type{varchar(50)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre de la categoría}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{description}
+      \definition{Descripción de la categoría}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{parent\_id}
+      \definition{Identificador único de una categoría padre}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Review}
+
+\begin{attrtables}{review}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de cada reseña}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{rating}
+      \definition{Número de estrellas que da la reseña}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{user\_review}
+      \definition{Texto de la reseña}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{publication\_date}
+      \definition{Fecha de publicación}
+      \type{smalldatetime}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Membership}
+
+\begin{attrtables}{membership}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{student\_id}
+      \definition{Identificador único del estudiante}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_role}
+      \definition{Rol del estudiante en el curso}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{enrollment\_date}
+      \definition{Fecha de inscripción}
+      \type{datetime}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{finished\_course}
+      \definition{Indicador de finalización de del curso}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{certificate\_code}
+      \definition{Código alfanumérico del certificado}
+      \type{varchar(20)}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Question}
+
+\begin{attrtables}{question}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de la pregunta}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{question}
+      \definition{Texto de la pregunta}
+      \type{varchar(500)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{answer}
+      \definition{Texto de la respuesta}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_global}
+      \definition{Indicador de si la pregunta es global}
+      \type{bit}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Question\_Category}
+
+\begin{attrtables}{questioncategory}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{question\_id}
+      \definition{Identificador único de la pregunta}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{category\_id}
+      \definition{Identificador único de la categoría}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{order}
+      \definition{Número de orden correlativo de la pregunta en la categoría}
+      \type{tinyint}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Question\_Course}
+
+\begin{attrtables}{questioncourse}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{question\_id}
+      \definition{Identificador único de la pregunta}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{order}
+      \definition{Número de orden correlativo de la pregunta en la categoría}
+      \type{tinyint}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Course\_Instructor}
+
+\begin{attrtables}{courseinstructor}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{instructor\_id}
+      \definition{Identificador único del instructor}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{order}
+      \definition{Orden correlativo del instructor en el curso}
+      \type{tinyint}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Specialization\_Course}
+
+\begin{attrtables}{specializationcourse}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{specialization\_id}
+      \definition{Identificador único de la especialización}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{order}
+      \definition{Orden correlativo del curso en la especialización en cada curso}
+      \type{tinyint}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Language}
+
+\begin{attrtables}{language}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único del idioma}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{iso\_code}
+      \definition{Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)}
+      \type{char(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{human\_name}
+      \definition{Nombre común del idioma (ejemplo: english)}
+      \type{varchar(100)}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Course\_Language}
+
+\begin{attrtables}{courselanguage}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{language\_id}
+      \definition{Identificador único del idioma}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_primary}
+      \definition{Indicador de si el idioma es el principal del curso}
+      \type{bit}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Module}
+
+\begin{attrtables}{module}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{module\_id}
+      \definition{Identificador único del módulo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre del módulo}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{slug}
+      \definition{Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{description}
+      \definition{Descripción del módulo}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{time\_commitment}
+      \definition{Tiempo estimado donde un estudiante termina un módulo}
+      \type{bigint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{order}
+      \definition{Número de orden correlativo del módulo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{forum\_id}
+      \definition{Identificador único del foro}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Lecture}
+
+\begin{attrtables}{lecture}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{module\_id}
+      \definition{Identificador único del módulo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{lesson\_id}
+      \definition{Identificador único de la lección}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{lecture\_id}
+      \definition{Identificador único de la lectura}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre de la lectura}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{slug}
+      \definition{Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{lesson\_type}
+      \definition{}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{time\_commitment}
+      \definition{Tiempo estimado donde un estudiante termina una lectura}
+      \type{bigint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{video\_id}
+      \definition{Identificador del video}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{reading\_id}
+      \definition{Identificador de la lectura}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{quiz\_id}
+      \definition{Identificador de la quiz}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Video}
+
+\begin{attrtables}{video}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único del video}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{cloudfront\_domain}
+      \definition{}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{cloudfront\_object\_key}
+      \definition{}
+      \type{varchar(500)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{resolution\_width}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{resolution\_height}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Subtitle}
+
+\begin{attrtables}{subtitle}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{video\_id}
+      \definition{Identificador único del video}
+      \type{int}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{id}
-      \definition{User ID}
+      \definition{Identificador único del subtítulo}
       \type{int}
-      \unit{Código}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
-      \definition{User ID}
-      \type{int}
-      \unit{Código}
+      \name{cloudfront\_domain}
+      \definition{}
+      \type{varchar(100)}
     \end{table}
   }
   \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{cloudfront\_object\_key}
+      \definition{}
+      \type{varchar(500)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{original\_format}
+      \definition{}
+      \type{varchar(10)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{language\_id}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Lesson}
+
+\begin{attrtables}{lesson}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{module\_id}
+      \definition{Identificador único del módulo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{lesson\_id}
+      \definition{Identificador único de la lección}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre de la lección}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{slug}
+      \definition{Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{time\_commitment}
+      \definition{Tiempo estimado donde un estudiante termina una lección}
+      \type{bigint}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Quiz}
+
+\begin{attrtables}{quiz}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único del Quiz}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{submissions\_interval}
+      \definition{Tiempo de espera para la renovación del intervalo de intentos para una Quiz}
+      \type{bigint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{submissions\_per\_interval}
+      \definition{Cantidad de intentos disponibles para realizar una Quiz por intervalo}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{contains\_widget\_questions}
+      \definition{}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{max\_score}
+      \definition{Puntuación máxima en la Quiz}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{passing\_fraction}
+      \definition{Porcentaje mínimo de respuestas correctas para aprobar el Quiz}
+      \type{float(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{passing\_score}
+      \definition{Puntuación mínima para aprobar el Quiz}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{question\_count}
+      \definition{Cantidad de preguntas en la Quiz}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Forum}
+
+\begin{attrtables}{forum}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de Forum}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre del foro}
+      \type{varchar(100)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{description}
+      \definition{Descripción del foro}
+      \type{varchar(200)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{thread\_count}
+      \definition{Cantidad de publicaciones}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{last\_post}
+      \definition{Fecha de la última publicación hecha.}
+      \type{datetime}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificador único del curso}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Certificate}
+
+\begin{attrtables}{certificate}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{certificate\_code}
+      \definition{Identificador único del certificado}
+      \type{varchar(20)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{grade\_achieved}
+      \definition{Calificación obtenida en el curso}
+      \type{float(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{date\_achieved}
+      \definition{Fecha de obtención del certificado}
+      \type{datetime}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{pdf\_url}
+      \definition{Enlace que lleva a un pdf del certificado}
+      \type{varchar(2000)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{image\_url}
+      \definition{Enlace que lleva a una imagen del certificado}
+      \type{varchar(2000)}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad QuizQuestion}
+
+\begin{attrtables}{quizquestion}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{quiz\_id}
+      \definition{Identificador único del quiz}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{question\_id}
+      \definition{Identificador único de la pregunta}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{extra\_credit}
+      \definition{Indicador si la pregunta tiene créditos extra}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_submit\_allowed}
+      \definition{Indicador de si es posible enviar}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{question\_type}
+      \definition{}
+      \type{tinyint}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{definition\_id}
+      \definition{Identificador único de la definición}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{max\_score}
+      \definition{Calificación máxima para la pregunta}
+      \type{float(2)}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad ContentDefinition}
+
+\begin{attrtables}{contentdefinition}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único de la definición de contenido}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{value}
+      \definition{Definición del contenido}
+      \type{varchar(max)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{has\_asset\_block}
+      \definition{Indica si tiene}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{has\_code\_block}
+      \definition{Indica si tiene un bloque de código}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{has\_math}
+      \definition{Indica si tiene matemática}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_plain\_text}
+      \definition{Indica si es un texto plano}
+      \type{bit}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad QuizOption}
+
+\begin{attrtables}{quizoption}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{quiz\_id}
+      \definition{Identificador único del quiz}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{option\_id}
+      \definition{Identificador único de la opción}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{definition\_id}
+      \definition{Identificador único de la definición}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Thread}
+
+\begin{attrtables}{thread}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{id}
+      \definition{Identificador único del hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{name}
+      \definition{Nombre del hilo}
+      \type{varchar(200)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{created\_at}
+      \definition{Fecha de creación del hilo}
+      \type{datetime}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{created\_by}
+      \definition{Id del estudiante que creó el hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Id del curso del que forma parte el hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{forum\_id}
+      \definition{Id del foro al que pertenece el hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{content\_definition\_id}
+      \definition{Id de la definición de contenido}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{last\_answered\_at}
+      \definition{Fecha de la última vez que el hilo ha sido respondido}
+      \type{datetime}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{last\_answered\_by}
+      \definition{Id del estudiante que ha respondido la última vez}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{answer\_count}
+      \definition{Número de respuestas}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{top\_level\_answer\_count}
+      \definition{Número de respuestas que se muestran al inicio del hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{upvote\_count}
+      \definition{Número de votos positivos que tiene el hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{follower\_count}
+      \definition{Número de seguidores que tiene el hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{view\_count}
+      \definition{Número de visualizaciones que tiene el hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{parent\_thread\_id}
+      \definition{Id del hilo padre}
+      \type{int}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Student\_Thread}
+
+\begin{attrtables}{studentthread}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{student\_id}
+      \definition{Identificador único del estudiante}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{thread\_id}
+      \definition{Identificador único del hilo}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_upvoted}
+      \definition{Indica si el estudiante ha votado por dicho hilo}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{is\_follower}
+      \definition{Indica si el estudiante es un seguidor del hilo}
+      \type{bit}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{viewed}
+      \definition{Indica si el hilo ha sido visto}
+      \type{bit}
+    \end{table}
+  }
 \end{attrtables}
 
 \end{document}
