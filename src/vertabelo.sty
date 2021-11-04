@@ -6,7 +6,7 @@
 
 \newenvironment{database}{
   \renewenvironment{table}{
-    \newcommand{\attribute}[3]{\texttt{####1} & \texttt{####2} & ####3 \\ \hline}
+    \newcommand{\attribute}[3]{####1 & \texttt{####2} & ####3 \\ \hline}
     \xltabular{\linewidth}{ | >{\raggedright\arraybackslash}l | >{\raggedright\arraybackslash}l | >{\raggedright\arraybackslash}X | }
       \hline
       Atributo & Tipo & Descripción \\ \hline
@@ -40,7 +40,7 @@
       \hline
       Nombre & \thename \\ \hline
       Definición & \thedefinition \\ \hline
-      Tipo & \thetype \\ \hline
+      Tipo & \texttt{\thetype} \\ \hline
       Rango & \therange \\ \hline
       Unidad de medida & \theunit \\ \hline
       Valores restringidos & \therestrictions \\ \hline
