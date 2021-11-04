@@ -1,4 +1,5 @@
 import dedent from 'ts-dedent';
+import { parseAttributeDescription } from './parser';
 
 export interface TableColumn {
   _Id: string,
@@ -63,6 +64,10 @@ const escapeValue = (value: string): string => {
   return value.replace(/([_%])/g, "\\$1");
 };
 
+const deleteEmptyLines = (value: string): string => {
+  return value.split('\n').filter(str => str.trim().length > 0).join('\n');
+};
+
 export const createColumn = (column: TableColumn): string => {
   const { Name, Type, Description } = column;
   if (Description.length === 0) {
@@ -100,16 +105,19 @@ export const createDatabase = (vertabelo: Vertabelo): string => {
 
 export const createAttributeTable = (column: TableColumn): string => {
   const { Name, Description, Type } = column;
-  return dedent`
+  const parsed = parseAttributeDescription(Description);
+  return deleteEmptyLines(dedent`
     \\parbox{0.48\\linewidth}{
       \\begin{table}
         \\name{${escapeValue(Name)}}
-        \\definition{${escapeValue(Description)}}
+        \\definition{${escapeValue(parsed.description)}}
         \\type{${escapeValue(Type)}}
-        \\unit{}
+        ${parsed.range ? `\\range{${escapeValue(parsed.range)}}` : ''}
+        ${parsed.unit ? `\\unit{${escapeValue(parsed.unit)}}` : ''}
+        ${parsed.restrictions ? `\\restrictions{${escapeValue(parsed.restrictions)}}` : ''}
       \\end{table}
     }
-  `;
+  `);
 };
 
 export const createAttributeTables = (table: Table): string => {
