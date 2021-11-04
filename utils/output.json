@@ -1,0 +1,1087 @@
+[
+  {
+    "name": "Student",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único del estudiante"
+      },
+      {
+        "name": "fullname",
+        "type": "varchar(max)",
+        "description": "Nombre completo del estudiante"
+      },
+      {
+        "name": "email",
+        "type": "varchar(254)",
+        "description": "Correo electrónico principal de la cuenta"
+      },
+      {
+        "name": "password",
+        "type": "char(60)",
+        "description": "Contraseña encriptada con el algoritmo BCrypt del estudiante"
+      },
+      {
+        "name": "alternative_email",
+        "type": "varchar(254)",
+        "description": "Cuenta personal o correo alternativo del estudiante"
+      },
+      {
+        "name": "profile_picture_url",
+        "type": "varchar(2000)",
+        "description": "Dirección URL de la foto de perfil del estudiante"
+      },
+      {
+        "name": "employment_status",
+        "type": "tinyint",
+        "description": "Seleccionable para la situación laboral del estudiante"
+      },
+      {
+        "name": "industry",
+        "type": "varchar(100)",
+        "description": "Seleccionable para la industria en la que trabaja el estudiante"
+      },
+      {
+        "name": "employer",
+        "type": "varchar(max)",
+        "description": "Seleccionable para dónde trabaja el estudiante"
+      },
+      {
+        "name": "profession",
+        "type": "varchar(100)",
+        "description": "Seleccionable para cuál es la profesión del estudiante"
+      },
+      {
+        "name": "experience_level",
+        "type": "tinyint",
+        "description": "Seleccionable para el nivel de experiencia relevante del estudiante"
+      },
+      {
+        "name": "is_current_employer",
+        "type": "bit",
+        "description": "Indicador de si el empleador ingresado es el actual"
+      },
+      {
+        "name": "highest_degree",
+        "type": "tinyint",
+        "description": "Seleccionable para el máximo grado educativo."
+      },
+      {
+        "name": "university",
+        "type": "varchar(max)",
+        "description": "Universidad en la que se encuentra el estudiante en la actualidad "
+      },
+      {
+        "name": "major",
+        "type": "tinyint",
+        "description": "El campo de estudio del usuario"
+      },
+      {
+        "name": "is_student",
+        "type": "bit",
+        "description": "Indicador de si es un estudiante actualmente"
+      },
+      {
+        "name": "experience_privacy",
+        "type": "tinyint",
+        "description": "Seleccionable para la privacidad de experiencia del estudiante"
+      },
+      {
+        "name": "about_me",
+        "type": "varchar(max)",
+        "description": "Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso"
+      },
+      {
+        "name": "location",
+        "type": "varchar(max)",
+        "description": "Ubicación del estudiante"
+      },
+      {
+        "name": "principal_skills",
+        "type": "varchar(max)",
+        "description": "Campo separado por comas de las habilidades del estudiante"
+      },
+      {
+        "name": "website_urls",
+        "type": "varchar(max)",
+        "description": "Lista de URLs del estudiante en formato JSON"
+      },
+      {
+        "name": "gender",
+        "type": "tinyint",
+        "description": "Seleccionable del género del estudiante"
+      },
+      {
+        "name": "birthday",
+        "type": "date",
+        "description": "Fecha de nacimiento del estudiante"
+      },
+      {
+        "name": "phone_number",
+        "type": "varchar(25)",
+        "description": "Número de teléfono del estudiante"
+      },
+      {
+        "name": "details_privacy",
+        "type": "tinyint",
+        "description": "Seleccionable de quién puede acceder a la información personal del estudiante"
+      }
+    ]
+  },
+  {
+    "name": "Institution",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de la institución"
+      },
+      {
+        "name": "name",
+        "type": "varchar(max)",
+        "description": "Nombre de la institución"
+      },
+      {
+        "name": "description",
+        "type": "varchar(max)",
+        "description": "Descripción de la institución"
+      },
+      {
+        "name": "country",
+        "type": "char(2)",
+        "description": "País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2."
+      },
+      {
+        "name": "logo_url",
+        "type": "varchar(2000)",
+        "description": "Dirección URL del logo de la institución "
+      },
+      {
+        "name": "squared_logo_url",
+        "type": "varchar(2000)",
+        "description": "Dirección URL del logo en cuadrado de la institución"
+      },
+      {
+        "name": "course_logo_url",
+        "type": "varchar(2000)",
+        "description": "Dirección URL del logo de la institución utilizada en la cabecera de un curso "
+      },
+      {
+        "name": "website_urls",
+        "type": "varchar(max)",
+        "description": "Lista de URLs de la institución en formato JSON"
+      }
+    ]
+  },
+  {
+    "name": "Instructor",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de cada instructor"
+      },
+      {
+        "name": "fullname",
+        "type": "varchar(max)",
+        "description": "Nombre completo del instructor "
+      },
+      {
+        "name": "occupation",
+        "type": "varchar(max)",
+        "description": "Ocupación del instructor"
+      },
+      {
+        "name": "rating",
+        "type": "float(2)",
+        "description": "Calificación de la calidad de enseñanza de parte de los estudiantes"
+      },
+      {
+        "name": "ratings_count",
+        "type": "int",
+        "description": "Cantidad de calificaciones recibidas"
+      },
+      {
+        "name": "profile_picture_url",
+        "type": "varchar(2000)",
+        "description": "Enlace del CDN a la foto de perfil del instructor"
+      },
+      {
+        "name": "website_urls",
+        "type": "varchar(max)",
+        "description": "Lista de URLs del instructor en formato JSON "
+      },
+      {
+        "name": "biography",
+        "type": "varchar(max)",
+        "description": "Biografía del instructor"
+      },
+      {
+        "name": "is_top_instructor",
+        "type": "bit",
+        "description": "Indicador de si es un instructor top"
+      },
+      {
+        "name": "institution_id",
+        "type": "int",
+        "description": "Institución Afiliada en la que trabaja el instructor"
+      }
+    ]
+  },
+  {
+    "name": "Course",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de cada curso"
+      },
+      {
+        "name": "slug",
+        "type": "varchar(50)",
+        "description": "Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)"
+      },
+      {
+        "name": "name",
+        "type": "varchar(max)",
+        "description": "Nombre del curso"
+      },
+      {
+        "name": "course_rating",
+        "type": "float(2)",
+        "description": "Cantidad de estrellas que tiene el curso"
+      },
+      {
+        "name": "content_rating",
+        "type": "float(2)",
+        "description": "Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido"
+      },
+      {
+        "name": "instructor_rating",
+        "type": "float(2)",
+        "description": "Calificación de la calidad de enseñanza del instructor"
+      },
+      {
+        "name": "enrolled_students",
+        "type": "int",
+        "description": "Número de estudiantes que se han inscrito en el curso"
+      },
+      {
+        "name": "description",
+        "type": "varchar(max)",
+        "description": "Descripción del curso"
+      },
+      {
+        "name": "recent_views",
+        "type": "int",
+        "description": "Cantidad de visitas recientes al curso"
+      },
+      {
+        "name": "has_certificate",
+        "type": "bit",
+        "description": "Indicador de si el curso tiene algún certificado"
+      },
+      {
+        "name": "is_fully_online",
+        "type": "bit",
+        "description": "Indicador de si el curso es 100% online"
+      },
+      {
+        "name": "time_commitment",
+        "type": "bigint",
+        "description": "Tiempo estimado donde un estudiante termina un curso"
+      },
+      {
+        "name": "financial_aid",
+        "type": "bit",
+        "description": "Identificador de si se ofrece apoyo financiero al curso"
+      },
+      {
+        "name": "institution_id",
+        "type": "int",
+        "description": "Identificador de la institución afiliada que ofrece el curso"
+      },
+      {
+        "name": "certificate_template_url",
+        "type": "varchar(2000)",
+        "description": "Enlace que lleva a una imagen del certificado"
+      },
+      {
+        "name": "course_type",
+        "type": "tinyint",
+        "description": "Seleccionable para el tipo de curso"
+      },
+      {
+        "name": "category_id",
+        "type": "int",
+        "description": "Identificador de la categoría del curso"
+      },
+      {
+        "name": "subcategory_id",
+        "type": "int",
+        "description": "Identificador de la subcategoría del curso"
+      }
+    ]
+  },
+  {
+    "name": "Category",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de cada categoría"
+      },
+      {
+        "name": "slug",
+        "type": "varchar(50)",
+        "description": "Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)"
+      },
+      {
+        "name": "name",
+        "type": "varchar(max)",
+        "description": "Nombre de la categoría"
+      },
+      {
+        "name": "description",
+        "type": "varchar(max)",
+        "description": "Descripción de la categoría"
+      },
+      {
+        "name": "parent_id",
+        "type": "int",
+        "description": "Identificador único de una categoría padre"
+      }
+    ]
+  },
+  {
+    "name": "Review",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de cada reseña"
+      },
+      {
+        "name": "rating",
+        "type": "int",
+        "description": "Número de estrellas que da la reseña"
+      },
+      {
+        "name": "user_review",
+        "type": "varchar(max)",
+        "description": "Texto de la reseña "
+      },
+      {
+        "name": "publication_date",
+        "type": "smalldatetime",
+        "description": "Fecha de publicación"
+      },
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      }
+    ]
+  },
+  {
+    "name": "Membership",
+    "fields": [
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "student_id",
+        "type": "int",
+        "description": "Identificador único del estudiante"
+      },
+      {
+        "name": "course_role",
+        "type": "tinyint",
+        "description": "Rol del estudiante en el curso"
+      },
+      {
+        "name": "enrollment_date",
+        "type": "datetime",
+        "description": "Fecha de inscripción"
+      },
+      {
+        "name": "finished_course",
+        "type": "bit",
+        "description": "Indicador de finalización de del curso"
+      },
+      {
+        "name": "certificate_code",
+        "type": "varchar(20)",
+        "description": "Código alfanumérico del certificado"
+      }
+    ]
+  },
+  {
+    "name": "Question",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de la pregunta"
+      },
+      {
+        "name": "question",
+        "type": "varchar(500)",
+        "description": "Texto de la pregunta "
+      },
+      {
+        "name": "answer",
+        "type": "varchar(max)",
+        "description": "Texto de la respuesta"
+      },
+      {
+        "name": "is_global",
+        "type": "bit",
+        "description": "Indicador de si la pregunta es global"
+      }
+    ]
+  },
+  {
+    "name": "Question_Category",
+    "fields": [
+      {
+        "name": "question_id",
+        "type": "int",
+        "description": "Identificador único de la pregunta"
+      },
+      {
+        "name": "category_id",
+        "type": "int",
+        "description": "Identificador único de la categoría"
+      },
+      {
+        "name": "order",
+        "type": "tinyint",
+        "description": "Número de orden correlativo de la pregunta en la categoría"
+      }
+    ]
+  },
+  {
+    "name": "Question_Course",
+    "fields": [
+      {
+        "name": "question_id",
+        "type": "int",
+        "description": "Identificador único de la pregunta"
+      },
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "order",
+        "type": "tinyint",
+        "description": "Número de orden correlativo de la pregunta en la categoría"
+      }
+    ]
+  },
+  {
+    "name": "Course_Instructor",
+    "fields": [
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "instructor_id",
+        "type": "int",
+        "description": "Identificador único del instructor"
+      },
+      {
+        "name": "order",
+        "type": "tinyint",
+        "description": "Orden correlativo del instructor en el curso"
+      }
+    ]
+  },
+  {
+    "name": "Specialization_Course",
+    "fields": [
+      {
+        "name": "specialization_id",
+        "type": "int",
+        "description": "Identificador único de la especialización"
+      },
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "order",
+        "type": "tinyint",
+        "description": "Orden correlativo del curso en la especialización en cada curso"
+      }
+    ]
+  },
+  {
+    "name": "Language",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único del idioma"
+      },
+      {
+        "name": "iso_code",
+        "type": "char(2)",
+        "description": "Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)"
+      },
+      {
+        "name": "human_name",
+        "type": "varchar(100)",
+        "description": "Nombre común del idioma (ejemplo: english)"
+      }
+    ]
+  },
+  {
+    "name": "Course_Language",
+    "fields": [
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "language_id",
+        "type": "int",
+        "description": "Identificador único del idioma"
+      },
+      {
+        "name": "is_primary",
+        "type": "bit",
+        "description": "Indicador de si el idioma es el principal del curso"
+      }
+    ]
+  },
+  {
+    "name": "Module",
+    "fields": [
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "module_id",
+        "type": "int",
+        "description": "Identificador único del módulo"
+      },
+      {
+        "name": "name",
+        "type": "varchar(100)",
+        "description": "Nombre del módulo"
+      },
+      {
+        "name": "slug",
+        "type": "varchar(100)",
+        "description": "Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)"
+      },
+      {
+        "name": "description",
+        "type": "varchar(max)",
+        "description": "Descripción del módulo"
+      },
+      {
+        "name": "time_commitment",
+        "type": "bigint",
+        "description": "Tiempo estimado donde un estudiante termina un módulo"
+      },
+      {
+        "name": "order",
+        "type": "int",
+        "description": "Número de orden correlativo del módulo"
+      },
+      {
+        "name": "forum_id",
+        "type": "int",
+        "description": "Identificador único del foro"
+      }
+    ]
+  },
+  {
+    "name": "Lecture",
+    "fields": [
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "module_id",
+        "type": "int",
+        "description": "Identificador único del módulo "
+      },
+      {
+        "name": "lesson_id",
+        "type": "int",
+        "description": "Identificador único de la lección"
+      },
+      {
+        "name": "lecture_id",
+        "type": "int",
+        "description": "Identificador único de la lectura"
+      },
+      {
+        "name": "name",
+        "type": "varchar(100)",
+        "description": "Nombre de la lectura"
+      },
+      {
+        "name": "slug",
+        "type": "varchar(100)",
+        "description": "Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)"
+      },
+      {
+        "name": "lesson_type",
+        "type": "tinyint",
+        "description": ""
+      },
+      {
+        "name": "time_commitment",
+        "type": "bigint",
+        "description": "Tiempo estimado donde un estudiante termina una lectura"
+      },
+      {
+        "name": "video_id",
+        "type": "int",
+        "description": "Identificador del video"
+      },
+      {
+        "name": "reading_id",
+        "type": "int",
+        "description": "Identificador de la lectura"
+      },
+      {
+        "name": "quiz_id",
+        "type": "int",
+        "description": "Identificador de la quiz"
+      }
+    ]
+  },
+  {
+    "name": "Video",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único del video"
+      },
+      {
+        "name": "cloudfront_domain",
+        "type": "varchar(100)",
+        "description": ""
+      },
+      {
+        "name": "cloudfront_object_key",
+        "type": "varchar(500)",
+        "description": ""
+      },
+      {
+        "name": "resolution_width",
+        "type": "int",
+        "description": ""
+      },
+      {
+        "name": "resolution_height",
+        "type": "int",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Subtitle",
+    "fields": [
+      {
+        "name": "video_id",
+        "type": "int",
+        "description": "Identificador único del video"
+      },
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único del subtítulo"
+      },
+      {
+        "name": "cloudfront_domain",
+        "type": "varchar(100)",
+        "description": ""
+      },
+      {
+        "name": "cloudfront_object_key",
+        "type": "varchar(500)",
+        "description": ""
+      },
+      {
+        "name": "original_format",
+        "type": "varchar(10)",
+        "description": ""
+      },
+      {
+        "name": "language_id",
+        "type": "int",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "name": "Lesson",
+    "fields": [
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      },
+      {
+        "name": "module_id",
+        "type": "int",
+        "description": "Identificador único del módulo "
+      },
+      {
+        "name": "lesson_id",
+        "type": "int",
+        "description": "Identificador único de la lección"
+      },
+      {
+        "name": "name",
+        "type": "varchar(100)",
+        "description": "Nombre de la lección"
+      },
+      {
+        "name": "slug",
+        "type": "varchar(100)",
+        "description": "Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)"
+      },
+      {
+        "name": "time_commitment",
+        "type": "bigint",
+        "description": "Tiempo estimado donde un estudiante termina una lección"
+      }
+    ]
+  },
+  {
+    "name": "Quiz",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único del Quiz"
+      },
+      {
+        "name": "submissions_interval",
+        "type": "bigint",
+        "description": "Tiempo de espera para la renovación del intervalo de intentos para una Quiz"
+      },
+      {
+        "name": "submissions_per_interval",
+        "type": "tinyint",
+        "description": "Cantidad de intentos disponibles para realizar una Quiz por intervalo"
+      },
+      {
+        "name": "contains_widget_questions",
+        "type": "bit",
+        "description": ""
+      },
+      {
+        "name": "max_score",
+        "type": "int",
+        "description": "Puntuación máxima en la Quiz"
+      },
+      {
+        "name": "passing_fraction",
+        "type": "float(2)",
+        "description": "Porcentaje mínimo de respuestas correctas para aprobar el Quiz"
+      },
+      {
+        "name": "passing_score",
+        "type": "int",
+        "description": "Puntuación mínima para aprobar el Quiz"
+      },
+      {
+        "name": "question_count",
+        "type": "int",
+        "description": "Cantidad de preguntas en la Quiz"
+      }
+    ]
+  },
+  {
+    "name": "Forum",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de Forum"
+      },
+      {
+        "name": "name",
+        "type": "varchar(100)",
+        "description": "Nombre del foro"
+      },
+      {
+        "name": "description",
+        "type": "varchar(200)",
+        "description": "Descripción del foro"
+      },
+      {
+        "name": "thread_count",
+        "type": "int",
+        "description": "Cantidad de publicaciones"
+      },
+      {
+        "name": "last_post",
+        "type": "datetime",
+        "description": "Fecha de la última publicación hecha."
+      },
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Identificador único del curso"
+      }
+    ]
+  },
+  {
+    "name": "Certificate",
+    "fields": [
+      {
+        "name": "certificate_code",
+        "type": "varchar(20)",
+        "description": "Identificador único del certificado"
+      },
+      {
+        "name": "grade_achieved",
+        "type": "float(2)",
+        "description": "Calificación obtenida en el curso"
+      },
+      {
+        "name": "date_achieved",
+        "type": "datetime",
+        "description": "Fecha de obtención del certificado"
+      },
+      {
+        "name": "pdf_url",
+        "type": "varchar(2000)",
+        "description": "Enlace que lleva a un pdf del certificado"
+      },
+      {
+        "name": "image_url",
+        "type": "varchar(2000)",
+        "description": "Enlace que lleva a una imagen del certificado"
+      }
+    ]
+  },
+  {
+    "name": "QuizQuestion",
+    "fields": [
+      {
+        "name": "quiz_id",
+        "type": "int",
+        "description": "Identificador único del quiz"
+      },
+      {
+        "name": "question_id",
+        "type": "int",
+        "description": "Identificador único de la pregunta"
+      },
+      {
+        "name": "extra_credit",
+        "type": "bit",
+        "description": "Indicador si la pregunta tiene créditos extra"
+      },
+      {
+        "name": "is_submit_allowed",
+        "type": "bit",
+        "description": "Indicador de si es posible enviar"
+      },
+      {
+        "name": "question_type",
+        "type": "tinyint",
+        "description": ""
+      },
+      {
+        "name": "definition_id",
+        "type": "int",
+        "description": "Identificador único de la definición"
+      },
+      {
+        "name": "max_score",
+        "type": "float(2)",
+        "description": "Calificación máxima para la pregunta"
+      }
+    ]
+  },
+  {
+    "name": "ContentDefinition",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único de la definición de contenido"
+      },
+      {
+        "name": "value",
+        "type": "varchar(max)",
+        "description": "Definición del contenido"
+      },
+      {
+        "name": "has_asset_block",
+        "type": "bit",
+        "description": "Indica si tiene "
+      },
+      {
+        "name": "has_code_block",
+        "type": "bit",
+        "description": "Indica si tiene un bloque de código"
+      },
+      {
+        "name": "has_math",
+        "type": "bit",
+        "description": "Indica si tiene matemática"
+      },
+      {
+        "name": "is_plain_text",
+        "type": "bit",
+        "description": "Indica si es un texto plano"
+      }
+    ]
+  },
+  {
+    "name": "QuizOption",
+    "fields": [
+      {
+        "name": "quiz_id",
+        "type": "int",
+        "description": "Identificador único del quiz"
+      },
+      {
+        "name": "option_id",
+        "type": "int",
+        "description": "Identificador único de la opción"
+      },
+      {
+        "name": "definition_id",
+        "type": "int",
+        "description": "Identificador único de la definición"
+      }
+    ]
+  },
+  {
+    "name": "Thread",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int",
+        "description": "Identificador único del hilo"
+      },
+      {
+        "name": "name",
+        "type": "varchar(200)",
+        "description": "Nombre del hilo"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "description": "Fecha de creación del hilo"
+      },
+      {
+        "name": "created_by",
+        "type": "int",
+        "description": "Id del estudiante que creó el hilo"
+      },
+      {
+        "name": "course_id",
+        "type": "int",
+        "description": "Id del curso del que forma parte el hilo"
+      },
+      {
+        "name": "forum_id",
+        "type": "int",
+        "description": "Id del foro al que pertenece el hilo"
+      },
+      {
+        "name": "content_definition_id",
+        "type": "int",
+        "description": "Id de la definición de contenido"
+      },
+      {
+        "name": "last_answered_at",
+        "type": "datetime",
+        "description": "Fecha de la última vez que el hilo ha sido respondido"
+      },
+      {
+        "name": "last_answered_by",
+        "type": "int",
+        "description": "Id del estudiante que ha respondido la última vez"
+      },
+      {
+        "name": "answer_count",
+        "type": "int",
+        "description": "Número de respuestas"
+      },
+      {
+        "name": "top_level_answer_count",
+        "type": "int",
+        "description": "Número de respuestas que se muestran al inicio del hilo"
+      },
+      {
+        "name": "upvote_count",
+        "type": "int",
+        "description": "Número de votos positivos que tiene el hilo"
+      },
+      {
+        "name": "follower_count",
+        "type": "int",
+        "description": "Número de seguidores que tiene el hilo"
+      },
+      {
+        "name": "view_count",
+        "type": "int",
+        "description": "Número de visualizaciones que tiene el hilo"
+      },
+      {
+        "name": "parent_thread_id",
+        "type": "int",
+        "description": "Id del hilo padre"
+      }
+    ]
+  },
+  {
+    "name": "Student_Thread",
+    "fields": [
+      {
+        "name": "student_id",
+        "type": "int",
+        "description": "Identificador único del estudiante"
+      },
+      {
+        "name": "thread_id",
+        "type": "int",
+        "description": "Identificador único del hilo"
+      },
+      {
+        "name": "is_upvoted",
+        "type": "bit",
+        "description": "Indica si el estudiante ha votado por dicho hilo"
+      },
+      {
+        "name": "is_follower",
+        "type": "bit",
+        "description": "Indica si el estudiante es un seguidor del hilo"
+      },
+      {
+        "name": "viewed",
+        "type": "bit",
+        "description": "Indica si el hilo ha sido visto"
+      }
+    ]
+  }
+]
