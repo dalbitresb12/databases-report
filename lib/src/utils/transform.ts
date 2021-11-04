@@ -45,6 +45,7 @@ export interface Counter {
 }
 
 export interface DatabaseModel {
+  _VersionId: string,
   Name: string,
   Description: string,
   DatabaseEngine: DatabaseEngine,

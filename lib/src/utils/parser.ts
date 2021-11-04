@@ -23,13 +23,19 @@ export const parseXML = (xml: string): Vertabelo => {
     ignoreAttributes: false,
     allowBooleanAttributes: true,
     parseNodeValue: true,
-    parseAttributeValue: true,
+    parseAttributeValue: false,
     arrayMode: false,
     tagValueProcessor: (value) => he.decode(value),
     attrValueProcessor: (value) => he.decode(value, { isAttributeValue: true })
   });
 
-  return parsed as Vertabelo;
+  const vertabelo = parsed as Vertabelo;
+  
+  if (vertabelo.DatabaseModel._VersionId !== "2.4") {
+    throw new Error(`Unknown model version: ${vertabelo.DatabaseModel._VersionId}`);
+  }
+
+  return vertabelo;
 };
 
 export interface AttributeDescription {
