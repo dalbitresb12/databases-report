@@ -31,3 +31,41 @@ export const parseXML = (xml: string): Vertabelo => {
 
   return parsed as Vertabelo;
 };
+
+export interface AttributeDescription {
+  description: string,
+  range?: string,
+  unit?: string,
+  restrictions?: string,
+}
+
+type AttributeKey = keyof Omit<AttributeDescription, 'description'>;
+
+export const isAttributeKey = (value: string): value is AttributeKey => {
+  return value === "range" || value === "unit" || value === "restrictions";
+};
+
+export const parseAttributeDescription = (description: string): AttributeDescription => {
+  const trimmed = description.trim();
+  const lines = trimmed.split('\n');
+  const attr: AttributeDescription = {
+    description: "",
+  };
+  for (const line of lines) {
+    if (line.trim().length === 0) {
+      continue;
+    }
+    if (line.includes(' = ')) {
+      const split = line.split(' = ');
+      if (split.length !== 2) continue;
+      const key = split[0].toLowerCase().trim();
+      if (!isAttributeKey(key)) continue;
+      attr[key] = split[1].trim().replace('\\=', '=');
+      continue;
+    }
+    if (attr.description.length === 0) {
+      attr.description = line.trim().replace('\\=', '=');
+    }
+  }
+  return attr;
+};
