@@ -5,7 +5,7 @@ import consola from 'consola';
 import dedent from 'ts-dedent';
 import { fetchXML } from './utils/fetcher';
 import { parseXML } from './utils/parser';
-import { createDatabase, createDocument } from './utils/transform';
+import { createTablesDocument, createAttributesDocument } from './utils/transform';
 
 consola.wrapAll();
 
@@ -26,14 +26,17 @@ const run = async () => {
   try {
     const xml = await fetchXML(modelId);
     const parsed = parseXML(xml);
-    const database = createDatabase(parsed);
-    const document = createDocument(database);
-    const outputDir = parseArgs('out/');
-    await fs.mkdir(outputDir, { recursive: true });
+    const dir = parseArgs('out/');
+    await fs.mkdir(dir, { recursive: true });
     await fs.writeFile(
-      path.join(outputDir, 'detailed-tables.tex'),
-      document,
-      { encoding: 'utf-8' }
+      path.join(dir, 'detailed-tables.tex'),
+      createTablesDocument(parsed),
+      'utf-8'
+    );
+    await fs.writeFile(
+      path.join(dir, 'attribute-tables.tex'),
+      createAttributesDocument(parsed),
+      'utf-8'
     );
   } catch (err) {
     if (err instanceof Error) {
