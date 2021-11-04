@@ -6,11 +6,46 @@
 
 \newenvironment{database}{
   \renewenvironment{table}{
-    \newcommand{\attribute}[3]{\texttt{####1} & \texttt{####2} & ####3 \\ \hline}
+    \newcommand{\attribute}[3]{####1 & \texttt{####2} & ####3 \\ \hline}
     \xltabular{\linewidth}{ | >{\raggedright\arraybackslash}l | >{\raggedright\arraybackslash}l | >{\raggedright\arraybackslash}X | }
       \hline
       Atributo & Tipo & Descripción \\ \hline
   }{
     \endxltabular
+  }
+}{}
+
+\newenvironment{attrtables}[1]{
+  \newcounter{attrtables#1}
+
+  \newcommand{\thename}{}
+  \newcommand{\thedefinition}{}
+  \newcommand{\thetype}{}
+  \newcommand{\therange}{No tiene}
+  \newcommand{\theunit}{}
+  \newcommand{\therestrictions}{No tiene}
+
+  \renewenvironment{table}{
+    \ifodd\value{attrtables#1} \newcommand{\tablepos}{l}
+    \else \newcommand{\tablepos}{r} \fi
+
+    \newcommand{\name}[1]{\renewcommand{\thename}{####1}}
+    \newcommand{\definition}[1]{\renewcommand{\thedefinition}{####1}}
+    \newcommand{\type}[1]{\renewcommand{\thetype}{####1}}
+    \newcommand{\range}[1]{\renewcommand{\therange}{####1}}
+    \newcommand{\unit}[1]{\renewcommand{\theunit}{####1}}
+    \newcommand{\restrictions}[1]{\renewcommand{\therestrictions}{####1}}
+  }{
+    \begin{xltabular}[\tablepos]{\linewidth}{ | >{\raggedright\arraybackslash}p{2cm} | >{\raggedright\arraybackslash}X | }
+      \hline
+      Nombre & \thename \\ \hline
+      Definición & \thedefinition \\ \hline
+      Tipo & \texttt{\thetype} \\ \hline
+      Rango & \therange \\ \hline
+      Unidad de medida & \theunit \\ \hline
+      Valores restringidos & \therestrictions \\ \hline
+    \end{xltabular}
+
+    \stepcounter{attrtables#1}
   }
 }{}
