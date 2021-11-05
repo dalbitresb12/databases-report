@@ -16,15 +16,19 @@ jobs:
         with:
           working_directory: src/
           root_file: main.tex
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
       - name: Rename artifact
-        run: mv src/main.pdf src/report-${{ github.ref }}.pdf
+        run: mv src/main.pdf src/report-${{ steps.get_version.outputs.version }}.pdf
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
-          name: report-${{ github.ref }}
-          path: src/report-${{ github.ref }}.pdf
+          name: report-${{ steps.get_version.outputs.version }}
+          path: src/report-${{ steps.get_version.outputs.version }}.pdf
       - name: Create release and upload artifact
         uses: softprops/action-gh-release@v1
         with:
           fail_on_unmatched_files: true
-          files: src/report-${{ github.ref }}.pdf
+          files: out/report-${{ steps.get_version.outputs.version }}.pdf
+          draft: true
