@@ -8,7 +8,7 @@
   \subsubsection{Tabla Student}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{student\_id}{int}{
       Identificador único del estudiante
     }
     \attribute{fullname}{varchar(max)}{
@@ -88,7 +88,7 @@
   \subsubsection{Tabla Institution}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{institution\_id}{int}{
       Identificador único de la institución
     }
     \attribute{name}{varchar(max)}{
@@ -117,7 +117,7 @@
   \subsubsection{Tabla Instructor}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{instructor\_id}{int}{
       Identificador único de cada instructor
     }
     \attribute{fullname}{varchar(max)}{
@@ -152,7 +152,7 @@
   \subsubsection{Tabla Course}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{course\_id}{int}{
       Identificador único de cada curso
     }
     \attribute{slug}{varchar(50)}{
@@ -206,12 +206,18 @@
     \attribute{subcategory\_id}{int}{
       Identificador de la subcategoría del curso
     }
+    \attribute{parent\_course\_id}{int}{
+      Identificador del padre del curso
+    }
+    \attribute{child\_order}{int}{
+      Número de orden correlativo como hijo de un curso
+    }
   \end{table}
   
   \subsubsection{Tabla Category}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{category\_id}{int}{
       Identificador único de cada categoría
     }
     \attribute{slug}{varchar(50)}{
@@ -231,7 +237,7 @@
   \subsubsection{Tabla Review}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{review\_id}{int}{
       Identificador único de cada reseña
     }
     \attribute{rating}{int}{
@@ -271,10 +277,10 @@
     }
   \end{table}
   
-  \subsubsection{Tabla Question}
+  \subsubsection{Tabla FAQ}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{faq\_id}{int}{
       Identificador único de la pregunta
     }
     \attribute{question}{varchar(500)}{
@@ -288,10 +294,10 @@
     }
   \end{table}
   
-  \subsubsection{Tabla Question\_Category}
+  \subsubsection{Tabla FAQ\_Category}
   
   \begin{table}
-    \attribute{question\_id}{int}{
+    \attribute{faq\_id}{int}{
       Identificador único de la pregunta
     }
     \attribute{category\_id}{int}{
@@ -302,10 +308,10 @@
     }
   \end{table}
   
-  \subsubsection{Tabla Question\_Course}
+  \subsubsection{Tabla FAQ\_Course}
   
   \begin{table}
-    \attribute{question\_id}{int}{
+    \attribute{faq\_id}{int}{
       Identificador único de la pregunta
     }
     \attribute{course\_id}{int}{
@@ -330,24 +336,10 @@
     }
   \end{table}
   
-  \subsubsection{Tabla Specialization\_Course}
-  
-  \begin{table}
-    \attribute{specialization\_id}{int}{
-      Identificador único de la especialización
-    }
-    \attribute{course\_id}{int}{
-      Identificador único del curso
-    }
-    \attribute{order}{tinyint}{
-      Orden correlativo del curso en la especialización en cada curso
-    }
-  \end{table}
-  
   \subsubsection{Tabla Language}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{language\_id}{int}{
       Identificador único del idioma
     }
     \attribute{iso\_code}{char(2)}{
@@ -375,9 +367,6 @@
   \subsubsection{Tabla Module}
   
   \begin{table}
-    \attribute{course\_id}{int}{
-      Identificador único del curso
-    }
     \attribute{module\_id}{int}{
       Identificador único del módulo
     }
@@ -399,20 +388,14 @@
     \attribute{forum\_id}{int}{
       Identificador único del foro
     }
+    \attribute{course\_id}{int}{
+      Identificado único del curso
+    }
   \end{table}
   
   \subsubsection{Tabla Lecture}
   
   \begin{table}
-    \attribute{course\_id}{int}{
-      Identificador único del curso
-    }
-    \attribute{module\_id}{int}{
-      Identificador único del módulo
-    }
-    \attribute{lesson\_id}{int}{
-      Identificador único de la lección
-    }
     \attribute{lecture\_id}{int}{
       Identificador único de la lectura
     }
@@ -422,31 +405,35 @@
     \attribute{slug}{varchar(100)}{
       Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)
     }
-    \attribute{lesson\_type}{tinyint}{}
+    \attribute{lecture\_type}{tinyint}{
+      Indicador de tipo de contenido, ya sea video, questionario o lectura.
+    }
     \attribute{time\_commitment}{bigint}{
       Tiempo estimado donde un estudiante termina una lectura
     }
-    \attribute{video\_id}{int}{
-      Identificador del video
-    }
-    \attribute{reading\_id}{int}{
-      Identificador de la lectura
-    }
-    \attribute{quiz\_id}{int}{
-      Identificador de la quiz
-    }
+    \attribute{lesson\_id}{int}{}
+    \attribute{content\_id}{int}{}
   \end{table}
   
   \subsubsection{Tabla Video}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{video\_id}{int}{
       Identificador único del video
     }
-    \attribute{cloudfront\_domain}{varchar(100)}{}
-    \attribute{cloudfront\_object\_key}{varchar(500)}{}
-    \attribute{resolution\_width}{int}{}
-    \attribute{resolution\_height}{int}{}
+    \attribute{cloudfront\_domain}{varchar(100)}{
+      Dominio de Cloudfront donde está alojado el video
+    }
+    \attribute{cloudfront\_object\_key}{varchar(500)}{
+      Key del video alojado en Cloudfront
+    }
+    \attribute{resolution\_width}{int}{
+      Ancho de la resolución del video
+    }
+    \attribute{resolution\_height}{int}{
+      Altura de la resolución del video
+    }
+    \attribute{lecture\_id}{int}{}
   \end{table}
   
   \subsubsection{Tabla Subtitle}
@@ -455,24 +442,24 @@
     \attribute{video\_id}{int}{
       Identificador único del video
     }
-    \attribute{id}{int}{
+    \attribute{subtitle\_id}{int}{
       Identificador único del subtítulo
     }
-    \attribute{cloudfront\_domain}{varchar(100)}{}
-    \attribute{cloudfront\_object\_key}{varchar(500)}{}
-    \attribute{original\_format}{varchar(10)}{}
+    \attribute{cloudfront\_domain}{varchar(100)}{
+      Dominio de Cloudfront donde están alojados los subtítulos
+    }
+    \attribute{cloudfront\_object\_key}{varchar(500)}{
+      Key de los subtítulos alojado en Cloudfront
+    }
+    \attribute{original\_format}{varchar(10)}{
+      Formato original
+    }
     \attribute{language\_id}{int}{}
   \end{table}
   
   \subsubsection{Tabla Lesson}
   
   \begin{table}
-    \attribute{course\_id}{int}{
-      Identificador único del curso
-    }
-    \attribute{module\_id}{int}{
-      Identificador único del módulo
-    }
     \attribute{lesson\_id}{int}{
       Identificador único de la lección
     }
@@ -485,12 +472,13 @@
     \attribute{time\_commitment}{bigint}{
       Tiempo estimado donde un estudiante termina una lección
     }
+    \attribute{module\_id}{int}{}
   \end{table}
   
   \subsubsection{Tabla Quiz}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{quiz\_id}{int}{
       Identificador único del Quiz
     }
     \attribute{submissions\_interval}{bigint}{
@@ -499,7 +487,6 @@
     \attribute{submissions\_per\_interval}{tinyint}{
       Cantidad de intentos disponibles para realizar una Quiz por intervalo
     }
-    \attribute{contains\_widget\_questions}{bit}{}
     \attribute{max\_score}{int}{
       Puntuación máxima en la Quiz
     }
@@ -512,12 +499,13 @@
     \attribute{question\_count}{int}{
       Cantidad de preguntas en la Quiz
     }
+    \attribute{lecture\_id}{int}{}
   \end{table}
   
   \subsubsection{Tabla Forum}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{forum\_id}{int}{
       Identificador único de Forum
     }
     \attribute{name}{varchar(100)}{
@@ -540,7 +528,7 @@
   \subsubsection{Tabla Certificate}
   
   \begin{table}
-    \attribute{certificate\_code}{varchar(20)}{
+    \attribute{certificate\_id}{varchar(20)}{
       Identificador único del certificado
     }
     \attribute{grade\_achieved}{float(2)}{
@@ -560,9 +548,6 @@
   \subsubsection{Tabla QuizQuestion}
   
   \begin{table}
-    \attribute{quiz\_id}{int}{
-      Identificador único del quiz
-    }
     \attribute{question\_id}{int}{
       Identificador único de la pregunta
     }
@@ -572,13 +557,11 @@
     \attribute{is\_submit\_allowed}{bit}{
       Indicador de si es posible enviar
     }
-    \attribute{question\_type}{tinyint}{}
-    \attribute{definition\_id}{int}{
-      Identificador único de la definición
-    }
     \attribute{max\_score}{float(2)}{
       Calificación máxima para la pregunta
     }
+    \attribute{quiz\_id}{int}{}
+    \attribute{content\_id}{int}{}
   \end{table}
   
   \subsubsection{Tabla ContentDefinition}
@@ -591,7 +574,7 @@
       Definición del contenido
     }
     \attribute{has\_asset\_block}{bit}{
-      Indica si tiene
+      Indica si se tiene que subir un archivo
     }
     \attribute{has\_code\_block}{bit}{
       Indica si tiene un bloque de código
@@ -607,21 +590,17 @@
   \subsubsection{Tabla QuizOption}
   
   \begin{table}
-    \attribute{quiz\_id}{int}{
-      Identificador único del quiz
-    }
     \attribute{option\_id}{int}{
       Identificador único de la opción
     }
-    \attribute{definition\_id}{int}{
-      Identificador único de la definición
-    }
+    \attribute{question\_id}{int}{}
+    \attribute{content\_id}{int}{}
   \end{table}
   
   \subsubsection{Tabla Thread}
   
   \begin{table}
-    \attribute{id}{int}{
+    \attribute{thread\_id}{int}{
       Identificador único del hilo
     }
     \attribute{name}{varchar(200)}{
@@ -638,9 +617,6 @@
     }
     \attribute{forum\_id}{int}{
       Id del foro al que pertenece el hilo
-    }
-    \attribute{content\_definition\_id}{int}{
-      Id de la definición de contenido
     }
     \attribute{last\_answered\_at}{datetime}{
       Fecha de la última vez que el hilo ha sido respondido
@@ -665,6 +641,9 @@
     }
     \attribute{parent\_thread\_id}{int}{
       Id del hilo padre
+    }
+    \attribute{content\_id}{int}{
+      Id del contenido
     }
   \end{table}
   

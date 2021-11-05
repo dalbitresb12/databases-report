@@ -10,9 +10,12 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{student\_id}
       \definition{Identificador único del estudiante}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -21,6 +24,9 @@
       \name{fullname}
       \definition{Nombre completo del estudiante}
       \type{varchar(max)}
+      \range{No tiene}
+      \unit{Nombre}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -29,6 +35,9 @@
       \name{email}
       \definition{Correo electrónico principal de la cuenta}
       \type{varchar(254)}
+      \range{No tiene}
+      \unit{Texto}
+      \restrictions{Más de 254 carácteres}
     \end{table}
   }
   \hfill
@@ -37,6 +46,9 @@
       \name{password}
       \definition{Contraseña encriptada con el algoritmo BCrypt del estudiante}
       \type{char(60)}
+      \range{No tiene}
+      \unit{Texto}
+      \restrictions{Más de 60 carácteres}
     \end{table}
   }
   \hfill
@@ -45,6 +57,9 @@
       \name{alternative\_email}
       \definition{Cuenta personal o correo alternativo del estudiante}
       \type{varchar(254)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{Más de 254 carácteres}
     \end{table}
   }
   \hfill
@@ -53,6 +68,9 @@
       \name{profile\_picture\_url}
       \definition{Dirección URL de la foto de perfil del estudiante}
       \type{varchar(2000)}
+      \range{Puede ser nulo}
+      \unit{Descripción}
+      \restrictions{Más de 2000 carácteres}
     \end{table}
   }
   \hfill
@@ -61,6 +79,9 @@
       \name{employment\_status}
       \definition{Seleccionable para la situación laboral del estudiante}
       \type{tinyint}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -69,6 +90,9 @@
       \name{industry}
       \definition{Seleccionable para la industria en la que trabaja el estudiante}
       \type{varchar(100)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{Más de 100 carácteres}
     \end{table}
   }
   \hfill
@@ -77,6 +101,9 @@
       \name{employer}
       \definition{Seleccionable para dónde trabaja el estudiante}
       \type{varchar(max)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -85,6 +112,9 @@
       \name{profession}
       \definition{Seleccionable para cuál es la profesión del estudiante}
       \type{varchar(100)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{Más de 100 carácteres}
     \end{table}
   }
   \hfill
@@ -93,6 +123,9 @@
       \name{experience\_level}
       \definition{Seleccionable para el nivel de experiencia relevante del estudiante}
       \type{tinyint}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -101,6 +134,9 @@
       \name{is\_current\_employer}
       \definition{Indicador de si el empleador ingresado es el actual}
       \type{bit}
+      \range{Puede ser nulo}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -109,6 +145,9 @@
       \name{highest\_degree}
       \definition{Seleccionable para el máximo grado educativo.}
       \type{tinyint}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -117,6 +156,9 @@
       \name{university}
       \definition{Universidad en la que se encuentra el estudiante en la actualidad}
       \type{varchar(max)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -125,6 +167,9 @@
       \name{major}
       \definition{El campo de estudio del usuario}
       \type{tinyint}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -133,6 +178,9 @@
       \name{is\_student}
       \definition{Indicador de si es un estudiante actualmente}
       \type{bit}
+      \range{Puede ser nulo}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -141,6 +189,9 @@
       \name{experience\_privacy}
       \definition{Seleccionable para la privacidad de experiencia del estudiante}
       \type{tinyint}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -149,6 +200,9 @@
       \name{about\_me}
       \definition{Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso}
       \type{varchar(max)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -157,6 +211,9 @@
       \name{location}
       \definition{Ubicación del estudiante}
       \type{varchar(max)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -165,6 +222,9 @@
       \name{principal\_skills}
       \definition{Campo separado por comas de las habilidades del estudiante}
       \type{varchar(max)}
+      \range{Puede ser nulo}
+      \unit{Texto}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -173,6 +233,9 @@
       \name{website\_urls}
       \definition{Lista de URLs del estudiante en formato JSON}
       \type{varchar(max)}
+      \range{Puede ser nulo}
+      \unit{Descripción}
+      \restrictions{Formato no JSON}
     \end{table}
   }
   \hfill
@@ -181,6 +244,9 @@
       \name{gender}
       \definition{Seleccionable del género del estudiante}
       \type{tinyint}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -189,6 +255,9 @@
       \name{birthday}
       \definition{Fecha de nacimiento del estudiante}
       \type{date}
+      \range{Puede ser nulo}
+      \unit{Fecha}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -197,6 +266,9 @@
       \name{phone\_number}
       \definition{Número de teléfono del estudiante}
       \type{varchar(25)}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -205,6 +277,9 @@
       \name{details\_privacy}
       \definition{Seleccionable de quién puede acceder a la información personal del estudiante}
       \type{tinyint}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
 \end{attrtables}
@@ -215,9 +290,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{institution\_id}
       \definition{Identificador único de la institución}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -226,6 +302,7 @@
       \name{name}
       \definition{Nombre de la institución}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -234,6 +311,7 @@
       \name{description}
       \definition{Descripción de la institución}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -242,6 +320,7 @@
       \name{country}
       \definition{País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2.}
       \type{char(2)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -250,6 +329,7 @@
       \name{logo\_url}
       \definition{Dirección URL del logo de la institución}
       \type{varchar(2000)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -258,6 +338,7 @@
       \name{squared\_logo\_url}
       \definition{Dirección URL del logo en cuadrado de la institución}
       \type{varchar(2000)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -266,6 +347,7 @@
       \name{course\_logo\_url}
       \definition{Dirección URL del logo de la institución utilizada en la cabecera de un curso}
       \type{varchar(2000)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -274,6 +356,7 @@
       \name{website\_urls}
       \definition{Lista de URLs de la institución en formato JSON}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
 \end{attrtables}
@@ -284,9 +367,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{instructor\_id}
       \definition{Identificador único de cada instructor}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -295,6 +379,7 @@
       \name{fullname}
       \definition{Nombre completo del instructor}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -303,6 +388,7 @@
       \name{occupation}
       \definition{Ocupación del instructor}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -311,6 +397,7 @@
       \name{rating}
       \definition{Calificación de la calidad de enseñanza de parte de los estudiantes}
       \type{float(2)}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -319,6 +406,7 @@
       \name{ratings\_count}
       \definition{Cantidad de calificaciones recibidas}
       \type{int}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -327,6 +415,7 @@
       \name{profile\_picture\_url}
       \definition{Enlace del CDN a la foto de perfil del instructor}
       \type{varchar(2000)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -335,6 +424,7 @@
       \name{website\_urls}
       \definition{Lista de URLs del instructor en formato JSON}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -343,6 +433,7 @@
       \name{biography}
       \definition{Biografía del instructor}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -351,6 +442,7 @@
       \name{is\_top\_instructor}
       \definition{Indicador de si es un instructor top}
       \type{bit}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -359,6 +451,7 @@
       \name{institution\_id}
       \definition{Institución Afiliada en la que trabaja el instructor}
       \type{int}
+      \unit{Código}
     \end{table}
   }
 \end{attrtables}
@@ -369,9 +462,12 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{course\_id}
       \definition{Identificador único de cada curso}
       \type{int}
+      \range{No tiene}
+      \unit{Identificador}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -380,6 +476,9 @@
       \name{slug}
       \definition{Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)}
       \type{varchar(50)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{Carácteres que no se pueden usar en una URL. Más de 50 carácteres}
     \end{table}
   }
   \hfill
@@ -388,6 +487,9 @@
       \name{name}
       \definition{Nombre del curso}
       \type{varchar(max)}
+      \range{No tiene}
+      \unit{Name}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -396,6 +498,9 @@
       \name{course\_rating}
       \definition{Cantidad de estrellas que tiene el curso}
       \type{float(2)}
+      \range{No tiene}
+      \unit{Números}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -404,6 +509,9 @@
       \name{content\_rating}
       \definition{Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido}
       \type{float(2)}
+      \range{No tiene}
+      \unit{Cantidad}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -412,6 +520,9 @@
       \name{instructor\_rating}
       \definition{Calificación de la calidad de enseñanza del instructor}
       \type{float(2)}
+      \range{Puede ser nulo}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -420,6 +531,9 @@
       \name{enrolled\_students}
       \definition{Número de estudiantes que se han inscrito en el curso}
       \type{int}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -428,6 +542,9 @@
       \name{description}
       \definition{Descripción del curso}
       \type{varchar(max)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -436,6 +553,9 @@
       \name{recent\_views}
       \definition{Cantidad de visitas recientes al curso}
       \type{int}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -444,6 +564,9 @@
       \name{has\_certificate}
       \definition{Indicador de si el curso tiene algún certificado}
       \type{bit}
+      \range{No tiene}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -452,6 +575,9 @@
       \name{is\_fully\_online}
       \definition{Indicador de si el curso es 100\% online}
       \type{bit}
+      \range{No tiene}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -460,6 +586,9 @@
       \name{time\_commitment}
       \definition{Tiempo estimado donde un estudiante termina un curso}
       \type{bigint}
+      \range{No tiene}
+      \unit{Quantity}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -468,6 +597,9 @@
       \name{financial\_aid}
       \definition{Identificador de si se ofrece apoyo financiero al curso}
       \type{bit}
+      \range{No tiene}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -476,6 +608,9 @@
       \name{institution\_id}
       \definition{Identificador de la institución afiliada que ofrece el curso}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -484,6 +619,9 @@
       \name{certificate\_template\_url}
       \definition{Enlace que lleva a una imagen del certificado}
       \type{varchar(2000)}
+      \range{Puede ser nulo}
+      \unit{Descripción}
+      \restrictions{Más de 2000 carácteres}
     \end{table}
   }
   \hfill
@@ -492,6 +630,9 @@
       \name{course\_type}
       \definition{Seleccionable para el tipo de curso}
       \type{tinyint}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -500,6 +641,9 @@
       \name{category\_id}
       \definition{Identificador de la categoría del curso}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -508,6 +652,31 @@
       \name{subcategory\_id}
       \definition{Identificador de la subcategoría del curso}
       \type{int}
+      \range{Puede ser nulo}
+      \unit{Código}
+      \restrictions{No tiene}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{parent\_course\_id}
+      \definition{Identificador del padre del curso}
+      \type{int}
+      \range{Puede ser nulo}
+      \unit{Identificador}
+      \restrictions{No tiene}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{child\_order}
+      \definition{Número de orden correlativo como hijo de un curso}
+      \type{int}
+      \range{Puede ser nulo}
+      \unit{Puede ser nulo}
+      \restrictions{No tiene}
     \end{table}
   }
 \end{attrtables}
@@ -518,9 +687,12 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{category\_id}
       \definition{Identificador único de cada categoría}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -529,6 +701,9 @@
       \name{slug}
       \definition{Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)}
       \type{varchar(50)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{Carácteres que no se pueden utilizar en una URL. Más de 50 carácteres}
     \end{table}
   }
   \hfill
@@ -537,6 +712,9 @@
       \name{name}
       \definition{Nombre de la categoría}
       \type{varchar(max)}
+      \range{No tiene}
+      \unit{Nombre}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -545,6 +723,9 @@
       \name{description}
       \definition{Descripción de la categoría}
       \type{varchar(max)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -553,6 +734,9 @@
       \name{parent\_id}
       \definition{Identificador único de una categoría padre}
       \type{int}
+      \range{Puede ser nulo}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
 \end{attrtables}
@@ -563,9 +747,12 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{review\_id}
       \definition{Identificador único de cada reseña}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -574,6 +761,9 @@
       \name{rating}
       \definition{Número de estrellas que da la reseña}
       \type{int}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -582,6 +772,9 @@
       \name{user\_review}
       \definition{Texto de la reseña}
       \type{varchar(max)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -590,6 +783,9 @@
       \name{publication\_date}
       \definition{Fecha de publicación}
       \type{smalldatetime}
+      \range{No tiene}
+      \unit{Date}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -598,6 +794,9 @@
       \name{course\_id}
       \definition{Identificador único del curso}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
 \end{attrtables}
@@ -611,6 +810,9 @@
       \name{course\_id}
       \definition{Identificador único del curso}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -619,6 +821,9 @@
       \name{student\_id}
       \definition{Identificador único del estudiante}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -627,6 +832,9 @@
       \name{course\_role}
       \definition{Rol del estudiante en el curso}
       \type{tinyint}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -635,6 +843,9 @@
       \name{enrollment\_date}
       \definition{Fecha de inscripción}
       \type{datetime}
+      \range{No tiene}
+      \unit{Date}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -643,6 +854,9 @@
       \name{finished\_course}
       \definition{Indicador de finalización de del curso}
       \type{bit}
+      \range{No tiene}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -651,19 +865,25 @@
       \name{certificate\_code}
       \definition{Código alfanumérico del certificado}
       \type{varchar(20)}
+      \range{No tiene}
+      \unit{Texto}
+      \restrictions{Carácteres no alfanuméricos. Más de 20 carácteres}
     \end{table}
   }
 \end{attrtables}
 
-\subsubsection{Entidad Question}
+\subsubsection{Entidad FAQ}
 
-\begin{attrtables}{question}
+\begin{attrtables}{faq}
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{faq\_id}
       \definition{Identificador único de la pregunta}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -672,6 +892,9 @@
       \name{question}
       \definition{Texto de la pregunta}
       \type{varchar(500)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -680,6 +903,9 @@
       \name{answer}
       \definition{Texto de la respuesta}
       \type{varchar(max)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -688,19 +914,25 @@
       \name{is\_global}
       \definition{Indicador de si la pregunta es global}
       \type{bit}
+      \range{No tiene}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
 \end{attrtables}
 
-\subsubsection{Entidad Question\_Category}
+\subsubsection{Entidad FAQ\_Category}
 
-\begin{attrtables}{questioncategory}
+\begin{attrtables}{faqcategory}
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{question\_id}
+      \name{faq\_id}
       \definition{Identificador único de la pregunta}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -709,6 +941,9 @@
       \name{category\_id}
       \definition{Identificador único de la categoría}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -717,19 +952,25 @@
       \name{order}
       \definition{Número de orden correlativo de la pregunta en la categoría}
       \type{tinyint}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{Número menor igual a 0}
     \end{table}
   }
 \end{attrtables}
 
-\subsubsection{Entidad Question\_Course}
+\subsubsection{Entidad FAQ\_Course}
 
-\begin{attrtables}{questioncourse}
+\begin{attrtables}{faqcourse}
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{question\_id}
+      \name{faq\_id}
       \definition{Identificador único de la pregunta}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -738,6 +979,9 @@
       \name{course\_id}
       \definition{Identificador único del curso}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -746,6 +990,9 @@
       \name{order}
       \definition{Número de orden correlativo de la pregunta en la categoría}
       \type{tinyint}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{Número menor igual a 0}
     \end{table}
   }
 \end{attrtables}
@@ -759,6 +1006,7 @@
       \name{course\_id}
       \definition{Identificador único del curso}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -767,6 +1015,7 @@
       \name{instructor\_id}
       \definition{Identificador único del instructor}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -775,35 +1024,7 @@
       \name{order}
       \definition{Orden correlativo del instructor en el curso}
       \type{tinyint}
-    \end{table}
-  }
-\end{attrtables}
-
-\subsubsection{Entidad Specialization\_Course}
-
-\begin{attrtables}{specializationcourse}
-  \noindent
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{specialization\_id}
-      \definition{Identificador único de la especialización}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{course\_id}
-      \definition{Identificador único del curso}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{order}
-      \definition{Orden correlativo del curso en la especialización en cada curso}
-      \type{tinyint}
+      \unit{Número}
     \end{table}
   }
 \end{attrtables}
@@ -814,9 +1035,12 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{language\_id}
       \definition{Identificador único del idioma}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -825,6 +1049,9 @@
       \name{iso\_code}
       \definition{Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)}
       \type{char(2)}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No acorde al estandar ISO 3166-1 alpha-2}
     \end{table}
   }
   \hfill
@@ -833,6 +1060,9 @@
       \name{human\_name}
       \definition{Nombre común del idioma (ejemplo: english)}
       \type{varchar(100)}
+      \range{Relacionado al iso\_code}
+      \unit{Nombre}
+      \restrictions{Más de 100 carácteres}
     \end{table}
   }
 \end{attrtables}
@@ -846,6 +1076,9 @@
       \name{course\_id}
       \definition{Identificador único del curso}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -854,6 +1087,9 @@
       \name{language\_id}
       \definition{Identificador único del idioma}
       \type{int}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -862,6 +1098,9 @@
       \name{is\_primary}
       \definition{Indicador de si el idioma es el principal del curso}
       \type{bit}
+      \range{No tiene}
+      \unit{Flag}
+      \restrictions{No tiene}
     \end{table}
   }
 \end{attrtables}
@@ -872,17 +1111,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{course\_id}
-      \definition{Identificador único del curso}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
       \name{module\_id}
       \definition{Identificador único del módulo}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -891,6 +1123,7 @@
       \name{name}
       \definition{Nombre del módulo}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -899,6 +1132,7 @@
       \name{slug}
       \definition{Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -907,6 +1141,7 @@
       \name{description}
       \definition{Descripción del módulo}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -915,6 +1150,7 @@
       \name{time\_commitment}
       \definition{Tiempo estimado donde un estudiante termina un módulo}
       \type{bigint}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -923,6 +1159,7 @@
       \name{order}
       \definition{Número de orden correlativo del módulo}
       \type{int}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -931,6 +1168,16 @@
       \name{forum\_id}
       \definition{Identificador único del foro}
       \type{int}
+      \unit{Código}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{course\_id}
+      \definition{Identificado único del curso}
+      \type{int}
+      \unit{Código}
     \end{table}
   }
 \end{attrtables}
@@ -941,33 +1188,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{course\_id}
-      \definition{Identificador único del curso}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{module\_id}
-      \definition{Identificador único del módulo}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{lesson\_id}
-      \definition{Identificador único de la lección}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
       \name{lecture\_id}
       \definition{Identificador único de la lectura}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -976,6 +1200,7 @@
       \name{name}
       \definition{Nombre de la lectura}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -984,14 +1209,17 @@
       \name{slug}
       \definition{Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{lesson\_type}
-      \definition{}
+      \name{lecture\_type}
+      \definition{Indicador de tipo de contenido, ya sea video, questionario o lectura.}
       \type{tinyint}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
@@ -1000,29 +1228,23 @@
       \name{time\_commitment}
       \definition{Tiempo estimado donde un estudiante termina una lectura}
       \type{bigint}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{video\_id}
-      \definition{Identificador del video}
+      \name{lesson\_id}
+      \definition{}
       \type{int}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{reading\_id}
-      \definition{Identificador de la lectura}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{quiz\_id}
-      \definition{Identificador de la quiz}
+      \name{content\_id}
+      \definition{}
       \type{int}
     \end{table}
   }
@@ -1034,39 +1256,54 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{video\_id}
       \definition{Identificador único del video}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{cloudfront\_domain}
-      \definition{}
+      \definition{Dominio de Cloudfront donde está alojado el video}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{cloudfront\_object\_key}
-      \definition{}
+      \definition{Key del video alojado en Cloudfront}
       \type{varchar(500)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{resolution\_width}
-      \definition{}
+      \definition{Ancho de la resolución del video}
       \type{int}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{resolution\_height}
+      \definition{Altura de la resolución del video}
+      \type{int}
+      \unit{Número}
+      \restrictions{Menor a 0}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{lecture\_id}
       \definition{}
       \type{int}
     \end{table}
@@ -1087,33 +1324,37 @@
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{subtitle\_id}
       \definition{Identificador único del subtítulo}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{cloudfront\_domain}
-      \definition{}
+      \definition{Dominio de Cloudfront donde están alojados los subtítulos}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{cloudfront\_object\_key}
-      \definition{}
+      \definition{Key de los subtítulos alojado en Cloudfront}
       \type{varchar(500)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{original\_format}
-      \definition{}
+      \definition{Formato original}
       \type{varchar(10)}
+      \unit{Texto}
     \end{table}
   }
   \hfill
@@ -1132,25 +1373,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{course\_id}
-      \definition{Identificador único del curso}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{module\_id}
-      \definition{Identificador único del módulo}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
       \name{lesson\_id}
       \definition{Identificador único de la lección}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1159,6 +1385,7 @@
       \name{name}
       \definition{Nombre de la lección}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -1167,6 +1394,7 @@
       \name{slug}
       \definition{Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -1175,6 +1403,16 @@
       \name{time\_commitment}
       \definition{Tiempo estimado donde un estudiante termina una lección}
       \type{bigint}
+      \unit{Número}
+      \restrictions{Menor a 0}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{module\_id}
+      \definition{}
+      \type{int}
     \end{table}
   }
 \end{attrtables}
@@ -1185,9 +1423,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{quiz\_id}
       \definition{Identificador único del Quiz}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1196,6 +1435,8 @@
       \name{submissions\_interval}
       \definition{Tiempo de espera para la renovación del intervalo de intentos para una Quiz}
       \type{bigint}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
@@ -1204,14 +1445,8 @@
       \name{submissions\_per\_interval}
       \definition{Cantidad de intentos disponibles para realizar una Quiz por intervalo}
       \type{tinyint}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{contains\_widget\_questions}
-      \definition{}
-      \type{bit}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
@@ -1220,6 +1455,8 @@
       \name{max\_score}
       \definition{Puntuación máxima en la Quiz}
       \type{int}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
@@ -1228,6 +1465,8 @@
       \name{passing\_fraction}
       \definition{Porcentaje mínimo de respuestas correctas para aprobar el Quiz}
       \type{float(2)}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
@@ -1236,6 +1475,8 @@
       \name{passing\_score}
       \definition{Puntuación mínima para aprobar el Quiz}
       \type{int}
+      \unit{Número}
+      \restrictions{Menor a 0}
     \end{table}
   }
   \hfill
@@ -1243,6 +1484,16 @@
     \begin{table}
       \name{question\_count}
       \definition{Cantidad de preguntas en la Quiz}
+      \type{int}
+      \unit{Número}
+      \restrictions{Menor a 0}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{lecture\_id}
+      \definition{}
       \type{int}
     \end{table}
   }
@@ -1254,9 +1505,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{forum\_id}
       \definition{Identificador único de Forum}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1265,6 +1517,7 @@
       \name{name}
       \definition{Nombre del foro}
       \type{varchar(100)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -1273,6 +1526,7 @@
       \name{description}
       \definition{Descripción del foro}
       \type{varchar(200)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
@@ -1281,6 +1535,7 @@
       \name{thread\_count}
       \definition{Cantidad de publicaciones}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1289,6 +1544,7 @@
       \name{last\_post}
       \definition{Fecha de la última publicación hecha.}
       \type{datetime}
+      \unit{Fecha}
     \end{table}
   }
   \hfill
@@ -1297,6 +1553,7 @@
       \name{course\_id}
       \definition{Identificador único del curso}
       \type{int}
+      \unit{Código}
     \end{table}
   }
 \end{attrtables}
@@ -1307,9 +1564,12 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{certificate\_code}
+      \name{certificate\_id}
       \definition{Identificador único del certificado}
       \type{varchar(20)}
+      \range{No tiene}
+      \unit{Código}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -1318,6 +1578,9 @@
       \name{grade\_achieved}
       \definition{Calificación obtenida en el curso}
       \type{float(2)}
+      \range{No tiene}
+      \unit{Número}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -1326,6 +1589,9 @@
       \name{date\_achieved}
       \definition{Fecha de obtención del certificado}
       \type{datetime}
+      \range{No tiene}
+      \unit{Fecha}
+      \restrictions{No tiene}
     \end{table}
   }
   \hfill
@@ -1334,6 +1600,9 @@
       \name{pdf\_url}
       \definition{Enlace que lleva a un pdf del certificado}
       \type{varchar(2000)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{Más de 2000 carácteres}
     \end{table}
   }
   \hfill
@@ -1342,6 +1611,9 @@
       \name{image\_url}
       \definition{Enlace que lleva a una imagen del certificado}
       \type{varchar(2000)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{Más de 2000 carácteres}
     \end{table}
   }
 \end{attrtables}
@@ -1352,17 +1624,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{quiz\_id}
-      \definition{Identificador único del quiz}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
       \name{question\_id}
       \definition{Identificador único de la pregunta}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1371,6 +1636,7 @@
       \name{extra\_credit}
       \definition{Indicador si la pregunta tiene créditos extra}
       \type{bit}
+      \unit{Flag}
     \end{table}
   }
   \hfill
@@ -1379,22 +1645,7 @@
       \name{is\_submit\_allowed}
       \definition{Indicador de si es posible enviar}
       \type{bit}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{question\_type}
-      \definition{}
-      \type{tinyint}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{definition\_id}
-      \definition{Identificador único de la definición}
-      \type{int}
+      \unit{Flag}
     \end{table}
   }
   \hfill
@@ -1403,6 +1654,24 @@
       \name{max\_score}
       \definition{Calificación máxima para la pregunta}
       \type{float(2)}
+      \unit{Número}
+      \restrictions{Menor a 0}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{quiz\_id}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{content\_id}
+      \definition{}
+      \type{int}
     \end{table}
   }
 \end{attrtables}
@@ -1416,6 +1685,7 @@
       \name{id}
       \definition{Identificador único de la definición de contenido}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1424,14 +1694,16 @@
       \name{value}
       \definition{Definición del contenido}
       \type{varchar(max)}
+      \unit{Descripción}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
       \name{has\_asset\_block}
-      \definition{Indica si tiene}
+      \definition{Indica si se tiene que subir un archivo}
       \type{bit}
+      \unit{Flag}
     \end{table}
   }
   \hfill
@@ -1440,6 +1712,7 @@
       \name{has\_code\_block}
       \definition{Indica si tiene un bloque de código}
       \type{bit}
+      \unit{Flag}
     \end{table}
   }
   \hfill
@@ -1448,6 +1721,7 @@
       \name{has\_math}
       \definition{Indica si tiene matemática}
       \type{bit}
+      \unit{Flag}
     \end{table}
   }
   \hfill
@@ -1456,6 +1730,7 @@
       \name{is\_plain\_text}
       \definition{Indica si es un texto plano}
       \type{bit}
+      \unit{Flag}
     \end{table}
   }
 \end{attrtables}
@@ -1466,24 +1741,25 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{quiz\_id}
-      \definition{Identificador único del quiz}
-      \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
       \name{option\_id}
       \definition{Identificador único de la opción}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{definition\_id}
-      \definition{Identificador único de la definición}
+      \name{question\_id}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{content\_id}
+      \definition{}
       \type{int}
     \end{table}
   }
@@ -1495,9 +1771,10 @@
   \noindent
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{id}
+      \name{thread\_id}
       \definition{Identificador único del hilo}
       \type{int}
+      \unit{Codigo}
     \end{table}
   }
   \hfill
@@ -1506,6 +1783,7 @@
       \name{name}
       \definition{Nombre del hilo}
       \type{varchar(200)}
+      \unit{Descripcion}
     \end{table}
   }
   \hfill
@@ -1514,6 +1792,7 @@
       \name{created\_at}
       \definition{Fecha de creación del hilo}
       \type{datetime}
+      \unit{Fecha}
     \end{table}
   }
   \hfill
@@ -1522,6 +1801,7 @@
       \name{created\_by}
       \definition{Id del estudiante que creó el hilo}
       \type{int}
+      \unit{Codigo}
     \end{table}
   }
   \hfill
@@ -1530,6 +1810,7 @@
       \name{course\_id}
       \definition{Id del curso del que forma parte el hilo}
       \type{int}
+      \unit{Codigo}
     \end{table}
   }
   \hfill
@@ -1538,14 +1819,7 @@
       \name{forum\_id}
       \definition{Id del foro al que pertenece el hilo}
       \type{int}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
-      \name{content\_definition\_id}
-      \definition{Id de la definición de contenido}
-      \type{int}
+      \unit{Codigo}
     \end{table}
   }
   \hfill
@@ -1554,6 +1828,7 @@
       \name{last\_answered\_at}
       \definition{Fecha de la última vez que el hilo ha sido respondido}
       \type{datetime}
+      \unit{Fecha}
     \end{table}
   }
   \hfill
@@ -1562,6 +1837,7 @@
       \name{last\_answered\_by}
       \definition{Id del estudiante que ha respondido la última vez}
       \type{int}
+      \unit{Codigo}
     \end{table}
   }
   \hfill
@@ -1570,6 +1846,7 @@
       \name{answer\_count}
       \definition{Número de respuestas}
       \type{int}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -1578,6 +1855,7 @@
       \name{top\_level\_answer\_count}
       \definition{Número de respuestas que se muestran al inicio del hilo}
       \type{int}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -1586,6 +1864,7 @@
       \name{upvote\_count}
       \definition{Número de votos positivos que tiene el hilo}
       \type{int}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -1594,6 +1873,7 @@
       \name{follower\_count}
       \definition{Número de seguidores que tiene el hilo}
       \type{int}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -1602,6 +1882,7 @@
       \name{view\_count}
       \definition{Número de visualizaciones que tiene el hilo}
       \type{int}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -1610,6 +1891,16 @@
       \name{parent\_thread\_id}
       \definition{Id del hilo padre}
       \type{int}
+      \unit{Codigo}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{content\_id}
+      \definition{Id del contenido}
+      \type{int}
+      \unit{Codigo}
     \end{table}
   }
 \end{attrtables}
@@ -1623,6 +1914,8 @@
       \name{student\_id}
       \definition{Identificador único del estudiante}
       \type{int}
+      \range{Por cada alumno}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1631,6 +1924,7 @@
       \name{thread\_id}
       \definition{Identificador único del hilo}
       \type{int}
+      \unit{Código}
     \end{table}
   }
   \hfill
@@ -1639,6 +1933,7 @@
       \name{is\_upvoted}
       \definition{Indica si el estudiante ha votado por dicho hilo}
       \type{bit}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -1647,6 +1942,7 @@
       \name{is\_follower}
       \definition{Indica si el estudiante es un seguidor del hilo}
       \type{bit}
+      \unit{Número}
     \end{table}
   }
   \hfill
@@ -1655,6 +1951,7 @@
       \name{viewed}
       \definition{Indica si el hilo ha sido visto}
       \type{bit}
+      \unit{Número}
     \end{table}
   }
 \end{attrtables}
