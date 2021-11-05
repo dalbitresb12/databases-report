@@ -125,7 +125,10 @@
                 <Column Id="c1">
                     <Name>student_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del estudiante</Description>
+                    <Description>Identificador único del estudiante
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -147,7 +150,10 @@
                 <Column Id="c2">
                     <Name>fullname</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Nombre completo del estudiante</Description>
+                    <Description>Nombre completo del estudiante
+Range = No tiene
+Unit = Nombre
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -156,7 +162,10 @@
                 <Column Id="c4">
                     <Name>email</Name>
                     <Type>varchar(254)</Type>
-                    <Description>Correo electrónico principal de la cuenta</Description>
+                    <Description>Correo electrónico principal de la cuenta
+Range = No tiene
+Unit = Texto
+Restrictions = Más de 254 carácteres</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -165,7 +174,10 @@
                 <Column Id="c5">
                     <Name>password</Name>
                     <Type>char(60)</Type>
-                    <Description>Contraseña encriptada con el algoritmo BCrypt del estudiante</Description>
+                    <Description>Contraseña encriptada con el algoritmo BCrypt del estudiante
+Range = No tiene
+Unit = Texto
+Restrictions = Más de 60 carácteres</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -174,7 +186,10 @@
                 <Column Id="c6">
                     <Name>alternative_email</Name>
                     <Type>varchar(254)</Type>
-                    <Description>Cuenta personal o correo alternativo del estudiante</Description>
+                    <Description>Cuenta personal o correo alternativo del estudiante
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = Más de 254 carácteres</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -183,7 +198,10 @@
                 <Column Id="c3">
                     <Name>profile_picture_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Dirección URL de la foto de perfil del estudiante</Description>
+                    <Description>Dirección URL de la foto de perfil del estudiante
+Range = Puede ser nulo
+Unit = Descripción
+Restrictions = Más de 2000 carácteres</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -192,7 +210,10 @@
                 <Column Id="c7">
                     <Name>employment_status</Name>
                     <Type>tinyint</Type>
-                    <Description>Seleccionable para la situación laboral del estudiante</Description>
+                    <Description>Seleccionable para la situación laboral del estudiante
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -201,7 +222,10 @@
                 <Column Id="c8">
                     <Name>industry</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Seleccionable para la industria en la que trabaja el estudiante</Description>
+                    <Description>Seleccionable para la industria en la que trabaja el estudiante
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = Más de 100 carácteres</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -210,7 +234,10 @@
                 <Column Id="c9">
                     <Name>employer</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Seleccionable para dónde trabaja el estudiante</Description>
+                    <Description>Seleccionable para dónde trabaja el estudiante
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -219,7 +246,10 @@
                 <Column Id="c10">
                     <Name>profession</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Seleccionable para cuál es la profesión del estudiante</Description>
+                    <Description>Seleccionable para cuál es la profesión del estudiante
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = Más de 100 carácteres</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -228,7 +258,10 @@
                 <Column Id="c11">
                     <Name>experience_level</Name>
                     <Type>tinyint</Type>
-                    <Description>Seleccionable para el nivel de experiencia relevante del estudiante</Description>
+                    <Description>Seleccionable para el nivel de experiencia relevante del estudiante
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -237,7 +270,10 @@
                 <Column Id="c12">
                     <Name>is_current_employer</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si el empleador ingresado es el actual</Description>
+                    <Description>Indicador de si el empleador ingresado es el actual
+Range = Puede ser nulo
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -246,7 +282,10 @@
                 <Column Id="c13">
                     <Name>highest_degree</Name>
                     <Type>tinyint</Type>
-                    <Description>Seleccionable para el máximo grado educativo.</Description>
+                    <Description>Seleccionable para el máximo grado educativo.
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -255,7 +294,10 @@
                 <Column Id="c14">
                     <Name>university</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Universidad en la que se encuentra el estudiante en la actualidad </Description>
+                    <Description>Universidad en la que se encuentra el estudiante en la actualidad
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = No tiene </Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -264,7 +306,10 @@
                 <Column Id="c15">
                     <Name>major</Name>
                     <Type>tinyint</Type>
-                    <Description>El campo de estudio del usuario</Description>
+                    <Description>El campo de estudio del usuario
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -273,7 +318,10 @@
                 <Column Id="c16">
                     <Name>is_student</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si es un estudiante actualmente</Description>
+                    <Description>Indicador de si es un estudiante actualmente
+Range = Puede ser nulo
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -282,7 +330,10 @@
                 <Column Id="c17">
                     <Name>experience_privacy</Name>
                     <Type>tinyint</Type>
-                    <Description>Seleccionable para la privacidad de experiencia del estudiante</Description>
+                    <Description>Seleccionable para la privacidad de experiencia del estudiante
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -291,7 +342,10 @@
                 <Column Id="c18">
                     <Name>about_me</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso</Description>
+                    <Description>Texto escrito por el estudiante acerca de lo que hace, sus intereses y qué espera del curso
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -300,7 +354,10 @@
                 <Column Id="c19">
                     <Name>location</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Ubicación del estudiante</Description>
+                    <Description>Ubicación del estudiante
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -309,7 +366,10 @@
                 <Column Id="c20">
                     <Name>principal_skills</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Campo separado por comas de las habilidades del estudiante</Description>
+                    <Description>Campo separado por comas de las habilidades del estudiante
+Range = Puede ser nulo
+Unit = Texto
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -318,7 +378,10 @@
                 <Column Id="c21">
                     <Name>website_urls</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Lista de URLs del estudiante en formato JSON</Description>
+                    <Description>Lista de URLs del estudiante en formato JSON
+Range = Puede ser nulo
+Unit = Descripción
+Restrictions = Formato no JSON</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -327,7 +390,10 @@
                 <Column Id="c22">
                     <Name>gender</Name>
                     <Type>tinyint</Type>
-                    <Description>Seleccionable del género del estudiante</Description>
+                    <Description>Seleccionable del género del estudiante
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -336,7 +402,10 @@
                 <Column Id="c23">
                     <Name>birthday</Name>
                     <Type>date</Type>
-                    <Description>Fecha de nacimiento del estudiante</Description>
+                    <Description>Fecha de nacimiento del estudiante
+Range = Puede ser nulo
+Unit = Fecha
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -345,7 +414,10 @@
                 <Column Id="c24">
                     <Name>phone_number</Name>
                     <Type>varchar(25)</Type>
-                    <Description>Número de teléfono del estudiante</Description>
+                    <Description>Número de teléfono del estudiante
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -354,7 +426,10 @@
                 <Column Id="c25">
                     <Name>details_privacy</Name>
                     <Type>tinyint</Type>
-                    <Description>Seleccionable de quién puede acceder a la información personal del estudiante</Description>
+                    <Description>Seleccionable de quién puede acceder a la información personal del estudiante
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -605,7 +680,10 @@
                 <Column Id="c46">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de cada curso</Description>
+                    <Description>Identificador único de cada curso
+Range = No tiene
+Unit = Identificador
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -627,7 +705,10 @@
                 <Column Id="c47">
                     <Name>slug</Name>
                     <Type>varchar(50)</Type>
-                    <Description>Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Description>Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)
+Range = No tiene
+Unit = Descripción
+Restrictions = Carácteres que no se pueden usar en una URL. Más de 50 carácteres</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -636,7 +717,10 @@
                 <Column Id="c48">
                     <Name>name</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Nombre del curso</Description>
+                    <Description>Nombre del curso
+Range = No tiene
+Unit = Name
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -645,7 +729,10 @@
                 <Column Id="c49">
                     <Name>course_rating</Name>
                     <Type>float(2)</Type>
-                    <Description>Cantidad de estrellas que tiene el curso</Description>
+                    <Description>Cantidad de estrellas que tiene el curso
+Range = No tiene
+Unit = Números
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -654,7 +741,10 @@
                 <Column Id="c51">
                     <Name>content_rating</Name>
                     <Type>float(2)</Type>
-                    <Description>Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido</Description>
+                    <Description>Indicador de la calidad del contenido del curso, indicado por los estudiantes a través de likes o dislikes en el contenido
+Range = No tiene
+Unit = Cantidad
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -663,7 +753,10 @@
                 <Column Id="c150">
                     <Name>instructor_rating</Name>
                     <Type>float(2)</Type>
-                    <Description>Calificación de la calidad de enseñanza del instructor</Description>
+                    <Description>Calificación de la calidad de enseñanza del instructor
+Range = Puede ser nulo
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -672,7 +765,10 @@
                 <Column Id="c53">
                     <Name>enrolled_students</Name>
                     <Type>int</Type>
-                    <Description>Número de estudiantes que se han inscrito en el curso</Description>
+                    <Description>Número de estudiantes que se han inscrito en el curso
+Range = No tiene
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -681,7 +777,10 @@
                 <Column Id="c54">
                     <Name>description</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Descripción del curso</Description>
+                    <Description>Descripción del curso
+Range = No tiene
+Unit = Descripción
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -690,7 +789,10 @@
                 <Column Id="c55">
                     <Name>recent_views</Name>
                     <Type>int</Type>
-                    <Description>Cantidad de visitas recientes al curso</Description>
+                    <Description>Cantidad de visitas recientes al curso
+Range = No tiene
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -699,7 +801,10 @@
                 <Column Id="c109">
                     <Name>has_certificate</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si el curso tiene algún certificado</Description>
+                    <Description>Indicador de si el curso tiene algún certificado
+Range = No tiene
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -708,7 +813,10 @@
                 <Column Id="c56">
                     <Name>is_fully_online</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si el curso es 100% online</Description>
+                    <Description>Indicador de si el curso es 100% online
+Range = No tiene
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -717,7 +825,10 @@
                 <Column Id="c57">
                     <Name>time_commitment</Name>
                     <Type>bigint</Type>
-                    <Description>Tiempo estimado donde un estudiante termina un curso</Description>
+                    <Description>Tiempo estimado donde un estudiante termina un curso
+Range = No tiene
+Unit = Quantity
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -726,7 +837,10 @@
                 <Column Id="c151">
                     <Name>financial_aid</Name>
                     <Type>bit</Type>
-                    <Description>Identificador de si se ofrece apoyo financiero al curso</Description>
+                    <Description>Identificador de si se ofrece apoyo financiero al curso
+Range = No tiene
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -735,7 +849,10 @@
                 <Column Id="c61">
                     <Name>institution_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador de la institución afiliada que ofrece el curso</Description>
+                    <Description>Identificador de la institución afiliada que ofrece el curso
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -744,7 +861,10 @@
                 <Column Id="c110">
                     <Name>certificate_template_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Enlace que lleva a una imagen del certificado</Description>
+                    <Description>Enlace que lleva a una imagen del certificado
+Range = Puede ser nulo
+Unit = Descripción
+Restrictions = Más de 2000 carácteres</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -753,7 +873,10 @@
                 <Column Id="c146">
                     <Name>course_type</Name>
                     <Type>tinyint</Type>
-                    <Description>Seleccionable para el tipo de curso</Description>
+                    <Description>Seleccionable para el tipo de curso
+Range = No tiene
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -762,7 +885,10 @@
                 <Column Id="c271">
                     <Name>category_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador de la categoría del curso</Description>
+                    <Description>Identificador de la categoría del curso
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -771,7 +897,10 @@
                 <Column Id="c272">
                     <Name>subcategory_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador de la subcategoría del curso</Description>
+                    <Description>Identificador de la subcategoría del curso
+Range = Puede ser nulo
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -780,7 +909,10 @@
                 <Column Id="c308">
                     <Name>parent_course_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador del padre del curso
+Range = Puede ser nulo
+Unit = Identificador
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -789,7 +921,10 @@
                 <Column Id="c309">
                     <Name>child_order</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Número de orden correlativo como hijo de un curso
+Range = Puede ser nulo
+Unit = Puede ser nulo
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -816,7 +951,10 @@
                 <Column Id="c69">
                     <Name>category_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de cada categoría</Description>
+                    <Description>Identificador único de cada categoría
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -838,7 +976,10 @@
                 <Column Id="c71">
                     <Name>slug</Name>
                     <Type>varchar(50)</Type>
-                    <Description>Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Description>Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)
+Range = No tiene
+Unit = Descripción
+Restrictions = Carácteres que no se pueden utilizar en una URL. Más de 50 carácteres</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -847,7 +988,10 @@
                 <Column Id="c70">
                     <Name>name</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Nombre de la categoría</Description>
+                    <Description>Nombre de la categoría
+Range = No tiene
+Unit = Nombre
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -856,7 +1000,10 @@
                 <Column Id="c115">
                     <Name>description</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Descripción de la categoría</Description>
+                    <Description>Descripción de la categoría
+Range = No tiene
+Unit = Descripción
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -865,7 +1012,10 @@
                 <Column Id="c114">
                     <Name>parent_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de una categoría padre</Description>
+                    <Description>Identificador único de una categoría padre
+Range = Puede ser nulo
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -892,7 +1042,10 @@
                 <Column Id="c78">
                     <Name>review_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de cada reseña</Description>
+                    <Description>Identificador único de cada reseña
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -914,7 +1067,10 @@
                 <Column Id="c79">
                     <Name>rating</Name>
                     <Type>int</Type>
-                    <Description>Número de estrellas que da la reseña</Description>
+                    <Description>Número de estrellas que da la reseña
+Range = No tiene
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -923,7 +1079,10 @@
                 <Column Id="c80">
                     <Name>user_review</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Texto de la reseña </Description>
+                    <Description>Texto de la reseña 
+Range = No tiene
+Unit = Descripción
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -932,7 +1091,10 @@
                 <Column Id="c81">
                     <Name>publication_date</Name>
                     <Type>smalldatetime</Type>
-                    <Description>Fecha de publicación</Description>
+                    <Description>Fecha de publicación
+Range = No tiene
+Unit = Date
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -941,7 +1103,10 @@
                 <Column Id="c94">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del curso</Description>
+                    <Description>Identificador único del curso
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -968,7 +1133,10 @@
                 <Column Id="c111">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del curso</Description>
+                    <Description>Identificador único del curso
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -977,7 +1145,10 @@
                 <Column Id="c87">
                     <Name>student_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del estudiante</Description>
+                    <Description>Identificador único del estudiante
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -986,7 +1157,10 @@
                 <Column Id="c236">
                     <Name>course_role</Name>
                     <Type>tinyint</Type>
-                    <Description>Rol del estudiante en el curso</Description>
+                    <Description>Rol del estudiante en el curso
+Range = No tiene
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -995,7 +1169,10 @@
                 <Column Id="c237">
                     <Name>enrollment_date</Name>
                     <Type>datetime</Type>
-                    <Description>Fecha de inscripción</Description>
+                    <Description>Fecha de inscripción
+Range = No tiene
+Unit = Date
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1004,7 +1181,10 @@
                 <Column Id="c235">
                     <Name>finished_course</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de finalización de del curso</Description>
+                    <Description>Indicador de finalización de del curso
+Range = No tiene
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1013,7 +1193,10 @@
                 <Column Id="c234">
                     <Name>certificate_code</Name>
                     <Type>varchar(20)</Type>
-                    <Description>Código alfanumérico del certificado</Description>
+                    <Description>Código alfanumérico del certificado
+Range = No tiene
+Unit = Texto
+Restrictions = Carácteres no alfanuméricos. Más de 20 carácteres</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1041,7 +1224,10 @@
                 <Column Id="c116">
                     <Name>faq_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la pregunta</Description>
+                    <Description>Identificador único de la pregunta
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1063,7 +1249,10 @@
                 <Column Id="c119">
                     <Name>question</Name>
                     <Type>varchar(500)</Type>
-                    <Description>Texto de la pregunta </Description>
+                    <Description>Texto de la pregunta 
+Range = No tiene
+Unit = Descripción
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1072,7 +1261,10 @@
                 <Column Id="c120">
                     <Name>answer</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Texto de la respuesta</Description>
+                    <Description>Texto de la respuesta
+Range = No tiene
+Unit = Descripción
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1081,7 +1273,10 @@
                 <Column Id="c118">
                     <Name>is_global</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si la pregunta es global</Description>
+                    <Description>Indicador de si la pregunta es global
+Range = No tiene
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1108,7 +1303,10 @@
                 <Column Id="c123">
                     <Name>faq_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la pregunta</Description>
+                    <Description>Identificador único de la pregunta
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1117,7 +1315,10 @@
                 <Column Id="c124">
                     <Name>category_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la categoría</Description>
+                    <Description>Identificador único de la categoría
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1126,7 +1327,10 @@
                 <Column Id="c131">
                     <Name>order</Name>
                     <Type>tinyint</Type>
-                    <Description>Número de orden correlativo de la pregunta en la categoría</Description>
+                    <Description>Número de orden correlativo de la pregunta en la categoría
+Range = No tiene
+Unit = Número
+Restrictions = Número menor igual a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1154,7 +1358,10 @@
                 <Column Id="c125">
                     <Name>faq_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la pregunta</Description>
+                    <Description>Identificador único de la pregunta
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1163,7 +1370,10 @@
                 <Column Id="c126">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del curso</Description>
+                    <Description>Identificador único del curso
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1172,7 +1382,10 @@
                 <Column Id="c130">
                     <Name>order</Name>
                     <Type>tinyint</Type>
-                    <Description>Número de orden correlativo de la pregunta en la categoría</Description>
+                    <Description>Número de orden correlativo de la pregunta en la categoría
+Range = No tiene
+Unit = Número
+Restrictions = Número menor igual a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1246,7 +1459,10 @@
                 <Column Id="c152">
                     <Name>language_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del idioma</Description>
+                    <Description>Identificador único del idioma
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1255,7 +1471,10 @@
                 <Column Id="c156">
                     <Name>iso_code</Name>
                     <Type>char(2)</Type>
-                    <Description>Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)</Description>
+                    <Description>Código acorde al estándar ISO 3166-1 alpha-2 (ejemplo: en)
+Range = No tiene
+Unit = Código
+Restrictions = No acorde al estandar ISO 3166-1 alpha-2</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1264,7 +1483,10 @@
                 <Column Id="c153">
                     <Name>human_name</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Nombre común del idioma (ejemplo: english)</Description>
+                    <Description>Nombre común del idioma (ejemplo: english)
+Range = Relacionado al iso_code
+Unit = Nombre
+Restrictions = Más de 100 carácteres</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1291,7 +1513,10 @@
                 <Column Id="c154">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del curso</Description>
+                    <Description>Identificador único del curso
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1300,7 +1525,10 @@
                 <Column Id="c157">
                     <Name>language_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del idioma</Description>
+                    <Description>Identificador único del idioma
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1309,7 +1537,10 @@
                 <Column Id="c158">
                     <Name>is_primary</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si el idioma es el principal del curso</Description>
+                    <Description>Indicador de si el idioma es el principal del curso
+Range = No tiene
+Unit = Flag
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1914,7 +2145,10 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c229">
                     <Name>certificate_id</Name>
                     <Type>varchar(20)</Type>
-                    <Description>Identificador único del certificado</Description>
+                    <Description>Identificador único del certificado
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1923,7 +2157,10 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c230">
                     <Name>grade_achieved</Name>
                     <Type>float(2)</Type>
-                    <Description>Calificación obtenida en el curso</Description>
+                    <Description>Calificación obtenida en el curso
+Range = No tiene
+Unit = Número
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1932,7 +2169,10 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c231">
                     <Name>date_achieved</Name>
                     <Type>datetime</Type>
-                    <Description>Fecha de obtención del certificado</Description>
+                    <Description>Fecha de obtención del certificado
+Range = No tiene
+Unit = Fecha
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1941,7 +2181,10 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c232">
                     <Name>pdf_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Enlace que lleva a un pdf del certificado</Description>
+                    <Description>Enlace que lleva a un pdf del certificado
+Range = No tiene
+Unit = Descripción
+Restrictions = Más de 2000 carácteres</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1950,7 +2193,10 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c233">
                     <Name>image_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Enlace que lleva a una imagen del certificado</Description>
+                    <Description>Enlace que lleva a una imagen del certificado
+Range = No tiene
+Unit = Descripción
+Restrictions = Más de 2000 carácteres</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -3560,11 +3806,11 @@ Unit = Código</Description>
             <ControlPoints>
                 <ControlPoint>
                     <X>6670.5</X>
-                    <Y>6660.5</Y>
+                    <Y>6653.5</Y>
                 </ControlPoint>
                 <ControlPoint>
                     <X>6895.5</X>
-                    <Y>6660.5</Y>
+                    <Y>6653.5</Y>
                 </ControlPoint>
                 <ControlPoint>
                     <X>6895.5</X>
@@ -3899,11 +4145,11 @@ Unit = Código</Description>
                 </ControlPoint>
                 <ControlPoint>
                     <X>7081.5</X>
-                    <Y>6889.5</Y>
+                    <Y>6883.5</Y>
                 </ControlPoint>
                 <ControlPoint>
                     <X>6007.5</X>
-                    <Y>6889.5</Y>
+                    <Y>6883.5</Y>
                 </ControlPoint>
             </ControlPoints>
             <PkTableDisplay>td1</PkTableDisplay>
@@ -4004,11 +4250,11 @@ Unit = Código</Description>
             <ControlPoints>
                 <ControlPoint>
                     <X>7784.5</X>
-                    <Y>7284.5</Y>
+                    <Y>7256.5</Y>
                 </ControlPoint>
                 <ControlPoint>
                     <X>6942.5</X>
-                    <Y>7284.5</Y>
+                    <Y>7256.5</Y>
                 </ControlPoint>
                 <ControlPoint>
                     <X>6942.5</X>
