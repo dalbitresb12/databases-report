@@ -405,7 +405,7 @@ Unit = Código</Description>
                     <Name>name</Name>
                     <Type>varchar(max)</Type>
                     <Description>Nombre de la institución
-Unit = Texto libre</Description>
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -415,7 +415,7 @@ Unit = Texto libre</Description>
                     <Name>description</Name>
                     <Type>varchar(max)</Type>
                     <Description>Descripción de la institución
-Unit = Texto libre</Description>
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -516,7 +516,7 @@ Unit = Código</Description>
                     <Name>fullname</Name>
                     <Type>varchar(max)</Type>
                     <Description>Nombre completo del instructor 
-Unit = Texto libre</Description>
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -526,7 +526,7 @@ Unit = Texto libre</Description>
                     <Name>occupation</Name>
                     <Type>varchar(max)</Type>
                     <Description>Ocupación del instructor
-Unit = Texto libre</Description>
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -576,7 +576,7 @@ Unit = Descripción</Description>
                     <Name>biography</Name>
                     <Type>varchar(max)</Type>
                     <Description>Biografía del instructor
-Unit = Texto libre</Description>
+Unit = Descripción</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -586,7 +586,7 @@ Unit = Texto libre</Description>
                     <Name>is_top_instructor</Name>
                     <Type>bit</Type>
                     <Description>Indicador de si es un instructor top
-Unit = Identificador</Description>
+Unit = Número</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1389,7 +1389,7 @@ Unit = Descripción</Description>
                     <Name>description</Name>
                     <Type>varchar(max)</Type>
                     <Description>Descripción del módulo
-Unit = Texto libre</Description>
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1399,7 +1399,7 @@ Unit = Texto libre</Description>
                     <Name>time_commitment</Name>
                     <Type>bigint</Type>
                     <Description>Tiempo estimado donde un estudiante termina un módulo
-Unit = Hora</Description>
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2358,7 +2358,7 @@ Unit = Código</Description>
                     <Name>is_upvoted</Name>
                     <Type>bit</Type>
                     <Description>Indica si el estudiante ha votado por dicho hilo
-Unit = Indicador</Description>
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2368,7 +2368,7 @@ Unit = Indicador</Description>
                     <Name>is_follower</Name>
                     <Type>bit</Type>
                     <Description>Indica si el estudiante es un seguidor del hilo
-Unit = Indicador</Description>
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2378,7 +2378,7 @@ Unit = Indicador</Description>
                     <Name>viewed</Name>
                     <Type>bit</Type>
                     <Description>Indica si el hilo ha sido visto
-Unit = Indicador</Description>
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
