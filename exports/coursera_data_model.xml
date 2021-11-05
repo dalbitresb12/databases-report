@@ -1739,7 +1739,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c299">
                     <Name>lesson_id</Name>
                     <Type>int</Type>
-                    <Description>  </Description>
+                    <Description>Identificador único de la lección
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1748,7 +1749,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c306">
                     <Name>content_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único de la definición de contenido
+Unit = Código</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1827,7 +1829,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c300">
                     <Name>lecture_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único de la lectura
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1854,7 +1857,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c188">
                     <Name>video_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del video</Description>
+                    <Description>Identificador único del video
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1903,7 +1907,10 @@ Unit = Texto</Description>
                 <Column Id="c194">
                     <Name>language_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único del idioma
+Range = No tiene
+Unit = Código
+Restrictions = No tiene</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1972,7 +1979,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c298">
                     <Name>module_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único del módulo
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2075,7 +2083,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c301">
                     <Name>lecture_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único de la lectura
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2299,7 +2308,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c302">
                     <Name>quiz_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único del Quiz
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2308,7 +2318,8 @@ Restrictions = Menor a 0</Description>
                 <Column Id="c305">
                     <Name>content_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único de la definición de contenido
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2423,7 +2434,8 @@ Unit = Código</Description>
                 <Column Id="c303">
                     <Name>question_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único de la pregunta
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2432,7 +2444,8 @@ Unit = Código</Description>
                 <Column Id="c307">
                     <Name>content_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificador único de la definición de contenido
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
