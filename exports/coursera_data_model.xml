@@ -1427,7 +1427,8 @@
                 <Column Id="c168">
                     <Name>lecture_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la lectura</Description>
+                    <Description>Identificador único de la lectura
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1436,7 +1437,8 @@
                 <Column Id="c213">
                     <Name>name</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Nombre de la lectura</Description>
+                    <Description>Nombre de la lectura
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1445,7 +1447,8 @@
                 <Column Id="c209">
                     <Name>slug</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Description>Identificador de la lectura para la URL (solo con caracteres que se pueden usar en una URL)
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1455,9 +1458,8 @@
                     <Name>lecture_type</Name>
                     <Type>tinyint</Type>
                     <Description>Indicador de tipo de contenido, ya sea video, questionario o lectura.
-Range = 1, 2, 3
 Unit = Número
-Restrictions = 1, 2, 3</Description>
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1466,7 +1468,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c208">
                     <Name>time_commitment</Name>
                     <Type>bigint</Type>
-                    <Description>Tiempo estimado donde un estudiante termina una lectura</Description>
+                    <Description>Tiempo estimado donde un estudiante termina una lectura
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1475,7 +1479,7 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c299">
                     <Name>lesson_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>  </Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1511,7 +1515,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c181">
                     <Name>video_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del video</Description>
+                    <Description>Identificador único del video
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1520,7 +1525,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c182">
                     <Name>cloudfront_domain</Name>
                     <Type>varchar(100)</Type>
-                    <Description></Description>
+                    <Description>Dominio de Cloudfront donde está alojado el video
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1529,7 +1535,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c183">
                     <Name>cloudfront_object_key</Name>
                     <Type>varchar(500)</Type>
-                    <Description></Description>
+                    <Description>Key del video alojado en Cloudfront
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1538,7 +1545,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c184">
                     <Name>resolution_width</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Ancho de la resolución del video
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1547,7 +1556,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c185">
                     <Name>resolution_height</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Altura de la resolución del video
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1592,7 +1603,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c187">
                     <Name>subtitle_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del subtítulo</Description>
+                    <Description>Identificador único del subtítulo
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1601,7 +1613,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c189">
                     <Name>cloudfront_domain</Name>
                     <Type>varchar(100)</Type>
-                    <Description></Description>
+                    <Description>Dominio de Cloudfront donde están alojados los subtítulos
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1610,7 +1623,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c190">
                     <Name>cloudfront_object_key</Name>
                     <Type>varchar(500)</Type>
-                    <Description></Description>
+                    <Description>Key de los subtítulos alojado en Cloudfront
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1619,7 +1633,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c191">
                     <Name>original_format</Name>
                     <Type>varchar(10)</Type>
-                    <Description></Description>
+                    <Description>Formato original
+Unit = Texto</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1656,7 +1671,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c216">
                     <Name>lesson_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la lección</Description>
+                    <Description>Identificador único de la lección
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1665,7 +1681,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c217">
                     <Name>name</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Nombre de la lección</Description>
+                    <Description>Nombre de la lección
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1674,7 +1691,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c218">
                     <Name>slug</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Description>Identificador de la lección para la URL (solo con caracteres que se pueden usar en una URL)
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1683,7 +1701,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c219">
                     <Name>time_commitment</Name>
                     <Type>bigint</Type>
-                    <Description>Tiempo estimado donde un estudiante termina una lección</Description>
+                    <Description>Tiempo estimado donde un estudiante termina una lección
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1719,7 +1739,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c220">
                     <Name>quiz_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del Quiz</Description>
+                    <Description>Identificador único del Quiz
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1728,7 +1749,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c258">
                     <Name>submissions_interval</Name>
                     <Type>bigint</Type>
-                    <Description>Tiempo de espera para la renovación del intervalo de intentos para una Quiz</Description>
+                    <Description>Tiempo de espera para la renovación del intervalo de intentos para una Quiz
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1737,7 +1760,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c259">
                     <Name>submissions_per_interval</Name>
                     <Type>tinyint</Type>
-                    <Description>Cantidad de intentos disponibles para realizar una Quiz por intervalo</Description>
+                    <Description>Cantidad de intentos disponibles para realizar una Quiz por intervalo
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1746,7 +1771,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c261">
                     <Name>max_score</Name>
                     <Type>int</Type>
-                    <Description>Puntuación máxima en la Quiz</Description>
+                    <Description>Puntuación máxima en la Quiz
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1755,7 +1782,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c262">
                     <Name>passing_fraction</Name>
                     <Type>float(2)</Type>
-                    <Description>Porcentaje mínimo de respuestas correctas para aprobar el Quiz</Description>
+                    <Description>Porcentaje mínimo de respuestas correctas para aprobar el Quiz
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1764,7 +1793,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c263">
                     <Name>passing_score</Name>
                     <Type>int</Type>
-                    <Description>Puntuación mínima para aprobar el Quiz</Description>
+                    <Description>Puntuación mínima para aprobar el Quiz
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1773,7 +1804,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c264">
                     <Name>question_count</Name>
                     <Type>int</Type>
-                    <Description>Cantidad de preguntas en la Quiz</Description>
+                    <Description>Cantidad de preguntas en la Quiz
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1944,7 +1977,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c238">
                     <Name>question_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la pregunta</Description>
+                    <Description>Identificador único de la pregunta
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1953,7 +1987,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c240">
                     <Name>extra_credit</Name>
                     <Type>bit</Type>
-                    <Description>Indicador si la pregunta tiene créditos extra</Description>
+                    <Description>Indicador si la pregunta tiene créditos extra
+Unit = Flag</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1962,7 +1997,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c241">
                     <Name>is_submit_allowed</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si es posible enviar</Description>
+                    <Description>Indicador de si es posible enviar
+Unit = Flag</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1971,7 +2007,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c256">
                     <Name>max_score</Name>
                     <Type>float(2)</Type>
-                    <Description>Calificación máxima para la pregunta</Description>
+                    <Description>Calificación máxima para la pregunta
+Unit = Número
+Restrictions = Menor a 0</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2016,7 +2054,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c244">
                     <Name>id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la definición de contenido</Description>
+                    <Description>Identificador único de la definición de contenido
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2025,7 +2064,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c245">
                     <Name>value</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Definición del contenido</Description>
+                    <Description>Definición del contenido
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2034,7 +2074,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c246">
                     <Name>has_asset_block</Name>
                     <Type>bit</Type>
-                    <Description>Indica si tiene </Description>
+                    <Description>Indica si se tiene que subir un archivo
+Unit = Flag</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2043,7 +2084,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c247">
                     <Name>has_code_block</Name>
                     <Type>bit</Type>
-                    <Description>Indica si tiene un bloque de código</Description>
+                    <Description>Indica si tiene un bloque de código
+Unit = Flag</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2052,7 +2094,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c248">
                     <Name>has_math</Name>
                     <Type>bit</Type>
-                    <Description>Indica si tiene matemática</Description>
+                    <Description>Indica si tiene matemática
+Unit = Flag</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2061,7 +2104,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c249">
                     <Name>is_plain_text</Name>
                     <Type>bit</Type>
-                    <Description>Indica si es un texto plano</Description>
+                    <Description>Indica si es un texto plano
+Unit = Flag</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2088,7 +2132,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c254">
                     <Name>option_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la opción</Description>
+                    <Description>Identificador único de la opción
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -3335,7 +3380,7 @@ Restrictions = 1, 2, 3</Description>
             <FixedSize>false</FixedSize>
         </TableDisplay>
         <TableDisplay Id="td36">
-            <X>6522.5</X>
+            <X>6526.5</X>
             <Y>7968.5</Y>
             <Width>201.0</Width>
             <Height>116.0</Height>
@@ -3959,11 +4004,11 @@ Restrictions = 1, 2, 3</Description>
             <ControlPoints>
                 <ControlPoint>
                     <X>7784.5</X>
-                    <Y>7264.5</Y>
+                    <Y>7284.5</Y>
                 </ControlPoint>
                 <ControlPoint>
                     <X>6942.5</X>
-                    <Y>7264.5</Y>
+                    <Y>7284.5</Y>
                 </ControlPoint>
                 <ControlPoint>
                     <X>6942.5</X>
@@ -4147,7 +4192,7 @@ Restrictions = 1, 2, 3</Description>
             <Type>Horizontal_4CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>6672.5</X>
+                    <X>6676.5</X>
                     <Y>8031.5</Y>
                 </ControlPoint>
                 <ControlPoint>
@@ -4172,11 +4217,11 @@ Restrictions = 1, 2, 3</Description>
             <Type>Cross_3CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>6623.5</X>
+                    <X>6627.5</X>
                     <Y>8003.5</Y>
                 </ControlPoint>
                 <ControlPoint>
-                    <X>6623.5</X>
+                    <X>6627.5</X>
                     <Y>7671.5</Y>
                 </ControlPoint>
                 <ControlPoint>
@@ -4193,7 +4238,7 @@ Restrictions = 1, 2, 3</Description>
             <Type>Horizontal_4CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>6704.5</X>
+                    <X>6708.5</X>
                     <Y>8056.5</Y>
                 </ControlPoint>
                 <ControlPoint>
@@ -4247,7 +4292,7 @@ Restrictions = 1, 2, 3</Description>
             <Type>Cross_3CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>6532.5</X>
+                    <X>6536.5</X>
                     <Y>8025.5</Y>
                 </ControlPoint>
                 <ControlPoint>
