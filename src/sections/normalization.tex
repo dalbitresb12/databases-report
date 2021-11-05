@@ -1,0 +1,142 @@
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\subsubsection{Determinantes}
+
+\begin{flushleft}
+  \texttt{%
+    student\_id, institution\_id, instructor\_id, course\_id,
+    faq\_id, language\_id, module\_id, lecture\_id, video\_id,
+    subtitle\_id, lesson\_id, quiz\_id, forum\_id, certificate\_id,
+    definition\_id, thread\_id
+  }
+
+  \textbf{PK(R):} \texttt{(student\_id, institution\_id, course\_id, instructor\_id)}
+\end{flushleft}
+
+\subsubsection{Dependencias Multi-Valor (DMV)}
+
+\begin{itemize}
+  \item \textbf{Student\_Course:} \texttt{(student\_id, course\_id)}
+  \item \textbf{Student\_Thread:} \texttt{(student\_id, thread\_id)}
+  \item \textbf{Course\_Instructor:} \texttt{(course\_id, instructor\_id)}
+  \item \textbf{Course\_Language:} \texttt{(course\_id, language\_id)}
+  \item \textbf{FAQ\_Category:} \texttt{(faq\_id, category\_id)}
+  \item \textbf{FAQ\_Course:} \texttt{(faq\_id, course\_id)}
+  \item \textbf{Course\_Language:} \texttt{(course\_id, language\_id)}
+  \item \textbf{Student\_Thread:} \texttt{(student\_id, thread\_id)}
+\end{itemize}
+
+\subsubsection{Primera Forma Normal (1FN)}
+
+En este paso, denotaremos la relación principal mediante una \textbf{dependencia
+funcional} colocando los atributos que forman parte de la llave primaria (PK)
+en la parte superior y determinan funcionalmente a los otros. Debajo,
+aquellos atributos que dependen funcionalmente de la llave definida.
+
+\begin{flushleft}
+  \textbf{Membership:} \texttt{%
+    (student\_id, course\_id, certificate\_id, instructor\_id, category\_id,
+    faq\_id, language\_id, module\_id, lecture\_id, video\_id, subtitle\_id,
+    lesson\_id, quiz\_id, forum\_id, content\_id, thread\_id, institution\_id)
+  }
+\end{flushleft}
+
+\subsubsection{Segunda Forma Normal (2FN)}
+
+Luego de formar nuestra relación principal, formamos nuevas relaciones
+identificando las \textbf{dependencias funcionales completas}.
+
+\begin{flushleft}
+  \textbf{Membership:} \texttt{(student\_id, course\_id, institution\_id, certificate\_id)}
+
+  \textbf{Course:} \texttt{%
+    (course\_id, category\_id, module\_id, lecture\_id, video\_id, content\_id,
+    subtitle\_id, instructor\_id, quiz\_id, forum\_id, language\_id, institution\_id)
+  }
+
+  \textbf{Student:} \texttt{(student\_id)}
+
+  \textbf{Institution:} \texttt{(institution\_id)}
+\end{flushleft}
+
+\subsubsection{Tercera Forma Normal (3FN)}
+
+Ahora, formamos nuevas relaciones al identificar las \textbf{transitividades}.
+
+\begin{flushleft}
+  \textbf{Membership:} \texttt{(student\_id, course\_id, certificate\_id)}
+  
+  \textbf{Course:} \texttt{(course\_id, category\_id, institution\_id, subcategory\_id)}
+  
+  \textbf{Module:} \texttt{(module\_id, course\_id, forum\_id)}
+  
+  \textbf{Lesson:} \texttt{(lesson\_id, module\_id, course\_id)}
+  
+  \textbf{Lecture:} \texttt{%
+    (lecture\_id, course\_id, module\_id, lesson\_id, video\_id,
+    reading\_id, quiz\_id)
+  }
+
+  \textbf{Video:} \texttt{(video\_id)}
+
+  \textbf{Content Definition:} \texttt{(definition\_id)}
+
+  \textbf{Quiz:} \texttt{(quiz\_id, lecture\_id)}
+
+  \textbf{FAQ:} \texttt{(faq\_id, quiz\_id, definition\_id)}
+
+  \textbf{Student:} \texttt{(student\_id)}
+
+  \textbf{Institution:} \texttt{(institution\_id)}
+
+  \textbf{Instructor:} \texttt{(instructor\_id, institution\_id)}
+
+  \textbf{Category:} \texttt{(category\_id, parent\_id)}
+
+  \textbf{Review:} \texttt{(review\_id, course\_id)}
+  
+  \textbf{Subtitle:} \texttt{(subtitle\_id, video\_id, language\_id)}
+  
+  \textbf{Language:} \texttt{(language\_id)}
+  
+  \textbf{Forum:} \texttt{(forum\_id, course\_id)}
+  
+  \textbf{Certificate:} \texttt{(certificate\_id)}
+  
+  \textbf{Thread:} \texttt{(thread\_id, student\_id, course\_id, forum\_id, definition\_id)}
+\end{flushleft}
+
+\subsubsection{Cuarta Forma Normal (4FN)}
+
+Finalmente, añadimos como tablas intermedias las dependencias
+multivalor definidas inicialmente.
+
+\begin{itemize}
+  \item \textbf{Student\_Course:} \texttt{(student\_id, course\_id)}
+  \item \textbf{Student\_Thread:} \texttt{(student\_id, thread\_id)}
+  \item \textbf{Course\_Instructor:} \texttt{(course\_id, instructor\_id)}
+  \item \textbf{Course\_Language:} \texttt{(course\_id, language\_id)}
+  \item \textbf{FAQ\_Category:} \texttt{(faq\_id, category\_id)}
+  \item \textbf{FAQ\_Course:} \texttt{(faq\_id, course\_id)}
+  \item \textbf{Course\_Language:} \texttt{(course\_id, language\_id)}
+  \item \textbf{Student\_Thread:} \texttt{(student\_id, thread\_id)}
+\end{itemize}
+
+\subsubsection{Conjunto Solución (CS)}
+
+\begin{flushleft}
+  \texttt{%
+    CS = \{Membership, Course, Module, Lesson, Lecture, Video,
+    Content Definition, Quiz, FAQ, Student, Institution,
+    Instructor, Category, Review, Subtitle, Language, Forum,
+    Certificate, Thread, Student\_Course, Student\_Thread,
+    Course\_Instructor, Course\_Language, FAQ\_Category,
+    FAQ\_Category, FAQ\_Course, Course\_Language, Student\_Thread\}
+  }
+\end{flushleft}
+
+\end{document}
