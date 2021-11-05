@@ -41,8 +41,10 @@
     "enumeratedtable",
     "Jaimes",
     "Jhonel",
+    "multivalor",
     "Stefano",
-    "subcategorías"
+    "subcategorías",
+    "transitividades"
   ],
   "cSpell.ignoreRegExpList": [
     "\\\\begin\\{luacode\\*?\\}[^]*\\\\end\\{luacode\\*?\\}",
