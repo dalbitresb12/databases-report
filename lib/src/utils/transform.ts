@@ -74,10 +74,11 @@ export const createColumn = (column: TableColumn): string => {
   if (Description.length === 0) {
     return `\\attribute{${escapeValue(Name)}}{${escapeValue(Type)}}{}`;
   }
+  const parsed = parseAttributeDescription(Description);
 
   return dedent`
     \\attribute{${escapeValue(Name)}}{${escapeValue(Type)}}{
-      ${escapeValue(Description)}
+      ${escapeValue(parsed.description)}
     }
   `;
 };
