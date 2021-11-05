@@ -14,7 +14,7 @@
         </Counter>
         <Counter>
             <Name>column</Name>
-            <Value>310</Value>
+            <Value>311</Value>
             <Prefix>c</Prefix>
         </Counter>
         <Counter>
@@ -381,7 +381,8 @@
                 <Column Id="c26">
                     <Name>institution_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de la institución</Description>
+                    <Description>Identificador único de la institución
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -403,7 +404,8 @@
                 <Column Id="c27">
                     <Name>name</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Nombre de la institución</Description>
+                    <Description>Nombre de la institución
+Unit = Texto libre</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -412,7 +414,8 @@
                 <Column Id="c28">
                     <Name>description</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Descripción de la institución</Description>
+                    <Description>Descripción de la institución
+Unit = Texto libre</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -421,7 +424,8 @@
                 <Column Id="c29">
                     <Name>country</Name>
                     <Type>char(2)</Type>
-                    <Description>País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2.</Description>
+                    <Description>País de procedencia de la institución acorde al estándar ISO 3166-1 alpha-2.
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -430,7 +434,8 @@
                 <Column Id="c170">
                     <Name>logo_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Dirección URL del logo de la institución </Description>
+                    <Description>Dirección URL del logo de la institución 
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -439,7 +444,8 @@
                 <Column Id="c174">
                     <Name>squared_logo_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Dirección URL del logo en cuadrado de la institución</Description>
+                    <Description>Dirección URL del logo en cuadrado de la institución
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -448,7 +454,8 @@
                 <Column Id="c175">
                     <Name>course_logo_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Dirección URL del logo de la institución utilizada en la cabecera de un curso </Description>
+                    <Description>Dirección URL del logo de la institución utilizada en la cabecera de un curso 
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -457,7 +464,8 @@
                 <Column Id="c176">
                     <Name>website_urls</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Lista de URLs de la institución en formato JSON</Description>
+                    <Description>Lista de URLs de la institución en formato JSON
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -484,7 +492,8 @@
                 <Column Id="c30">
                     <Name>instructor_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de cada instructor</Description>
+                    <Description>Identificador único de cada instructor
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -506,7 +515,8 @@
                 <Column Id="c31">
                     <Name>fullname</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Nombre completo del instructor </Description>
+                    <Description>Nombre completo del instructor 
+Unit = Texto libre</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -515,7 +525,8 @@
                 <Column Id="c32">
                     <Name>occupation</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Ocupación del instructor</Description>
+                    <Description>Ocupación del instructor
+Unit = Texto libre</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -524,7 +535,8 @@
                 <Column Id="c36">
                     <Name>rating</Name>
                     <Type>float(2)</Type>
-                    <Description>Calificación de la calidad de enseñanza de parte de los estudiantes</Description>
+                    <Description>Calificación de la calidad de enseñanza de parte de los estudiantes
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -533,7 +545,8 @@
                 <Column Id="c37">
                     <Name>ratings_count</Name>
                     <Type>int</Type>
-                    <Description>Cantidad de calificaciones recibidas</Description>
+                    <Description>Cantidad de calificaciones recibidas
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -542,7 +555,8 @@
                 <Column Id="c33">
                     <Name>profile_picture_url</Name>
                     <Type>varchar(2000)</Type>
-                    <Description>Enlace del CDN a la foto de perfil del instructor</Description>
+                    <Description>Enlace del CDN a la foto de perfil del instructor
+Unit = Descripción</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -551,7 +565,8 @@
                 <Column Id="c34">
                     <Name>website_urls</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Lista de URLs del instructor en formato JSON </Description>
+                    <Description>Lista de URLs del instructor en formato JSON 
+Unit = Descripción</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -560,7 +575,8 @@
                 <Column Id="c35">
                     <Name>biography</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Biografía del instructor</Description>
+                    <Description>Biografía del instructor
+Unit = Texto libre</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -569,7 +585,8 @@
                 <Column Id="c38">
                     <Name>is_top_instructor</Name>
                     <Type>bit</Type>
-                    <Description>Indicador de si es un instructor top</Description>
+                    <Description>Indicador de si es un instructor top
+Unit = Identificador</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -578,7 +595,8 @@
                 <Column Id="c43">
                     <Name>institution_id</Name>
                     <Type>int</Type>
-                    <Description>Institución Afiliada en la que trabaja el instructor</Description>
+                    <Description>Institución Afiliada en la que trabaja el instructor
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1200,7 +1218,8 @@
                 <Column Id="c134">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del curso</Description>
+                    <Description>Identificador único del curso
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1209,7 +1228,8 @@
                 <Column Id="c133">
                     <Name>instructor_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del instructor</Description>
+                    <Description>Identificador único del instructor
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1218,7 +1238,8 @@
                 <Column Id="c135">
                     <Name>order</Name>
                     <Type>tinyint</Type>
-                    <Description>Orden correlativo del instructor en el curso</Description>
+                    <Description>Orden correlativo del instructor en el curso
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1337,7 +1358,8 @@
                 <Column Id="c162">
                     <Name>module_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del módulo</Description>
+                    <Description>Identificador único del módulo
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1346,7 +1368,8 @@
                 <Column Id="c210">
                     <Name>name</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Nombre del módulo</Description>
+                    <Description>Nombre del módulo
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1355,7 +1378,8 @@
                 <Column Id="c212">
                     <Name>slug</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)</Description>
+                    <Description>Identificador del módulo para la URL (solo con caracteres que se pueden usar en una URL)
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1364,7 +1388,8 @@
                 <Column Id="c165">
                     <Name>description</Name>
                     <Type>varchar(max)</Type>
-                    <Description>Descripción del módulo</Description>
+                    <Description>Descripción del módulo
+Unit = Texto libre</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1373,7 +1398,8 @@
                 <Column Id="c164">
                     <Name>time_commitment</Name>
                     <Type>bigint</Type>
-                    <Description>Tiempo estimado donde un estudiante termina un módulo</Description>
+                    <Description>Tiempo estimado donde un estudiante termina un módulo
+Unit = Hora</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1382,7 +1408,8 @@
                 <Column Id="c178">
                     <Name>order</Name>
                     <Type>int</Type>
-                    <Description>Número de orden correlativo del módulo</Description>
+                    <Description>Número de orden correlativo del módulo
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1391,7 +1418,8 @@
                 <Column Id="c225">
                     <Name>forum_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del foro</Description>
+                    <Description>Identificador único del foro
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1400,7 +1428,8 @@
                 <Column Id="c296">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Identificado único del curso
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1809,7 +1838,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c224">
                     <Name>forum_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único de Forum</Description>
+                    <Description>Identificador único de Forum
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1818,7 +1848,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c266">
                     <Name>name</Name>
                     <Type>varchar(100)</Type>
-                    <Description>Nombre del foro</Description>
+                    <Description>Nombre del foro
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1827,7 +1858,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c267">
                     <Name>description</Name>
                     <Type>varchar(200)</Type>
-                    <Description>Descripción del foro</Description>
+                    <Description>Descripción del foro
+Unit = Descripción</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1836,7 +1868,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c268">
                     <Name>thread_count</Name>
                     <Type>int</Type>
-                    <Description>Cantidad de publicaciones</Description>
+                    <Description>Cantidad de publicaciones
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1845,7 +1878,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c269">
                     <Name>last_post</Name>
                     <Type>datetime</Type>
-                    <Description>Fecha de la última publicación hecha.</Description>
+                    <Description>Fecha de la última publicación hecha.
+Unit = Fecha</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -1854,7 +1888,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c273">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del curso</Description>
+                    <Description>Identificador único del curso
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2133,7 +2168,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c270">
                     <Name>thread_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del hilo</Description>
+                    <Description>Identificador único del hilo
+Unit = Codigo</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2142,7 +2178,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c294">
                     <Name>name</Name>
                     <Type>varchar(200)</Type>
-                    <Description>Nombre del hilo</Description>
+                    <Description>Nombre del hilo
+Unit = Descripcion</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2151,7 +2188,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c274">
                     <Name>created_at</Name>
                     <Type>datetime</Type>
-                    <Description>Fecha de creación del hilo</Description>
+                    <Description>Fecha de creación del hilo
+Unit = Fecha</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2160,7 +2198,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c278">
                     <Name>created_by</Name>
                     <Type>int</Type>
-                    <Description>Id del estudiante que creó el hilo</Description>
+                    <Description>Id del estudiante que creó el hilo
+Unit = Codigo</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2169,7 +2208,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c280">
                     <Name>course_id</Name>
                     <Type>int</Type>
-                    <Description>Id del curso del que forma parte el hilo</Description>
+                    <Description>Id del curso del que forma parte el hilo
+Unit = Codigo</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2178,7 +2218,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c279">
                     <Name>forum_id</Name>
                     <Type>int</Type>
-                    <Description>Id del foro al que pertenece el hilo</Description>
+                    <Description>Id del foro al que pertenece el hilo
+Unit = Codigo</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2187,7 +2228,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c287">
                     <Name>last_answered_at</Name>
                     <Type>datetime</Type>
-                    <Description>Fecha de la última vez que el hilo ha sido respondido</Description>
+                    <Description>Fecha de la última vez que el hilo ha sido respondido
+Unit = Fecha</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2196,7 +2238,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c290">
                     <Name>last_answered_by</Name>
                     <Type>int</Type>
-                    <Description>Id del estudiante que ha respondido la última vez</Description>
+                    <Description>Id del estudiante que ha respondido la última vez
+Unit = Codigo</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2205,7 +2248,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c288">
                     <Name>answer_count</Name>
                     <Type>int</Type>
-                    <Description>Número de respuestas</Description>
+                    <Description>Número de respuestas
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2214,7 +2258,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c292">
                     <Name>top_level_answer_count</Name>
                     <Type>int</Type>
-                    <Description>Número de respuestas que se muestran al inicio del hilo</Description>
+                    <Description>Número de respuestas que se muestran al inicio del hilo
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2223,7 +2268,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c289">
                     <Name>upvote_count</Name>
                     <Type>int</Type>
-                    <Description>Número de votos positivos que tiene el hilo</Description>
+                    <Description>Número de votos positivos que tiene el hilo
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2232,7 +2278,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c275">
                     <Name>follower_count</Name>
                     <Type>int</Type>
-                    <Description>Número de seguidores que tiene el hilo</Description>
+                    <Description>Número de seguidores que tiene el hilo
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2241,7 +2288,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c291">
                     <Name>view_count</Name>
                     <Type>int</Type>
-                    <Description>Número de visualizaciones que tiene el hilo</Description>
+                    <Description>Número de visualizaciones que tiene el hilo
+Unit = Número</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2250,7 +2298,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c293">
                     <Name>parent_thread_id</Name>
                     <Type>int</Type>
-                    <Description>Id del hilo padre</Description>
+                    <Description>Id del hilo padre
+Unit = Codigo</Description>
                     <Nullable>true</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2259,7 +2308,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c310">
                     <Name>content_id</Name>
                     <Type>int</Type>
-                    <Description></Description>
+                    <Description>Id del contenido
+Unit = Codigo</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2286,7 +2336,9 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c281">
                     <Name>student_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del estudiante</Description>
+                    <Description>Identificador único del estudiante
+Range = Por cada alumno
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2295,7 +2347,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c282">
                     <Name>thread_id</Name>
                     <Type>int</Type>
-                    <Description>Identificador único del hilo</Description>
+                    <Description>Identificador único del hilo
+Unit = Código</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2304,7 +2357,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c283">
                     <Name>is_upvoted</Name>
                     <Type>bit</Type>
-                    <Description>Indica si el estudiante ha votado por dicho hilo</Description>
+                    <Description>Indica si el estudiante ha votado por dicho hilo
+Unit = Indicador</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2313,7 +2367,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c284">
                     <Name>is_follower</Name>
                     <Type>bit</Type>
-                    <Description>Indica si el estudiante es un seguidor del hilo</Description>
+                    <Description>Indica si el estudiante es un seguidor del hilo
+Unit = Indicador</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
@@ -2322,7 +2377,8 @@ Restrictions = 1, 2, 3</Description>
                 <Column Id="c285">
                     <Name>viewed</Name>
                     <Type>bit</Type>
-                    <Description>Indica si el hilo ha sido visto</Description>
+                    <Description>Indica si el hilo ha sido visto
+Unit = Indicador</Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
