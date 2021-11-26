@@ -4,6 +4,11 @@ on:
   push:
     tags:
       - '*'
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        description: 'Version to use for this run'
 
 jobs:
   build_release:
@@ -16,19 +21,34 @@ jobs:
         with:
           working_directory: src/
           root_file: main.tex
-      - name: Get the version
+      - name: Get version name (tags)
         id: get_version
+        if: github.event_name != 'workflow_dispatch' && startsWith(github.ref, 'refs/tags/')
         run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
-      - name: Rename artifact
-        run: mv src/main.pdf src/report-${{ steps.get_version.outputs.version }}.pdf
+      - name: Get version name (workflow_dispatch)
+        id: get_version
+        if: github.event_name == 'workflow_dispatch'
+        run: echo ::set-output name=version::${{ github.event.inputs.version }}
+      - name: Prepare release archive
+        run: |
+          mkdir -p ${{ github.workspace }}/out
+          mv ${{ github.workspace }}/src/main.pdf ${{ github.workspace }}/out/reporte-coursera.pdf
+          cp -r ${{ github.workspace }}/sql ${{ github.workspace }}/exports/* ${{ github.workspace }}/out
+      - name: Create release archive
+        uses: TheDoctor0/zip-release@0.6.0
+        with:
+          type: 'zip'
+          directory: ${{ github.workspace }}/out
+          filename: coursera-${{ steps.get_version.outputs.version }}.zip
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
-          name: report-${{ steps.get_version.outputs.version }}
-          path: src/report-${{ steps.get_version.outputs.version }}.pdf
+          name: coursera-${{ steps.get_version.outputs.version }}
+          path: out/coursera-${{ steps.get_version.outputs.version }}.zip
       - name: Create release and upload artifact
         uses: softprops/action-gh-release@v1
+        if: github.event_name != 'workflow_dispatch' && startsWith(github.ref, 'refs/tags/')
         with:
           fail_on_unmatched_files: true
-          files: out/report-${{ steps.get_version.outputs.version }}.pdf
+          files: out/coursera-${{ steps.get_version.outputs.version }}.zip
           draft: true
