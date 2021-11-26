@@ -28,6 +28,7 @@ go
 
 -- 2. Coursera quiere saber quién fue el estudiante más joven que completó más cursos en un periodo de tiempo (entre 2 fechas)
 -- (función + subqueries)
+-- Ejecutar el trigger del inciso 1 para que esta función puede ejecutar sin ningún problema.
 
 CREATE FUNCTION BestYoungestStudent(@start DATE, @end DATE) RETURNS TABLE
 AS
