@@ -42,7 +42,7 @@ jobs:
 
           for ($i = 1; $i -le 30; $i++) {
             echo "Attempt $i/30 to connect to SQL Server..."
-            sqlcmd -X[1] -b -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
+            sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
             if ($?) {
               echo "  - SQL Server is now ready"
               break
@@ -58,10 +58,10 @@ jobs:
           docker exec sqlserver ls -lah /var/opt/mssql/backup/
 
           echo "Restore database inside container"
-          sqlcmd -X[1] -b -Q "RESTORE DATABASE coursera_db FROM DISK = '/var/opt/mssql/backup/coursera_db.bak' WITH MOVE 'coursera_db' TO '/var/opt/mssql/data/coursera_db.mdf', MOVE 'coursera_db_log' TO '/var/opt/mssql/data/coursera_db_log.ldf'"
+          sqlcmd -b -Q "RESTORE DATABASE coursera_db FROM DISK = '/var/opt/mssql/backup/coursera_db.bak' WITH MOVE 'coursera_db' TO '/var/opt/mssql/data/coursera_db.mdf', MOVE 'coursera_db_log' TO '/var/opt/mssql/data/coursera_db_log.ldf'"
 
           echo "Check database availability"
-          sqlcmd -X[1] -b -Q "SELECT DB_NAME() as CatalogName" -d "coursera_db"
+          sqlcmd -b -Q "SELECT DB_NAME() as CatalogName" -d "coursera_db"
 
           # Set the exit code if the restore failed
           if (!$?) { exit 1 }
@@ -75,7 +75,7 @@ jobs:
           $failed = $False
           foreach ($item in $files) {
             echo "Executing script: $($item.name)"
-            sqlcmd -X[1] -y 16 -Y 28 -b -V11 -i "$($item.fullname)"
+            sqlcmd -y 16 -Y 28 -b -V11 -i "$($item.fullname)"
             if (!$?) {
               $failed = $True
             }
