@@ -19,8 +19,10 @@ create or alter function dbo.InstructorRatingAvgByInstitution()
             );
 go
 
-select *
-from dbo.InstructorRatingAvgByInstitution();
+-- Validate function: InstructorRatingAvgByInstitution()
+
+select Av.institution_id, Av.rating_average
+from dbo.InstructorRatingAvgByInstitution() Av;
 go
 
 -- 2. Actualizar el campo Instructor.is_top_instructor dependiendo del rating de
@@ -36,12 +38,14 @@ from Instructor I;
 
 update It
 set It.is_top_instructor =
-        IIF(It.rating >= (select MAX(i) from (values (It.rating), (@global_average), (0.7)) as T(i)),
+        IIF(It.rating >= (select MAX(i) from (values (Av.rating_average), (@global_average), (0.7)) as T(i)),
             1, 0)
 from Instructor It
          join Institution Ic on Ic.institution_id = It.institution_id
          join dbo.InstructorRatingAvgByInstitution() Av on It.institution_id = Av.institution_id;
 go
+
+-- Validate procedure: UpdateTopInstructors
 
 exec dbo.UpdateTopInstructors;
 
@@ -58,6 +62,8 @@ create or alter trigger dbo.UpdateTopInstructorsOnUpdate
     after update as
     exec dbo.UpdateTopInstructors;
 go
+
+-- Validate trigger: UpdateTopInstructorsOnUpdate
 
 exec dbo.UpdateTopInstructors;
 go
@@ -111,8 +117,10 @@ create or alter function dbo.TopStudentsOfClass(
             );
 go
 
-select *
-from dbo.TopStudentsOfClass(1, '2014-01-01', '2021-01-01');
+-- Validate function: TopStudentsOfClass()
+
+select T.fullname, T.email, T.grade_achieved
+from dbo.TopStudentsOfClass(1, '2014-01-01', '2021-01-01') T;
 go
 
 -- Cleanup
