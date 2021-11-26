@@ -53,6 +53,7 @@ jobs:
           }
 
           echo "Copy database backup to container"
+          docker exec -it sqlserver mkdir -p /var/opt/mssql/backup/
           docker cp ${{ github.workspace }}/exports/coursera_db.bak sqlserver:/var/opt/mssql/backup/
           docker exec -it sqlserver ls -lah /var/opt/mssql/backup/
 
