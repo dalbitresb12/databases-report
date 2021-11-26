@@ -41,8 +41,8 @@ GROUP BY S.fullname) ECT)
 AND DATEDIFF(DAY, birthday, CURRENT_TIMESTAMP) <= (SELECT MIN(ECT.AgeDays)
 FROM (SELECT S.fullname as "StudentName", DATEDIFF(DAY, birthday, CURRENT_TIMESTAMP) AS "AgeDays"
 FROM Membership M INNER JOIN Student S ON  M.student_id = S.student_id
-WHERE M.finished_course = 1 AND M.enrollment_date BETWEEN @start AND @end AND S.birthday IS NOT NULL) ECT))
-go;
+WHERE M.finished_course = 1 AND M.enrollment_date BETWEEN @start AND @end AND S.birthday IS NOT NULL) ECT));
+go
 
 SELECT E.StudentName, E.FinishedCourses, E.Age 
 FROM EstudianteCursosTerminados('2021-01-01', '2021-11-26') E;
