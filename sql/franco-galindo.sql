@@ -6,9 +6,9 @@ go
 begin transaction;
 go
 
--- 1. Mostrar la cantidad de alumnos inscritos y el porcentaje de aprobados en cierto curso durante todos los a駉s (Funci髇).
+-- 1. Mostrar la cantidad de alumnos inscritos y el porcentaje de aprobados en cierto curso durante todos los a帽os (Funci贸n).
 
---Crear funci髇 para obtener porcentaje de aprobados en cierto a駉 y curso
+--Crear funci贸n para obtener porcentaje de aprobados en cierto a帽o y curso
 CREATE FUNCTION P_ALUMNOS_APROBADOS(@year INT, @course_id INT, @q_students INT) RETURNS FLOAT
 AS
 BEGIN
@@ -20,7 +20,7 @@ RETURN @p_students
 END;
 go
 
---Crear funci髇 para obtener la tabla entera
+--Crear funci贸n para obtener la tabla entera
 CREATE FUNCTION COURSE_APPROVED_EVOLUTION(@course_id int) RETURNS TABLE
 AS
 RETURN (Select COUNT(M.student_id) as "Q_enrolled_students",
@@ -31,7 +31,7 @@ WHERE M.course_id = @course_id
 GROUP BY M.course_id, YEAR(M.enrollment_date));
 go
 
---Ingresar la id del curso deseado para obtener la cantidad de inscritos y su porcentaje de aprobados a lo largo de los a駉s
+--Ingresar la id del curso deseado para obtener la cantidad de inscritos y su porcentaje de aprobados a lo largo de los a帽os
 DECLARE @selected_course INT = 2
 Select CE.Q_enrolled_students, CE.Approved_porcentage, CE.Enrollment_year
 From COURSE_APPROVED_EVOLUTION(@selected_course) CE
@@ -40,7 +40,7 @@ go
 
 
 --2. Mostrar el promedio de edad de un curso junto a su cantidad de alumnos inscritos entre un rango de edad ingresado, 
--- mostrando adicionalmente, su promedio. (Funci髇 con subquery)
+-- mostrando adicionalmente, su promedio. (Funci贸n con subquery)
 
 CREATE FUNCTION EDAD_ALUMNOS_CURSO(@course_id int, @edadInicio int, @edadFinal int) RETURNS TABLE
 AS
@@ -69,7 +69,7 @@ From EDAD_ALUMNOS_CURSO(2, 19, 24) EA;
 go
 
 
---3. El curso con el mejor y el peor promedio de notas en tal a駉. (Procedimiento)
+--3. El curso con el mejor y el peor promedio de notas en tal a帽o. (Procedimiento)
 
 CREATE FUNCTION AVERAGE_GRADE_COURSE(@year INT) RETURNS TABLE
 AS
@@ -114,9 +114,9 @@ PRINT 'Se ha actualizado correctamente la fecha de cumpleanhos';
 go
 
 UPDATE Student Set birthday = '1997-09-09' Where  student_id = 1;
-UPDATE Student Set birthday = '1997-09-11' Where  student_id = 1;
-UPDATE Student Set birthday = '1997-09-11' Where  student_id = 1;
-UPDATE Student Set birthday = '1997-09-10' Where  student_id = 1;
+-- UPDATE Student Set birthday = '1997-09-11' Where  student_id = 1;
+-- UPDATE Student Set birthday = '1997-09-11' Where  student_id = 1;
+-- UPDATE Student Set birthday = '1997-09-10' Where  student_id = 1;
 go
 
 
