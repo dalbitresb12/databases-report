@@ -1,0 +1,85 @@
+name: MSSQL
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "exports/coursera_db.bak"
+      - "sql/*"
+  pull_request:
+    paths:
+      - "exports/coursera_db.bak"
+      - "sql/*"
+
+jobs:
+  mssql_tests:
+    name: tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install SQL Server 2019
+        shell: bash
+        run: |
+          # Linux SQL install via Docker
+
+          # If the password generator needs to be changed, make sure the resulting password meets SQL Server password requirements
+          sa_pw=$(uuidgen) 
+          echo "::add-mask::$sa_pw"
+
+          echo "Starting SQL Server in a Docker container..."
+          docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$sa_pw" -e "MSSQL_PID=Developer" -p 1433:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+
+          echo "Setting environment variables for sqlcmd..."
+          echo "SQLCMDPASSWORD=$sa_pw" >> $GITHUB_ENV
+          echo "SQLCMDUSER=sa" >> $GITHUB_ENV
+          echo "SQLCMDSERVER=localhost,1433" >> $GITHUB_ENV
+      - name: Setup SQL Server
+        shell: pwsh
+        run: |
+          # Wait for availability then restore from backup
+
+          for ($i = 1; $i -le 30; $i++) {
+            echo "Attempt $i/30 to connect to SQL Server..."
+            sqlcmd -b -Q "SELECT @@SERVERNAME as ServerName" 2>&1>$null
+            if ($?) {
+              echo "  - SQL Server is now ready"
+              break
+            } else {
+              echo "  - Not ready, sleeping for 5s"
+              Start-Sleep -seconds 5
+            }
+          }
+
+          echo "Copy database backup to container"
+          docker exec sqlserver mkdir -p /var/opt/mssql/backup/
+          docker cp ${{ github.workspace }}/exports/coursera_db.bak sqlserver:/var/opt/mssql/backup/
+          docker exec sqlserver ls -lah /var/opt/mssql/backup/
+
+          echo "Restore database inside container"
+          sqlcmd -b -Q "RESTORE DATABASE coursera_db FROM DISK = '/var/opt/mssql/backup/coursera_db.bak' WITH MOVE 'coursera_db' TO '/var/opt/mssql/data/coursera_db.mdf', MOVE 'coursera_db_log' TO '/var/opt/mssql/data/coursera_db_log.ldf'"
+
+          echo "Check database availability"
+          sqlcmd -b -Q "SELECT DB_NAME() as CatalogName" -d "coursera_db"
+
+          # Set the exit code if the restore failed
+          if (!$?) { exit 1 }
+      - name: Run SQL scripts
+        shell: pwsh
+        run: |
+          echo "Get the list of SQL scripts"
+          $files = Get-ChildItem -File ${{ github.workspace }}/sql
+
+          # Run sqlcmd for each file
+          $failed = $False
+          foreach ($item in $files) {
+            echo "Executing script: $($item.name)"
+            sqlcmd -y 16 -Y 28 -b -V11 -i "$($item.fullname)"
+            if (!$?) {
+              $failed = $True
+            }
+          }
+
+          # Set the exit code if any of the scripts failed
+          if ($failed) { exit 1 }
