@@ -39,8 +39,9 @@ Order by 3 asc;
 go
 
 
---2. Mostrar el promedio de edad de un curso junto a su cantidad de alumnos inscritos entre un rango de edad ingresado, 
--- mostrando adicionalmente, su promedio. (Función con subquery)
+--2. Mostrar la cantidad de alumnos que se han inscrito de un curso, entre un rango de edad ingresado. 
+-- Además, muestra el promedio de edad de alumnos en el curso. (Función con subquery)
+
 
 CREATE FUNCTION EDAD_ALUMNOS_CURSO(@course_id int, @edadInicio int, @edadFinal int) RETURNS TABLE
 AS
