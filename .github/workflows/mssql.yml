@@ -62,7 +62,7 @@ jobs:
           sqlcmd -b -Q "SELECT DB_NAME() as CatalogName" -d "coursera_db"
 
           # Set the exit code if the restore failed
-          if (!$?) exit 1
+          if (!$?) { exit 1 }
       - name: Run SQL scripts
         shell: pwsh
         run: |
@@ -80,4 +80,4 @@ jobs:
           }
 
           # Set the exit code if any of the scripts failed
-          if ($failed) exit 1
+          if ($failed) { exit 1 }
