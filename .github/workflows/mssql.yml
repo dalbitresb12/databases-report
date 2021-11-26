@@ -53,7 +53,7 @@ jobs:
           }
 
           echo "Copy database backup to container"
-          docker cp exports/coursera_db.bak sqlserver:/var/opt/mssql/backup
+          docker cp ${{ github.workspace }}/exports/coursera_db.bak sqlserver:/var/opt/mssql/backup
 
           echo "Restore database inside container"
           sqlcmd -b -Q "RESTORE DATABASE coursera_db FROM DISK = '/var/opt/mssql/backup/coursera_db.bak' WITH MOVE 'coursera_db' TO '/var/opt/mssql/data/coursera_db.mdf', MOVE 'coursera_db_log' TO '/var/opt/mssql/data/coursera_db_log.ldf'"
@@ -67,7 +67,7 @@ jobs:
         shell: pwsh
         run: |
           echo "Get the list of SQL scripts"
-          $files = Get-ChildItem -File sql/
+          $files = Get-ChildItem -File ${{ github.workspace }}/sql
 
           # Run sqlcmd for each file
           $failed = $False
