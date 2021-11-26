@@ -73,9 +73,9 @@ jobs:
 
           # Run sqlcmd for each file
           $failed = $False
-          for ($i = 0; $i -lt $files.length; $i++) {
-            echo "Executing script: $files"
-            sqlcmd -b -V11 -i "$files"
+          foreach ($item in $files) {
+            echo "Executing script: $($item.name)"
+            sqlcmd -b -V11 -i "$($item.fullname)"
             if (!$?) {
               $failed = $True
             }
