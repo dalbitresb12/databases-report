@@ -75,7 +75,7 @@ go
 
 UPDATE Course 
 SET course_type = 10
-WHERE course_id = (SELECT C.category_id
+WHERE category_id = (SELECT C.category_id
 FROM Course C INNER JOIN (SELECT Ca.category_id AS "CategoryID", AVG(Ce.grade_achieved) AS "AverageGrade"
 FROM Certificate Ce INNER JOIN Membership M ON Ce.certificate_id = M.certificate_code
 INNER JOIN Course Co ON M.course_id = Co.course_id
@@ -87,7 +87,10 @@ FROM Certificate Ce INNER JOIN Membership M ON Ce.certificate_id = M.certificate
 INNER JOIN Course Co ON M.course_id = Co.course_id
 INNER JOIN Category Ca ON Co.category_id = Ca.category_id
 GROUP BY Ca.category_id) Cat)) T ON C.category_id = T.CategoryID); 
-go
+
+SELECT C.category_id, C.course_id, C.name, C.course_type
+FROM Course C
+WHERE C.course_type = 10;
 
 -- Cleanup
 DROP TRIGGER TX_SettingAge;
