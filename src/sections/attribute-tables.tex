@@ -473,23 +473,23 @@
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{slug}
-      \definition{Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)}
-      \type{varchar(50)}
-      \range{No tiene}
-      \unit{Descripción}
-      \restrictions{Carácteres que no se pueden usar en una URL. Más de 50 carácteres}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
       \name{name}
       \definition{Nombre del curso}
       \type{varchar(max)}
       \range{No tiene}
       \unit{Name}
       \restrictions{No tiene}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{slug}
+      \definition{Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)}
+      \type{varchar(50)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{Carácteres que no se pueden usar en una URL. Más de 50 carácteres}
     \end{table}
   }
   \hfill
@@ -698,23 +698,23 @@
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
-      \name{slug}
-      \definition{Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)}
-      \type{varchar(50)}
-      \range{No tiene}
-      \unit{Descripción}
-      \restrictions{Carácteres que no se pueden utilizar en una URL. Más de 50 carácteres}
-    \end{table}
-  }
-  \hfill
-  \parbox{0.48\linewidth}{
-    \begin{table}
       \name{name}
       \definition{Nombre de la categoría}
       \type{varchar(max)}
       \range{No tiene}
       \unit{Nombre}
       \restrictions{No tiene}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{slug}
+      \definition{Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)}
+      \type{varchar(50)}
+      \range{No tiene}
+      \unit{Descripción}
+      \restrictions{Carácteres que no se pueden utilizar en una URL. Más de 50 carácteres}
     \end{table}
   }
   \hfill
@@ -1470,6 +1470,14 @@
   \hfill
   \parbox{0.48\linewidth}{
     \begin{table}
+      \name{weight\_score}
+      \definition{}
+      \type{float(2)}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
       \name{passing\_fraction}
       \definition{Porcentaje mínimo de respuestas correctas para aprobar el Quiz}
       \type{float(2)}
@@ -1965,6 +1973,51 @@
       \definition{Indica si el hilo ha sido visto}
       \type{bit}
       \unit{Número}
+    \end{table}
+  }
+\end{attrtables}
+
+\subsubsection{Entidad Student\_Quiz}
+
+\begin{attrtables}{studentquiz}
+  \noindent
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{student\_id}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{quiz\_id}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{score\_achieved}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{time\_used}
+      \definition{}
+      \type{int}
+    \end{table}
+  }
+  \hfill
+  \parbox{0.48\linewidth}{
+    \begin{table}
+      \name{total\_attempts}
+      \definition{}
+      \type{int}
     \end{table}
   }
 \end{attrtables}
