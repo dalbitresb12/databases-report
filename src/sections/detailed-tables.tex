@@ -155,11 +155,11 @@
     \attribute{course\_id}{int}{
       Identificador único de cada curso
     }
-    \attribute{slug}{varchar(50)}{
-      Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)
-    }
     \attribute{name}{varchar(max)}{
       Nombre del curso
+    }
+    \attribute{slug}{varchar(50)}{
+      Identificador del curso para la URL (solo con caracteres que se pueden usar en una URL)
     }
     \attribute{course\_rating}{float(2)}{
       Cantidad de estrellas que tiene el curso
@@ -220,11 +220,11 @@
     \attribute{category\_id}{int}{
       Identificador único de cada categoría
     }
-    \attribute{slug}{varchar(50)}{
-      Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)
-    }
     \attribute{name}{varchar(max)}{
       Nombre de la categoría
+    }
+    \attribute{slug}{varchar(50)}{
+      Identificador de la categoría para la URL (solo con caracteres que se pueden usar en una URL)
     }
     \attribute{description}{varchar(max)}{
       Descripción de la categoría
@@ -500,6 +500,7 @@
     \attribute{max\_score}{int}{
       Puntuación máxima en la Quiz
     }
+    \attribute{weight\_score}{float(2)}{}
     \attribute{passing\_fraction}{float(2)}{
       Porcentaje mínimo de respuestas correctas para aprobar el Quiz
     }
@@ -685,6 +686,16 @@
     \attribute{viewed}{bit}{
       Indica si el hilo ha sido visto
     }
+  \end{table}
+  
+  \subsubsection{Tabla Student\_Quiz}
+  
+  \begin{table}
+    \attribute{student\_id}{int}{}
+    \attribute{quiz\_id}{int}{}
+    \attribute{score\_achieved}{int}{}
+    \attribute{time\_used}{int}{}
+    \attribute{total\_attempts}{int}{}
   \end{table}
 \end{database}
 
